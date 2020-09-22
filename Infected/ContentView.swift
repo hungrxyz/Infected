@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @ObservedObject var api = CoronaWatchNLAPI()
+
+    @ViewBuilder
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(spacing: 16) {
+            if let numbers = api.latest {
+                NumbersView(numbers: numbers, refreshed: Date())
+            } else {
+                Text("No latest numbers")
+            }
+            Button(action: {
+                api.load()
+            }, label: {
+                Text("Refresh")
+            })
+        }
     }
 }
 

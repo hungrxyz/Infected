@@ -7,15 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADBB7CD52517BF3000F3C8B4 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */; };
+		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
+		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
+		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
+		ADBB7CE72517C1DC00F3C8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */; };
+		ADBB7CEB2517C1DC00F3C8B4 /* InfectedWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ADBB7CF82517C22600F3C8B4 /* CoronaWatchNLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */; };
+		ADBB7CF92517C22600F3C8B4 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */; };
 		ADD4C306251627910064A959 /* InfectedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C305251627910064A959 /* InfectedApp.swift */; };
 		ADD4C308251627910064A959 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C307251627910064A959 /* ContentView.swift */; };
 		ADD4C30A251627920064A959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD4C309251627920064A959 /* Assets.xcassets */; };
 		ADD4C30D251627920064A959 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD4C30C251627920064A959 /* Preview Assets.xcassets */; };
 		ADD4C318251627920064A959 /* InfectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C317251627920064A959 /* InfectedTests.swift */; };
 		ADD4C323251627920064A959 /* InfectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C322251627920064A959 /* InfectedUITests.swift */; };
+		ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		ADBB7CE92517C1DC00F3C8B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADD4C2FA251627910064A959 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADBB7CDC2517C1DA00F3C8B4;
+			remoteInfo = InfectedWidgetExtension;
+		};
 		ADD4C314251627920064A959 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADD4C2FA251627910064A959 /* Project object */;
@@ -32,7 +48,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ADBB7CEF2517C1DC00F3C8B4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ADBB7CEB2517C1DC00F3C8B4 /* InfectedWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
+		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedWidget.swift; sourceTree = "<group>"; };
+		ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADBB7CE82517C1DC00F3C8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADD4C302251627910064A959 /* Infected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD4C305251627910064A959 /* InfectedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedApp.swift; sourceTree = "<group>"; };
 		ADD4C307251627910064A959 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,9 +82,19 @@
 		ADD4C31E251627920064A959 /* InfectedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfectedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD4C322251627920064A959 /* InfectedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedUITests.swift; sourceTree = "<group>"; };
 		ADD4C324251627920064A959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaWatchNLAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ADBB7CDA2517C1DA00F3C8B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */,
+				ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADD4C2FF251627910064A959 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,12 +119,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADBB7CDE2517C1DA00F3C8B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */,
+				ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADBB7CE32517C1DA00F3C8B4 /* InfectedWidget */ = {
+			isa = PBXGroup;
+			children = (
+				ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */,
+				ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */,
+				ADBB7CE82517C1DC00F3C8B4 /* Info.plist */,
+			);
+			path = InfectedWidget;
+			sourceTree = "<group>";
+		};
 		ADD4C2F9251627910064A959 = {
 			isa = PBXGroup;
 			children = (
 				ADD4C304251627910064A959 /* Infected */,
 				ADD4C316251627920064A959 /* InfectedTests */,
 				ADD4C321251627920064A959 /* InfectedUITests */,
+				ADBB7CE32517C1DA00F3C8B4 /* InfectedWidget */,
+				ADBB7CDE2517C1DA00F3C8B4 /* Frameworks */,
 				ADD4C303251627910064A959 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +156,7 @@
 				ADD4C302251627910064A959 /* Infected.app */,
 				ADD4C313251627920064A959 /* InfectedTests.xctest */,
 				ADD4C31E251627920064A959 /* InfectedUITests.xctest */,
+				ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				ADD4C305251627910064A959 /* InfectedApp.swift */,
+				ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
+				ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				ADD4C30E251627920064A959 /* Info.plist */,
 				ADD4C30B251627920064A959 /* Preview Content */,
@@ -133,6 +204,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ADBB7CDC2517C1DA00F3C8B4 /* InfectedWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADBB7CEC2517C1DC00F3C8B4 /* Build configuration list for PBXNativeTarget "InfectedWidgetExtension" */;
+			buildPhases = (
+				ADBB7CD92517C1DA00F3C8B4 /* Sources */,
+				ADBB7CDA2517C1DA00F3C8B4 /* Frameworks */,
+				ADBB7CDB2517C1DA00F3C8B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InfectedWidgetExtension;
+			productName = InfectedWidgetExtension;
+			productReference = ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		ADD4C301251627910064A959 /* Infected */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADD4C327251627920064A959 /* Build configuration list for PBXNativeTarget "Infected" */;
@@ -140,10 +228,12 @@
 				ADD4C2FE251627910064A959 /* Sources */,
 				ADD4C2FF251627910064A959 /* Frameworks */,
 				ADD4C300251627910064A959 /* Resources */,
+				ADBB7CEF2517C1DC00F3C8B4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ADBB7CEA2517C1DC00F3C8B4 /* PBXTargetDependency */,
 			);
 			name = Infected;
 			productName = Infected;
@@ -195,6 +285,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					ADBB7CDC2517C1DA00F3C8B4 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					ADD4C301251627910064A959 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -224,11 +317,20 @@
 				ADD4C301251627910064A959 /* Infected */,
 				ADD4C312251627920064A959 /* InfectedTests */,
 				ADD4C31D251627920064A959 /* InfectedUITests */,
+				ADBB7CDC2517C1DA00F3C8B4 /* InfectedWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ADBB7CDB2517C1DA00F3C8B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADBB7CE72517C1DC00F3C8B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADD4C300251627910064A959 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,12 +357,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ADBB7CD92517C1DA00F3C8B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADBB7CF92517C22600F3C8B4 /* NumbersView.swift in Sources */,
+				ADBB7CF82517C22600F3C8B4 /* CoronaWatchNLAPI.swift in Sources */,
+				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADD4C2FE251627910064A959 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADD4C308251627910064A959 /* ContentView.swift in Sources */,
+				ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */,
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
+				ADBB7CD52517BF3000F3C8B4 /* NumbersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +397,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		ADBB7CEA2517C1DC00F3C8B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADBB7CDC2517C1DA00F3C8B4 /* InfectedWidgetExtension */;
+			targetProxy = ADBB7CE92517C1DC00F3C8B4 /* PBXContainerItemProxy */;
+		};
 		ADD4C315251627920064A959 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ADD4C301251627910064A959 /* Infected */;
@@ -296,6 +415,48 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		ADBB7CED2517C1DC00F3C8B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96HG6E2WJ6;
+				INFOPLIST_FILE = InfectedWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hungry.Infectado.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ADBB7CEE2517C1DC00F3C8B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 96HG6E2WJ6;
+				INFOPLIST_FILE = InfectedWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hungry.Infectado.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		ADD4C325251627920064A959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +491,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -348,6 +510,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -391,6 +554,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -403,6 +567,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -415,6 +580,7 @@
 		ADD4C328251627920064A959 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -427,7 +593,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hungry.Infected;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hungry.Infectado;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -437,6 +603,7 @@
 		ADD4C329251627920064A959 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,7 +616,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.hungry.Infected;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hungry.Infectado;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,6 +710,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ADBB7CEC2517C1DC00F3C8B4 /* Build configuration list for PBXNativeTarget "InfectedWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADBB7CED2517C1DC00F3C8B4 /* Debug */,
+				ADBB7CEE2517C1DC00F3C8B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ADD4C2FD251627910064A959 /* Build configuration list for PBXProject "Infected" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
