@@ -47,13 +47,13 @@ extension LatestNumbers {
 
     static var demo: LatestNumbers {
         LatestNumbers(date: Date(),
-                      cases: 123,
-                      hospitalizations: 45,
-                      deaths: 6,
-                      previousDayCases: 78,
-                      previousDayHospitalizations: 9,
-                      previousDayDeaths: 0,
-                      totalCases: 123456,
+                      cases: 1234,
+                      hospitalizations: 450,
+                      deaths: 61,
+                      previousDayCases: 788,
+                      previousDayHospitalizations: 92,
+                      previousDayDeaths: 10,
+                      totalCases: 1234560,
                       totalHospitalizations: 78901, totalDeaths: 23456
         )
     }

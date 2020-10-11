@@ -60,7 +60,7 @@ struct InfectedWidgetEntryView : View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(Self.dateFormatter.string(from: entry.numbers.date))
-                    .font(Font.system(size: 17, weight: .semibold))
+                    .font(Font.system(size: 16, weight: .semibold))
                     .foregroundColor(.secondary)
                 RowView(captionText: "New Cases",
                         value: entry.numbers.cases,
@@ -73,7 +73,7 @@ struct InfectedWidgetEntryView : View {
                         diffValue: entry.numbers.deathsDifference)
             }
         }
-        .padding()
+        .padding(10)
     }
 }
 
@@ -93,7 +93,12 @@ struct InfectedWidget: Widget {
 
 struct InfectedWidget_Previews: PreviewProvider {
     static var previews: some View {
-        InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .demo))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .demo))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .demo))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

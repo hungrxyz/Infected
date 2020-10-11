@@ -23,6 +23,7 @@ struct RowView: View {
         formatter.numberStyle = .decimal
         formatter.positivePrefix = "+"
         formatter.negativePrefix = "-"
+        formatter.zeroSymbol = "0"
         return formatter
     }()
 
@@ -35,7 +36,7 @@ struct RowView: View {
             }
             HStack {
                 Text(value.flatMap(Self.numberFormatter.string) ?? "--")
-                    .font(Font.system(size: 17, weight: .regular))
+                    .font(Font.system(size: 16, weight: .regular))
                 if let diffNumber = diffValue {
                     Spacer()
                     HStack {
@@ -45,6 +46,7 @@ struct RowView: View {
                     .foregroundColor(diffNumber.color)
                 }
             }
+            .font(Font.system(size: 16, weight: .regular))
         }
     }
 
@@ -53,7 +55,9 @@ struct RowView: View {
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RowView(captionText: "This", value: 23904823, diffValue: 3724)
+            RowView(captionText: "Positive", value: 23904823, diffValue: -3428)
+            RowView(captionText: "Neutral", value: 23904823, diffValue: 0)
+            RowView(captionText: "Negative", value: 23904823, diffValue: 3428)
             RowView(captionText: nil, value: nil, diffValue: nil)
                 .background(Color(.systemBackground))
                 .environment(\.colorScheme, .dark)
