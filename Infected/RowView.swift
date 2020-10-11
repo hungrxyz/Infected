@@ -34,9 +34,8 @@ struct RowView: View {
                     .font(Font.system(size: 12, weight: .regular))
                     .foregroundColor(.secondary)
             }
-            HStack {
+            HStack(spacing: 2) {
                 Text(value.flatMap(Self.numberFormatter.string) ?? "--")
-                    .font(Font.system(size: 16, weight: .regular))
                 if let diffNumber = diffValue {
                     Spacer()
                     HStack {
