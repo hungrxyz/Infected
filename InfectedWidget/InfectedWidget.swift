@@ -73,7 +73,8 @@ struct InfectedWidgetEntryView : View {
                         diffValue: entry.numbers.deathsDifference)
             }
         }
-        .padding()
+        .padding([.vertical, .leading])
+        .padding(.trailing, 8)
     }
 }
 

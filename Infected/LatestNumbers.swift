@@ -49,10 +49,10 @@ extension LatestNumbers {
         LatestNumbers(date: Date(),
                       cases: 1234,
                       hospitalizations: 450,
-                      deaths: 61,
-                      previousDayCases: 788,
-                      previousDayHospitalizations: 92,
-                      previousDayDeaths: 10,
+                      deaths: 48,
+                      previousDayCases: 1111,
+                      previousDayHospitalizations: 450,
+                      previousDayDeaths: 60,
                       totalCases: 1234560,
                       totalHospitalizations: 78901, totalDeaths: 23456
         )
