@@ -25,7 +25,7 @@ struct Provider: TimelineProvider {
         api.load { numbers in
 
             let now = Date()
-            let entry = SimpleEntry(date: now, numbers: numbers)
+            let entry = SimpleEntry(date: now, numbers: numbers[0])
 
             let after1Hour = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
 
@@ -45,11 +45,30 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct InfectedWidgetEntryView : View {
+
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
+
     var entry: Provider.Entry
 
     var body: some View {
-        NumbersView(numbers: entry.numbers, refreshed: entry.date)
-            .padding()
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(Self.dateFormatter.string(from: entry.numbers.date))
+                    .font(Font.system(size: 17, weight: .semibold))
+                    .foregroundColor(.secondary)
+                RowView(imageName: "plus", captionText: "New cases", value: entry.numbers.diagnosed)
+                RowView(imageName: "bed.double", captionText: "Hospitalized", value: entry.numbers.hospitalized)
+                RowView(imageName: "xmark", captionText: "Deceased", value: entry.numbers.deceased)
+            }
+            Spacer()
+        }
+        .padding()
     }
 }
 
@@ -72,14 +91,4 @@ struct InfectedWidget_Previews: PreviewProvider {
         InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .demo))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
-}
-
-private extension DailyNumbers {
-
-    static var demo: DailyNumbers {
-        DailyNumbers(
-            date: Date(),
-            diagnosed: 12, hospitalized: 345, deceased: 6, totalDiagnosed: 7890, totalHospitalized: 123, totalDeceased: 45)
-    }
-
 }

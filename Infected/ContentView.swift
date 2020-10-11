@@ -13,23 +13,32 @@ struct ContentView: View {
 
     @ViewBuilder
     var body: some View {
-        VStack(spacing: 16) {
-            if let numbers = api.latest {
-                NumbersView(numbers: numbers, refreshed: Date())
+        NavigationView {
+            if let numbers = api.latest.first {
+                List {
+                    DaySectionView(numbers: numbers)
+                    TotalSectionView(numbers: numbers)
+                }
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarTitle("Latest")
             } else {
                 Text("No latest numbers")
+                    .navigationBarTitle("Latest")
             }
-            Button(action: {
-                api.load()
-            }, label: {
-                Text("Refresh")
-            })
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            api.load()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView(api: CoronaWatchNLAPI(latest: [DailyNumbers.demo]))
+            ContentView()
+        }
+        .previewDevice("iPhone 11 Pro")
     }
 }

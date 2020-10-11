@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ADBB7CD52517BF3000F3C8B4 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */; };
+		AD6680BC251F4C0800E669A7 /* DaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* DaySectionView.swift */; };
+		AD6680C22520832800E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
+		AD6680C8252086BC00E669A7 /* TotalSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C7252086BC00E669A7 /* TotalSectionView.swift */; };
+		AD6680D22520978000E669A7 /* DailyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680D12520978000E669A7 /* DailyNumbers.swift */; };
+		AD6680DB2520985100E669A7 /* DailyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680D12520978000E669A7 /* DailyNumbers.swift */; };
+		AD6680E0252098AF00E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
+		AD6680E5252098C000E669A7 /* DaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* DaySectionView.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
 		ADBB7CE72517C1DC00F3C8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */; };
 		ADBB7CEB2517C1DC00F3C8B4 /* InfectedWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ADBB7CF82517C22600F3C8B4 /* CoronaWatchNLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */; };
-		ADBB7CF92517C22600F3C8B4 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */; };
 		ADD4C306251627910064A959 /* InfectedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C305251627910064A959 /* InfectedApp.swift */; };
 		ADD4C308251627910064A959 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C307251627910064A959 /* ContentView.swift */; };
 		ADD4C30A251627920064A959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD4C309251627920064A959 /* Assets.xcassets */; };
@@ -63,7 +68,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
+		AD6680BB251F4C0800E669A7 /* DaySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySectionView.swift; sourceTree = "<group>"; };
+		AD6680C12520832800E669A7 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		AD6680C7252086BC00E669A7 /* TotalSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSectionView.swift; sourceTree = "<group>"; };
+		AD6680D12520978000E669A7 /* DailyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNumbers.swift; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -167,7 +175,10 @@
 				ADD4C305251627910064A959 /* InfectedApp.swift */,
 				ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
-				ADBB7CD42517BF3000F3C8B4 /* NumbersView.swift */,
+				AD6680BB251F4C0800E669A7 /* DaySectionView.swift */,
+				AD6680C7252086BC00E669A7 /* TotalSectionView.swift */,
+				AD6680D12520978000E669A7 /* DailyNumbers.swift */,
+				AD6680C12520832800E669A7 /* RowView.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				ADD4C30E251627920064A959 /* Info.plist */,
 				ADD4C30B251627920064A959 /* Preview Content */,
@@ -361,9 +372,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADBB7CF92517C22600F3C8B4 /* NumbersView.swift in Sources */,
 				ADBB7CF82517C22600F3C8B4 /* CoronaWatchNLAPI.swift in Sources */,
+				AD6680E5252098C000E669A7 /* DaySectionView.swift in Sources */,
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
+				AD6680DB2520985100E669A7 /* DailyNumbers.swift in Sources */,
+				AD6680E0252098AF00E669A7 /* RowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,9 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD4C308251627910064A959 /* ContentView.swift in Sources */,
+				AD6680D22520978000E669A7 /* DailyNumbers.swift in Sources */,
+				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
+				AD6680BC251F4C0800E669A7 /* DaySectionView.swift in Sources */,
 				ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */,
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
-				ADBB7CD52517BF3000F3C8B4 /* NumbersView.swift in Sources */,
+				AD6680C8252086BC00E669A7 /* TotalSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +507,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -554,7 +570,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
