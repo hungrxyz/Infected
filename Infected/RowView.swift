@@ -71,11 +71,11 @@ private extension Int {
     var imageName: String {
         switch signum() {
         case -1:
-            return "arrow.down.square.fill"
+            return "arrow.down.right.square.fill"
         case 0:
-            return "minus.square.fill"
+            return "arrow.right.square.fill"
         case 1:
-            return "arrow.up.square.fill"
+            return "arrow.up.right.square.fill"
         default:
             fatalError()
         }
