@@ -9,19 +9,19 @@ import SwiftUI
 
 struct TotalSectionView: View {
 
-    let numbers: DailyNumbers
+    let numbers: LatestNumbers
 
     var body: some View {
         Section(header: Text("Total")) {
-            RowView(imageName: "number",
-                    captionText: "Cases",
-                    value: numbers.totalDiagnosed)
-            RowView(imageName: "bed.double",
-                    captionText: "Hospitalized",
-                    value: numbers.totalHospitalized)
-            RowView(imageName: "xmark",
-                    captionText: "Deceased",
-                    value: numbers.totalDeceased)
+            RowView(captionText: "New Cases",
+                    value: numbers.totalCases,
+                    diffValue: nil)
+            RowView(captionText: "Hospitalizations",
+                    value: numbers.totalHospitalizations,
+                    diffValue: nil)
+            RowView(captionText: "Deaths",
+                    value: numbers.totalDeaths,
+                    diffValue: nil)
         }
     }
 }

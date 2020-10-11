@@ -14,7 +14,7 @@ struct ContentView: View {
     @ViewBuilder
     var body: some View {
         NavigationView {
-            if let numbers = api.latest.first {
+            if let numbers = api.latestNumbers {
                 List {
                     DaySectionView(numbers: numbers)
                     TotalSectionView(numbers: numbers)
@@ -36,7 +36,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(api: CoronaWatchNLAPI(latest: [DailyNumbers.demo]))
+            ContentView(api: CoronaWatchNLAPI(latestNumbers: .demo))
             ContentView()
         }
         .previewDevice("iPhone 11 Pro")

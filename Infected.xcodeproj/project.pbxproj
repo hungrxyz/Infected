@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD5C7329253300C800E32B5E /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = AD5C7328253300C800E32B5E /* CodableCSV */; };
+		AD5C732F25330C8100E32B5E /* LatestNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C732E25330C8100E32B5E /* LatestNumbers.swift */; };
+		AD5C733025330C8100E32B5E /* LatestNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C732E25330C8100E32B5E /* LatestNumbers.swift */; };
 		AD6680BC251F4C0800E669A7 /* DaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* DaySectionView.swift */; };
 		AD6680C22520832800E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
 		AD6680C8252086BC00E669A7 /* TotalSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C7252086BC00E669A7 /* TotalSectionView.swift */; };
@@ -14,6 +17,7 @@
 		AD6680DB2520985100E669A7 /* DailyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680D12520978000E669A7 /* DailyNumbers.swift */; };
 		AD6680E0252098AF00E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
 		AD6680E5252098C000E669A7 /* DaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* DaySectionView.swift */; };
+		AD7C67752532FBB10037716F /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = AD7C67742532FBB10037716F /* CodableCSV */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
@@ -68,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD5C732E25330C8100E32B5E /* LatestNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNumbers.swift; sourceTree = "<group>"; };
 		AD6680BB251F4C0800E669A7 /* DaySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySectionView.swift; sourceTree = "<group>"; };
 		AD6680C12520832800E669A7 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		AD6680C7252086BC00E669A7 /* TotalSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSectionView.swift; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */,
+				AD5C7329253300C800E32B5E /* CodableCSV in Frameworks */,
 				ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7C67752532FBB10037716F /* CodableCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +181,7 @@
 			children = (
 				ADD4C305251627910064A959 /* InfectedApp.swift */,
 				ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */,
+				AD5C732E25330C8100E32B5E /* LatestNumbers.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
 				AD6680BB251F4C0800E669A7 /* DaySectionView.swift */,
 				AD6680C7252086BC00E669A7 /* TotalSectionView.swift */,
@@ -228,6 +236,9 @@
 			dependencies = (
 			);
 			name = InfectedWidgetExtension;
+			packageProductDependencies = (
+				AD5C7328253300C800E32B5E /* CodableCSV */,
+			);
 			productName = InfectedWidgetExtension;
 			productReference = ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -247,6 +258,9 @@
 				ADBB7CEA2517C1DC00F3C8B4 /* PBXTargetDependency */,
 			);
 			name = Infected;
+			packageProductDependencies = (
+				AD7C67742532FBB10037716F /* CodableCSV */,
+			);
 			productName = Infected;
 			productReference = ADD4C302251627910064A959 /* Infected.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +335,9 @@
 				Base,
 			);
 			mainGroup = ADD4C2F9251627910064A959;
+			packageReferences = (
+				AD7C67732532FBB10037716F /* XCRemoteSwiftPackageReference "CodableCSV" */,
+			);
 			productRefGroup = ADD4C303251627910064A959 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,6 +392,7 @@
 				ADBB7CF82517C22600F3C8B4 /* CoronaWatchNLAPI.swift in Sources */,
 				AD6680E5252098C000E669A7 /* DaySectionView.swift in Sources */,
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
+				AD5C733025330C8100E32B5E /* LatestNumbers.swift in Sources */,
 				AD6680DB2520985100E669A7 /* DailyNumbers.swift in Sources */,
 				AD6680E0252098AF00E669A7 /* RowView.swift in Sources */,
 			);
@@ -391,6 +409,7 @@
 				ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */,
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
 				AD6680C8252086BC00E669A7 /* TotalSectionView.swift in Sources */,
+				AD5C732F25330C8100E32B5E /* LatestNumbers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +791,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD7C67732532FBB10037716F /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dehesa/CodableCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD5C7328253300C800E32B5E /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD7C67732532FBB10037716F /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
+		};
+		AD7C67742532FBB10037716F /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD7C67732532FBB10037716F /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADD4C2FA251627910064A959 /* Project object */;
 }

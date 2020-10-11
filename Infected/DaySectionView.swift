@@ -17,19 +17,19 @@ struct DaySectionView: View {
         return formatter
     }()
 
-    let numbers: DailyNumbers
+    let numbers: LatestNumbers
 
     var body: some View {
         Section(header: Text(Self.dateFormatter.string(from: numbers.date))) {
-            RowView(imageName: "plus",
-                    captionText: "New cases",
-                    value: numbers.diagnosed)
-            RowView(imageName: "bed.double",
-                    captionText: "Hospitalized",
-                    value: numbers.hospitalized)
-            RowView(imageName: "xmark",
-                    captionText: "Deceased",
-                    value: numbers.deceased)
+            RowView(captionText: "New Cases",
+                    value: numbers.cases,
+                    diffValue: numbers.casesDifference)
+            RowView(captionText: "Hospitalizations",
+                    value: numbers.hospitalizations,
+                    diffValue: numbers.hospitalizationsDifference)
+            RowView(captionText: "Deaths",
+                    value: numbers.deaths,
+                    diffValue: numbers.deathsDifference)
         }
     }
 }

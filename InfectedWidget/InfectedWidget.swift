@@ -25,7 +25,7 @@ struct Provider: TimelineProvider {
         api.load { numbers in
 
             let now = Date()
-            let entry = SimpleEntry(date: now, numbers: numbers[0])
+            let entry = SimpleEntry(date: now, numbers: numbers)
 
             let after1Hour = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
 
@@ -41,7 +41,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let numbers: DailyNumbers
+    let numbers: LatestNumbers
 }
 
 struct InfectedWidgetEntryView : View {
@@ -62,11 +62,16 @@ struct InfectedWidgetEntryView : View {
                 Text(Self.dateFormatter.string(from: entry.numbers.date))
                     .font(Font.system(size: 17, weight: .semibold))
                     .foregroundColor(.secondary)
-                RowView(imageName: "plus", captionText: "New cases", value: entry.numbers.diagnosed)
-                RowView(imageName: "bed.double", captionText: "Hospitalized", value: entry.numbers.hospitalized)
-                RowView(imageName: "xmark", captionText: "Deceased", value: entry.numbers.deceased)
+                RowView(captionText: "New Cases",
+                        value: entry.numbers.cases,
+                        diffValue: entry.numbers.casesDifference)
+                RowView(captionText: "Hospitalizations",
+                        value: entry.numbers.hospitalizations,
+                        diffValue: entry.numbers.hospitalizationsDifference)
+                RowView(captionText: "Deaths",
+                        value: entry.numbers.deaths,
+                        diffValue: entry.numbers.deathsDifference)
             }
-            Spacer()
         }
         .padding()
     }
