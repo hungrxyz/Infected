@@ -27,9 +27,6 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear {
-            api.load()
-        }
     }
 }
 

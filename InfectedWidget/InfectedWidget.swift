@@ -7,8 +7,12 @@
 
 import WidgetKit
 import SwiftUI
+import Combine
 
-struct Provider: TimelineProvider {
+final class Provider: TimelineProvider {
+
+    private var cancellables = Set<AnyCancellable>()
+
     private let api = CoronaWatchNLAPI()
 
     func placeholder(in context: Context) -> SimpleEntry {
@@ -22,18 +26,19 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
 
-        api.load { numbers in
-
-            let now = Date()
-            let entry = SimpleEntry(date: now, numbers: numbers)
-
-            let after1Hour = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
-
-            let timeline = Timeline(entries: [entry], policy: .after(after1Hour))
-
-            completion(timeline)
-
-        }
+        api.load()
+            .sink { completion in
+                print(completion)
+            } receiveValue: { numbers in
+                let now = Date()
+                let entry = SimpleEntry(date: now, numbers: numbers)
+                
+                let after1Hour = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
+                
+                let timeline = Timeline(entries: [entry], policy: .after(after1Hour))
+                
+                completion(timeline)
+            }.store(in: &cancellables)
 
     }
 

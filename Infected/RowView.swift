@@ -58,7 +58,6 @@ struct RowView_Previews: PreviewProvider {
             RowView(captionText: "Neutral", value: 23904823, diffValue: 0)
             RowView(captionText: "Negative", value: 23904823, diffValue: 3428)
             RowView(captionText: nil, value: nil, diffValue: nil)
-                .background(Color(.systemBackground))
                 .environment(\.colorScheme, .dark)
         }
         .padding()
