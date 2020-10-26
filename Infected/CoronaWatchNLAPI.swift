@@ -25,6 +25,14 @@ final class CoronaWatchNLAPI: ObservableObject {
         load().sink { _ in } receiveValue: { _ in }.store(in: &cancellables)
     }
 
+    func latestNational() -> AnyPublisher<[NumbersDTO], Error> {
+        numbers(forAreaKind: .national, date: nil)
+    }
+
+    func national(forDate date: Date) -> AnyPublisher<[NumbersDTO], Error> {
+        numbers(forAreaKind: .national, date: date)
+    }
+
     func load() -> AnyPublisher<LatestNumbers, Error> {
 
         let dateFormatter = DateFormatter()
@@ -88,6 +96,47 @@ final class CoronaWatchNLAPI: ObservableObject {
             .eraseToAnyPublisher()
 
     }
+
+}
+
+private extension CoronaWatchNLAPI {
+
+    func numbers(forAreaKind areaKind: AreaKind, date: Date?) -> AnyPublisher<[NumbersDTO], Error> {
+        let baseURL = URL(string: "https://raw.githubusercontent.com/J535D165/CoronaWatchNL/master/data-geo/")!
+
+        let fileNameDateFormatter = DateFormatter()
+        fileNameDateFormatter.dateFormat = "yyyyMMdd"
+
+        let filenameDate = date.flatMap(fileNameDateFormatter.string) ?? "latest"
+        let filename = ["RIVM_NL", areaKind.rawValue, filenameDate]
+            .joined(separator: "_")
+            .appending(".csv")
+
+        let url = baseURL
+            .appendingPathComponent(areaKind.rawValue)
+            .appendingPathComponent(filename)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        let decoder = CSVDecoder()
+        decoder.headerStrategy = .firstLine
+        decoder.dateStrategy = .formatted(dateFormatter)
+
+        return urlSession.dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: [NumbersDTO].self, decoder: decoder)
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+}
+
+private enum AreaKind: String {
+
+    case national
+    case provincial
+    case municipal
 
 }
 
