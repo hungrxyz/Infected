@@ -5,9 +5,10 @@
 //  Created by marko on 10/25/20.
 //
 
+import Foundation
 import Combine
 
-final class NumbersProvider {
+final class NumbersProvider: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -29,7 +30,17 @@ final class NumbersProvider {
                 totalNumbers = dtos.totalNumbers
             })
             .map(\.[0].date)
+            .flatMap(api.national)
+            .sink { (completion) in
+                print(completion)
+            } receiveValue: { [weak self] (numbers) in
+                let previousNumbers = numbers.dailyNumbers
 
+                self?.national = NationalNumbers(latest: latestNumbers,
+                                                 previous: previousNumbers,
+                                                 total: totalNumbers)
+            }
+            .store(in: &cancellables)
 
     }
 

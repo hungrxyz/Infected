@@ -9,33 +9,50 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject var api = CoronaWatchNLAPI()
+    @ObservedObject var numbersProvider = NumbersProvider()
+
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
 
     @ViewBuilder
     var body: some View {
         NavigationView {
-            if let numbers = api.latestNumbers {
+            if let numbers = numbersProvider.national {
                 List {
-                    DaySectionView(numbers: numbers)
-                    TotalSectionView(numbers: numbers)
+                    DaySectionView(area: numbers)
                 }
                 .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle("Latest")
+                .navigationBarTitle(Self.dateFormatter.string(from: numbers.latest.date))
             } else {
                 Text("No latest numbers")
-                    .navigationBarTitle("Latest")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: numbersProvider.reload)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(api: CoronaWatchNLAPI(latestNumbers: .demo))
+            ContentView(numbersProvider: .demo)
             ContentView()
         }
         .previewDevice("iPhone 11 Pro")
     }
+}
+
+private extension NumbersProvider {
+
+    static var demo: NumbersProvider {
+        let provider = NumbersProvider()
+        provider.national = .demo
+        return provider
+    }
+
 }

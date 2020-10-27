@@ -113,7 +113,7 @@ private extension CoronaWatchNLAPI {
             .appending(".csv")
 
         let url = baseURL
-            .appendingPathComponent(areaKind.rawValue)
+            .appendingPathComponent(["data", areaKind.rawValue].joined(separator: "-"))
             .appendingPathComponent(filename)
 
         let dateFormatter = DateFormatter()

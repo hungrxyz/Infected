@@ -9,35 +9,40 @@ import SwiftUI
 
 struct DaySectionView: View {
 
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.doesRelativeDateFormatting = true
-        return formatter
-    }()
-
-    let numbers: LatestNumbers
+    let area: Area
 
     var body: some View {
-        Section(header: Text(Self.dateFormatter.string(from: numbers.date))) {
+        Section(header: Header(text: area.name)) {
             RowView(captionText: "New Cases",
-                    value: numbers.cases,
-                    diffValue: numbers.casesDifference)
+                    value: area.latest.cases,
+                    diffValue: area.casesDifferenceToPreviousDay)
             RowView(captionText: "Hospitalizations",
-                    value: numbers.hospitalizations,
-                    diffValue: numbers.hospitalizationsDifference)
+                    value: area.latest.hospitalizations,
+                    diffValue: area.hospitalizationsDifferenceToPreviousDay)
             RowView(captionText: "Deaths",
-                    value: numbers.deaths,
-                    diffValue: numbers.deathsDifference)
+                    value: area.latest.deaths,
+                    diffValue: area.deathsDifferenceToPreviousDay)
+        }
+        .textCase(.none)
+    }
+
+    struct Header: View {
+        let text: String
+
+        var body: some View {
+            Text(text.capitalized)
+                .font(.headline)
+                .foregroundColor(.primary)
+                .position(x: 33, y: 12)
         }
     }
+
 }
 
 struct DaySectionView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            DaySectionView(numbers: .demo)
+            DaySectionView(area: NationalNumbers.demo)
         }
         .listStyle(InsetGroupedListStyle())
         .previewLayout(.sizeThatFits)
