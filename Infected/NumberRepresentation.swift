@@ -31,11 +31,11 @@ extension NumberRepresentation {
     var symbolName: String {
         switch self {
         case .cases:
-            return "list.bullet.rectangle"
+            return "folder.fill.badge.plus"
         case .hospitalizations:
-            return "cross.case"
+            return "cross.case.fill"
         case .deaths:
-            return "heart.slash"
+            return "heart.broken.fill"
         }
     }
 

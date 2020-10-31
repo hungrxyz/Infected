@@ -23,7 +23,12 @@ struct RowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Image(systemName: representation.symbolName)
+                switch representation {
+                case .deaths:
+                    Image(representation.symbolName)
+                default:
+                    Image(systemName: representation.symbolName)
+                }
                 Text(representation.displayName)
             }
             .font(.system(.headline, design: .rounded))
