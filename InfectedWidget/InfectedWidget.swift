@@ -114,6 +114,9 @@ struct InfectedWidgetEntryView : View {
 
         var body: some View {
             VStack(alignment: .leading) {
+                Text(kindText)
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundColor(.secondary)
                 HStack(alignment: .lastTextBaseline, spacing: 4) {
                     Text(Self.numberFormatter.string(for: latestNumber) ?? "--")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
@@ -122,9 +125,6 @@ struct InfectedWidgetEntryView : View {
                             .font(.system(size: 13, weight: .bold, design: .rounded))
                             .foregroundColor(trendNumber.color)
                 }
-                Text(kindText)
-                    .font(.system(size: 13, weight: .regular))
-                    .foregroundColor(.secondary)
             }
         }
 

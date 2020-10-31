@@ -29,22 +29,22 @@ struct RowView: View {
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.secondary)
             VStack(alignment: .leading) {
+                Text("New")
+                    .font(Font.subheadline.bold())
+                    .foregroundColor(.secondary)
                 HStack(alignment: .lastTextBaseline) {
                     Text(Self.numberFormatter.string(for: dailyNumber) ?? "--")
                         .font(.system(.title, design: .rounded)).bold()
                     TrendNumberView(trendNumber: trendNumber)
                     Spacer()
                 }
-                Text("New")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
             }
             VStack(alignment: .leading) {
+                Text("Total")
+                    .font(Font.subheadline.bold())
+                    .foregroundColor(.secondary)
                 Text(Self.numberFormatter.string(for: totalNumber) ?? "--")
                     .font(.system(.title, design: .rounded)).bold()
-                Text("Total")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
             }
         }
         .padding(.vertical, 8)
