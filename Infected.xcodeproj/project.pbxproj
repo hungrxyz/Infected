@@ -11,11 +11,8 @@
 		AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		AD327F32254633B7002CCE01 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F31254633B7002CCE01 /* Numbers.swift */; };
 		AD5C7329253300C800E32B5E /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = AD5C7328253300C800E32B5E /* CodableCSV */; };
-		AD5C732F25330C8100E32B5E /* LatestNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C732E25330C8100E32B5E /* LatestNumbers.swift */; };
-		AD5C733025330C8100E32B5E /* LatestNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C732E25330C8100E32B5E /* LatestNumbers.swift */; };
 		AD6680BC251F4C0800E669A7 /* AreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* AreaView.swift */; };
 		AD6680C22520832800E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
-		AD6680C8252086BC00E669A7 /* TotalSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C7252086BC00E669A7 /* TotalSectionView.swift */; };
 		AD6680D22520978000E669A7 /* DailyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680D12520978000E669A7 /* DailyNumbers.swift */; };
 		AD6680DB2520985100E669A7 /* DailyNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680D12520978000E669A7 /* DailyNumbers.swift */; };
 		AD78EBB32548C6D00021ECA2 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F31254633B7002CCE01 /* Numbers.swift */; };
@@ -35,6 +32,7 @@
 		ADD4C323251627920064A959 /* InfectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C322251627920064A959 /* InfectedUITests.swift */; };
 		ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */; };
 		ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */; };
+		ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,10 +77,8 @@
 		AD327F25254629EC002CCE01 /* NumbersDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersDTO.swift; sourceTree = "<group>"; };
 		AD327F2B2546332E002CCE01 /* NumbersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersProvider.swift; sourceTree = "<group>"; };
 		AD327F31254633B7002CCE01 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
-		AD5C732E25330C8100E32B5E /* LatestNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNumbers.swift; sourceTree = "<group>"; };
 		AD6680BB251F4C0800E669A7 /* AreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaView.swift; sourceTree = "<group>"; };
 		AD6680C12520832800E669A7 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
-		AD6680C7252086BC00E669A7 /* TotalSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSectionView.swift; sourceTree = "<group>"; };
 		AD6680D12520978000E669A7 /* DailyNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNumbers.swift; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -192,10 +188,8 @@
 				AD327F2B2546332E002CCE01 /* NumbersProvider.swift */,
 				AD327F25254629EC002CCE01 /* NumbersDTO.swift */,
 				AD327F31254633B7002CCE01 /* Numbers.swift */,
-				AD5C732E25330C8100E32B5E /* LatestNumbers.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
 				AD6680BB251F4C0800E669A7 /* AreaView.swift */,
-				AD6680C7252086BC00E669A7 /* TotalSectionView.swift */,
 				AD6680D12520978000E669A7 /* DailyNumbers.swift */,
 				AD6680C12520832800E669A7 /* RowView.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
@@ -403,8 +397,8 @@
 			files = (
 				ADBB7CF82517C22600F3C8B4 /* CoronaWatchNLAPI.swift in Sources */,
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
-				AD5C733025330C8100E32B5E /* LatestNumbers.swift in Sources */,
 				AD78EBB32548C6D00021ECA2 /* Numbers.swift in Sources */,
+				ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */,
 				AD6680DB2520985100E669A7 /* DailyNumbers.swift in Sources */,
 				ADB2641D25474C0C00231946 /* NumbersDTO.swift in Sources */,
 			);
@@ -420,10 +414,8 @@
 				AD6680BC251F4C0800E669A7 /* AreaView.swift in Sources */,
 				ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */,
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
-				AD6680C8252086BC00E669A7 /* TotalSectionView.swift in Sources */,
 				AD327F32254633B7002CCE01 /* Numbers.swift in Sources */,
 				AD327F26254629EC002CCE01 /* NumbersDTO.swift in Sources */,
-				AD5C732F25330C8100E32B5E /* LatestNumbers.swift in Sources */,
 				ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */,
 				AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */,
 			);
@@ -479,6 +471,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -500,6 +493,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -566,6 +560,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -623,6 +618,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

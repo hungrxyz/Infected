@@ -43,7 +43,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView(numbersProvider: .demo)
             ContentView()
         }
-        .previewDevice("iPhone 11 Pro")
+        .previewDevice("iPhone 12 mini")
     }
 }
 
