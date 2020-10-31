@@ -95,7 +95,11 @@ extension Area {
 extension Numbers {
 
     static var demo: Numbers {
-        Numbers(date: Date(), cases: 123456, hospitalizations: 78, deaths: 9)
+        Numbers(date: Date(), cases: 1234, hospitalizations: 567, deaths: 89)
+    }
+
+    static var random: Numbers {
+        Numbers(date: Date(), cases: Int.random(in: 0...999999), hospitalizations: Int.random(in: 0...9999), deaths: Int.random(in: 0...999))
     }
 
 }
@@ -108,6 +112,10 @@ extension NationalNumbers: Area {
 
     static var demo: NationalNumbers {
         NationalNumbers(latest: .demo, previous: .demo, total: .demo)
+    }
+
+    static var random: NationalNumbers {
+        NationalNumbers(latest: .random, previous: .random, total: .random)
     }
 
 }

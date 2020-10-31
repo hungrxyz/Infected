@@ -30,6 +30,7 @@ final class NumbersProvider: ObservableObject {
                 totalNumbers = dtos.totalNumbers
             })
             .map(\.[0].date)
+            .map { Calendar.current.date(byAdding: .day, value: -1, to: $0)! }
             .flatMap(api.national)
             .sink { (completion) in
                 print(completion)

@@ -13,15 +13,15 @@ struct TotalSectionView: View {
 
     var body: some View {
         Section(header: Text("Total")) {
-            RowView(captionText: "New Cases",
-                    value: numbers.totalCases,
-                    diffValue: nil)
-            RowView(captionText: "Hospitalizations",
-                    value: numbers.totalHospitalizations,
-                    diffValue: nil)
-            RowView(captionText: "Deaths",
-                    value: numbers.totalDeaths,
-                    diffValue: nil)
+//            RowView(captionText: "New Cases",
+//                    value: numbers.totalCases,
+//                    diffValue: nil)
+//            RowView(captionText: "Hospitalizations",
+//                    value: numbers.totalHospitalizations,
+//                    diffValue: nil)
+//            RowView(captionText: "Deaths",
+//                    value: numbers.totalDeaths,
+//                    diffValue: nil)
         }
     }
 }

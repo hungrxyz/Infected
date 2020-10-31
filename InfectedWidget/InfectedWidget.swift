@@ -67,15 +67,15 @@ struct InfectedWidgetEntryView : View {
                 Text(Self.dateFormatter.string(from: entry.numbers.date))
                     .font(Font.system(size: 16, weight: .semibold))
                     .foregroundColor(.secondary)
-                RowView(captionText: "New Cases",
-                        value: entry.numbers.cases,
-                        diffValue: entry.numbers.casesDifference)
-                RowView(captionText: "Hospitalizations",
-                        value: entry.numbers.hospitalizations,
-                        diffValue: entry.numbers.hospitalizationsDifference)
-                RowView(captionText: "Deaths",
-                        value: entry.numbers.deaths,
-                        diffValue: entry.numbers.deathsDifference)
+//                RowView(captionText: "New Cases",
+//                        value: entry.numbers.cases,
+//                        diffValue: entry.numbers.casesDifference)
+//                RowView(captionText: "Hospitalizations",
+//                        value: entry.numbers.hospitalizations,
+//                        diffValue: entry.numbers.hospitalizationsDifference)
+//                RowView(captionText: "Deaths",
+//                        value: entry.numbers.deaths,
+//                        diffValue: entry.numbers.deathsDifference)
             }
         }
         .padding([.vertical, .leading])

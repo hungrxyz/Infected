@@ -24,7 +24,7 @@ struct ContentView: View {
         NavigationView {
             if let numbers = numbersProvider.national {
                 List {
-                    DaySectionView(area: numbers)
+                    AreaView(area: numbers)
                 }
                 .listStyle(InsetGroupedListStyle())
                 .navigationBarTitle(Self.dateFormatter.string(from: numbers.latest.date))

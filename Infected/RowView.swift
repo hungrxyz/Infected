@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct RowView: View {
-    let captionText: String?
-    let value: Int?
-    let diffValue: Int?
 
     private static let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -18,35 +15,34 @@ struct RowView: View {
         return formatter
     }()
 
-    private static let differenceNumberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.positivePrefix = "+"
-        formatter.negativePrefix = "-"
-        formatter.zeroSymbol = "0"
-        return formatter
-    }()
+    let numbersKindText: String
+    let dailyNumber: Int
+    let totalNumber: Int
+    let trendNumber: Int
 
     var body: some View {
-        VStack(alignment: .leading) {
-            if let captionText = captionText {
-                Text(captionText)
-                    .font(Font.system(size: 12, weight: .regular))
+        VStack(alignment: .leading, spacing: 12) {
+            Text(numbersKindText)
+                .font(.system(.headline, design: .rounded))
+                .foregroundColor(.primary)
+            VStack(alignment: .leading) {
+                HStack(alignment: .lastTextBaseline) {
+                    Text(Self.numberFormatter.string(for: dailyNumber) ?? "--")
+                        .font(.system(.title, design: .rounded)).bold()
+                    TrendNumberView(trendNumber: trendNumber)
+                    Spacer()
+                }
+                Text("New")
                     .foregroundColor(.secondary)
             }
-            HStack(spacing: 0) {
-                Text(value.flatMap(Self.numberFormatter.string) ?? "--")
-                if let diffNumber = diffValue {
-                    Spacer()
-                    HStack {
-                        Text(Self.differenceNumberFormatter.string(from: NSNumber(value: diffNumber)) ?? "--")
-                        Image(systemName: diffNumber.imageName)
-                    }
-                    .foregroundColor(diffNumber.color)
-                }
+            VStack(alignment: .leading) {
+                Text(Self.numberFormatter.string(for: totalNumber) ?? "--")
+                    .font(.system(.title, design: .rounded)).bold()
+                Text("Total")
+                    .foregroundColor(.secondary)
             }
-            .font(Font.system(size: 16, weight: .regular))
         }
+        .padding(.vertical, 8)
     }
 
 }
@@ -54,43 +50,11 @@ struct RowView: View {
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RowView(captionText: "Positive", value: 23904823, diffValue: -3428)
-            RowView(captionText: "Neutral", value: 23904823, diffValue: 0)
-            RowView(captionText: "Negative", value: 23904823, diffValue: 3428)
-            RowView(captionText: nil, value: nil, diffValue: nil)
-                .environment(\.colorScheme, .dark)
+            RowView(numbersKindText: "Cases", dailyNumber: Int.random(in: 0...9999), totalNumber: Int.random(in: 0...Int.max), trendNumber: Int.random(in: -9999...9999))
+                .preferredColorScheme(.dark)
+            RowView(numbersKindText: "Cases", dailyNumber: Int.random(in: 0...9999), totalNumber: Int.random(in: 0...Int.max), trendNumber: Int.random(in: -9999...9999))
         }
-        .padding()
         .previewLayout(.sizeThatFits)
+        .padding()
     }
-}
-
-private extension Int {
-
-    var imageName: String {
-        switch signum() {
-        case -1:
-            return "arrow.down.right.square.fill"
-        case 0:
-            return "arrow.right.square.fill"
-        case 1:
-            return "arrow.up.right.square.fill"
-        default:
-            fatalError()
-        }
-    }
-
-    var color: Color {
-        switch signum() {
-        case -1:
-            return .green
-        case 0:
-            return .orange
-        case 1:
-            return .red
-        default:
-            fatalError()
-        }
-    }
-
 }
