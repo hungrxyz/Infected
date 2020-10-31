@@ -14,19 +14,19 @@ struct AreaView: View {
     var body: some View {
         Section(header: Header(text: area.name)) {
             RowView(
-                numbersKindText: "Cases",
+                representation: .cases,
                 dailyNumber: area.latest.cases ?? 0,
                 totalNumber: area.total.cases ?? 0,
                 trendNumber: area.casesDifferenceToPreviousDay ?? 0
             )
             RowView(
-                numbersKindText: "Hospitalizations",
+                representation: .hospitalizations,
                 dailyNumber: area.latest.hospitalizations ?? 0,
                 totalNumber: area.total.hospitalizations ?? 0,
                 trendNumber: area.hospitalizationsDifferenceToPreviousDay ?? 0
             )
             RowView(
-                numbersKindText: "Deaths",
+                representation: .deaths,
                 dailyNumber: area.latest.deaths ?? 0,
                 totalNumber: area.total.deaths ?? 0,
                 trendNumber: area.deathsDifferenceToPreviousDay ?? 0
