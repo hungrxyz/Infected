@@ -13,7 +13,7 @@ struct NumbersDTO: Decodable {
     let category: Category
     let count: Int
     let totalCount: Int
-    let municipalCode: Int?
+    let municipalityCode: Int?
     let municipalityName: String?
     let provinceCode: Int?
     let provinceName: String?
@@ -33,7 +33,7 @@ extension NumbersDTO {
         case category = "Type"
         case count = "Aantal"
         case totalCount = "AantalCumulatief"
-        case municipalCode = "Gemeentecode"
+        case municipalityCode = "Gemeentecode"
         case municipalityName = "Gemeentenaam"
         case provinceCode = "Provinciecode"
         case provinceName = "Provincienaam"

@@ -22,12 +22,15 @@ struct ContentView: View {
     @ViewBuilder
     var body: some View {
         NavigationView {
-            if let numbers = numbersProvider.national {
+            if let national = numbersProvider.national {
                 List {
-                    AreaView(area: numbers)
+                    AreaView(area: national)
+                    ForEach(numbersProvider.provincial) { province in
+                        AreaView(area: province)
+                    }
                 }
                 .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle(Self.dateFormatter.string(from: numbers.latest.date))
+                .navigationBarTitle(Self.dateFormatter.string(from: national.latest.date))
             } else {
                 Text("No latest numbers")
             }

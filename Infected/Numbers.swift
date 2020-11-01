@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Numbers {
+struct Numbers: Hashable {
 
     let date: Date
     let cases: Int?
@@ -24,22 +24,26 @@ struct NationalNumbers {
 
 }
 
-struct ProvincialNumbers {
+struct ProvinceNumbers: Hashable, Identifiable {
+
+    var id: Int {
+        provinceCode
+    }
 
     let provinceCode: Int
-    let provinceName: String
+    let provinceName: String?
     let latest: Numbers
     let previous: Numbers
     let total: Numbers
 
 }
 
-struct MunicipalNumbers {
+struct MunicipalityNumbers: Hashable {
 
-    let municipalCode: Int
-    let municipalityName: String
+    let municipalityCode: Int
+    let municipalityName: String?
     let provinceCode: Int
-    let provinceName: String
+    let provinceName: String?
     let latest: Numbers
     let previous: Numbers
     let total: Numbers
@@ -120,18 +124,20 @@ extension NationalNumbers: Area {
 
 }
 
-extension ProvincialNumbers: Area {
+extension ProvinceNumbers: Area {
 
     var name: String {
-        provinceName
+        provinceName ?? "Unknown"
     }
 
 }
 
-extension MunicipalNumbers: Area {
+extension MunicipalityNumbers: Area {
 
     var name: String {
-        [municipalityName, provinceName].joined(separator: ", ")
+        [municipalityName ?? "Unknown", provinceName]
+            .compactMap { $0 }
+            .joined(separator: ", ")
     }
 
 }

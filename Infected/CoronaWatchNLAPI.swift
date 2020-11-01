@@ -25,6 +25,22 @@ final class CoronaWatchNLAPI: ObservableObject {
         numbers(forAreaKind: .national, date: date)
     }
 
+    func latestProvincial() -> AnyPublisher<[NumbersDTO], Error> {
+        numbers(forAreaKind: .provincial, date: nil)
+    }
+
+    func provincial(forDate date: Date) -> AnyPublisher<[NumbersDTO], Error> {
+        numbers(forAreaKind: .provincial, date: date)
+    }
+
+    func latestMunicipal() -> AnyPublisher<[NumbersDTO], Error> {
+        numbers(forAreaKind: .municipal, date: nil)
+    }
+
+    func municipal(forDate date: Date) -> AnyPublisher<[NumbersDTO], Error> {
+        numbers(forAreaKind: .municipal, date: date)
+    }
+
 }
 
 private extension CoronaWatchNLAPI {
@@ -54,7 +70,6 @@ private extension CoronaWatchNLAPI {
         return urlSession.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: [NumbersDTO].self, decoder: decoder)
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 
@@ -75,12 +90,20 @@ private extension CoronaWatchNLAPI {
         let category: Category
         let count: Int
         let totalCount: Int
+        let municipalityCode: Int?
+        let municipalityName: String?
+        let provinceCode: Int?
+        let provinceName: String?
 
         enum CodingKeys: String, CodingKey {
             case date = "Datum"
             case category = "Type"
             case count = "Aantal"
             case totalCount = "AantalCumulatief"
+            case municipalityCode = "Gemeentecode"
+            case municipalityName = "Gemeentenaam"
+            case provinceCode = "Provinciecode"
+            case provinceName = "Provincienaam"
         }
     }
 
