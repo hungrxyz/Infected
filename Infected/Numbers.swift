@@ -38,7 +38,11 @@ struct ProvinceNumbers: Hashable, Identifiable {
 
 }
 
-struct MunicipalityNumbers: Hashable {
+struct MunicipalityNumbers: Hashable, Identifiable {
+
+    var id: Int {
+        municipalityCode
+    }
 
     let municipalityCode: Int
     let municipalityName: String?
@@ -137,7 +141,7 @@ extension MunicipalityNumbers: Area {
     var name: String {
         [municipalityName ?? "Unknown", provinceName]
             .compactMap { $0 }
-            .joined(separator: ", ")
+            .joined(separator: " | ")
     }
 
 }

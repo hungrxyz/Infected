@@ -31,6 +31,12 @@
 		ADD4C318251627920064A959 /* InfectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C317251627920064A959 /* InfectedTests.swift */; };
 		ADD4C323251627920064A959 /* InfectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C322251627920064A959 /* InfectedUITests.swift */; };
 		ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */; };
+		ADE10EF0254F3FEA0080B975 /* AreasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10EEF254F3FEA0080B975 /* AreasView.swift */; };
+		ADE10EF6254F454D0080B975 /* NetherlandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10EF5254F454D0080B975 /* NetherlandsView.swift */; };
+		ADE10EFC254F45930080B975 /* ProvincesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10EFB254F45930080B975 /* ProvincesView.swift */; };
+		ADE10F02254F52650080B975 /* Municipality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10F01254F52650080B975 /* Municipality.swift */; };
+		ADE10F08254F56AE0080B975 /* MunicipalitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10F07254F56AE0080B975 /* MunicipalitiesView.swift */; };
+		ADE10F0D254F57400080B975 /* Municipality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10F01254F52650080B975 /* Municipality.swift */; };
 		ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */; };
 		ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
@@ -100,6 +106,11 @@
 		ADD4C322251627920064A959 /* InfectedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedUITests.swift; sourceTree = "<group>"; };
 		ADD4C324251627920064A959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaWatchNLAPI.swift; sourceTree = "<group>"; };
+		ADE10EEF254F3FEA0080B975 /* AreasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreasView.swift; sourceTree = "<group>"; };
+		ADE10EF5254F454D0080B975 /* NetherlandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetherlandsView.swift; sourceTree = "<group>"; };
+		ADE10EFB254F45930080B975 /* ProvincesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvincesView.swift; sourceTree = "<group>"; };
+		ADE10F01254F52650080B975 /* Municipality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Municipality.swift; sourceTree = "<group>"; };
+		ADE10F07254F56AE0080B975 /* MunicipalitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunicipalitiesView.swift; sourceTree = "<group>"; };
 		ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendNumberView.swift; sourceTree = "<group>"; };
 		ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,10 +200,15 @@
 				ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */,
 				AD327F2B2546332E002CCE01 /* NumbersProvider.swift */,
 				AD422CCB254E31FB005122CB /* Province.swift */,
+				ADE10F01254F52650080B975 /* Municipality.swift */,
 				AD327F25254629EC002CCE01 /* NumbersDTO.swift */,
 				AD327F31254633B7002CCE01 /* Numbers.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
 				AD6680BB251F4C0800E669A7 /* AreaView.swift */,
+				ADE10EEF254F3FEA0080B975 /* AreasView.swift */,
+				ADE10EF5254F454D0080B975 /* NetherlandsView.swift */,
+				ADE10EFB254F45930080B975 /* ProvincesView.swift */,
+				ADE10F07254F56AE0080B975 /* MunicipalitiesView.swift */,
 				AD6680C12520832800E669A7 /* RowView.swift */,
 				ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
@@ -402,6 +418,7 @@
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
 				AD78EBB32548C6D00021ECA2 /* Numbers.swift in Sources */,
 				ADD2D16D254EBADD00FB678A /* Province.swift in Sources */,
+				ADE10F0D254F57400080B975 /* Municipality.swift in Sources */,
 				ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */,
 				ADB2641D25474C0C00231946 /* NumbersDTO.swift in Sources */,
 			);
@@ -416,11 +433,16 @@
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
 				AD6680BC251F4C0800E669A7 /* AreaView.swift in Sources */,
 				AD422CCC254E31FB005122CB /* Province.swift in Sources */,
+				ADE10EF0254F3FEA0080B975 /* AreasView.swift in Sources */,
 				ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */,
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
+				ADE10EFC254F45930080B975 /* ProvincesView.swift in Sources */,
 				AD327F32254633B7002CCE01 /* Numbers.swift in Sources */,
+				ADE10EF6254F454D0080B975 /* NetherlandsView.swift in Sources */,
 				AD327F26254629EC002CCE01 /* NumbersDTO.swift in Sources */,
 				ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */,
+				ADE10F02254F52650080B975 /* Municipality.swift in Sources */,
+				ADE10F08254F56AE0080B975 /* MunicipalitiesView.swift in Sources */,
 				AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

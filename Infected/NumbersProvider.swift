@@ -14,6 +14,7 @@ final class NumbersProvider: ObservableObject {
 
     @Published var national: NationalNumbers?
     @Published var provincial: [ProvinceNumbers] = []
+    @Published var municipal: [MunicipalityNumbers] = []
 
     let api: CoronaWatchNLAPI
 
@@ -36,7 +37,7 @@ final class NumbersProvider: ObservableObject {
             .map { $0.nationalDailyNumbers }
             .receive(on: DispatchQueue.main)
             .sink { (completion) in
-                print(completion, " => National")
+                print(completion, "=> National")
             } receiveValue: { [weak self] previousLatestNumbers in
                 self?.national = NationalNumbers(latest: nationalLatest,
                                                  previous: previousLatestNumbers(),
@@ -53,12 +54,32 @@ final class NumbersProvider: ObservableObject {
             })
             .mappedToPreviousDayDate()
             .flatMap(api.provincial)
-            .map { [weak self] cool in self?.mergeLatestAndPreviousProvincialDTOs(latest: provincialDTOs, previous: cool) ?? [] }
+            .map { [weak self] previous in self?.mergeLatestAndPreviousProvincialDTOs(latest: provincialDTOs, previous: previous) ?? [] }
+            .map { $0.sorted { $0.provinceName ?? "zzz" < $1.provinceName ?? "zzz" } }
             .receive(on: DispatchQueue.main)
             .sink { (completion) in
-                print(completion, " => Provincial")
+                print(completion, "=> Provincial")
             } receiveValue: { [weak self] numbers in
                 self?.provincial = numbers
+            }
+            .store(in: &cancellables)
+
+        var municipalDTOs = [NumbersDTO]()
+
+        api.latestMunicipal()
+            .filter { $0.isEmpty == false }
+            .handleEvents(receiveOutput: { dtos in
+                municipalDTOs = dtos
+            })
+            .mappedToPreviousDayDate()
+            .flatMap(api.municipal)
+            .map { [weak self] previous in self?.mergeLatestAndPreviousMunicipalDTOs(latest: municipalDTOs, previous: previous) ?? [] }
+            .map { $0.sorted { $0.municipalityName ?? "zzz" < $1.municipalityName ?? "zzz" } }
+            .receive(on: DispatchQueue.main)
+            .sink { (completion) in
+                print(completion, "=> Municipal")
+            } receiveValue: { [weak self] numbers in
+                self?.municipal = numbers
             }
             .store(in: &cancellables)
 
@@ -91,6 +112,33 @@ private extension NumbersProvider {
         }
 
         return provincialNumbers
+    }
+
+    func mergeLatestAndPreviousMunicipalDTOs(latest: [NumbersDTO], previous: [NumbersDTO]) -> [MunicipalityNumbers] {
+        var municipalNumbers = [MunicipalityNumbers]()
+
+        for municipalityCode in Municipality.allMunicipalityCodes {
+            guard
+                let latestNumbers = latest.municipalityNumbers(forMunicipalityCode: municipalityCode),
+                let previousNumbers = previous.municipalityNumbers(forMunicipalityCode: municipalityCode)
+            else {
+                continue
+            }
+
+            let numbers = MunicipalityNumbers(
+                municipalityCode: municipalityCode,
+                municipalityName: latestNumbers.municipalityName,
+                provinceCode: -999, // not important at the moment
+                provinceName: latestNumbers.provinceName,
+                latest: latestNumbers.daily,
+                previous: previousNumbers.daily,
+                total: latestNumbers.total
+            )
+
+            municipalNumbers.append(numbers)
+        }
+
+        return municipalNumbers
     }
 
 }
@@ -148,6 +196,32 @@ private extension Array where Element == NumbersDTO {
         )
 
         return (provinceName, daily, total)
+    }
+
+    func municipalityNumbers(forMunicipalityCode code: Int) -> (municipalityName: String?, provinceName: String?, daily: Numbers, total: Numbers)? {
+        let entries = filter { $0.municipalityCode == code }
+        guard entries.isEmpty == false else {
+            return nil
+        }
+
+        let municipalityName = entries.first?.municipalityName
+        let provinceName = entries.first?.provinceName
+
+        let daily = Numbers(
+            date: entries[0].date,
+            cases: entries.first(where: { $0.category == .cases })?.count,
+            hospitalizations: entries.first(where: { $0.category == .hospitalizations })?.count,
+            deaths: entries.first(where: { $0.category == .deaths })?.count
+        )
+
+        let total = Numbers(
+            date: entries[0].date,
+            cases: entries.first(where: { $0.category == .cases })?.totalCount,
+            hospitalizations: entries.first(where: { $0.category == .hospitalizations })?.totalCount,
+            deaths: entries.first(where: { $0.category == .deaths })?.totalCount
+        )
+
+        return (municipalityName, provinceName, daily, total)
     }
 
 }

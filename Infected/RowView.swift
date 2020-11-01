@@ -66,12 +66,21 @@ struct RowView: View {
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RowView(representation: .cases, dailyNumber: Int.random(in: 0...9999), totalNumber: Int.random(in: 0...Int.max), trendNumber: Int.random(in: -9999...9999))
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(.dark)
-            RowView(representation: .hospitalizations, dailyNumber: Int.random(in: 0...9999), totalNumber: Int.random(in: 0...Int.max), trendNumber: Int.random(in: -9999...9999))
+            RowView(
+                representation: .cases,
+                dailyNumber: Int.random(in: 0...9999),
+                totalNumber: Int.random(in: 0...9999999),
+                trendNumber: Int.random(in: -9999...9999)
+            )
+            .preferredColorScheme(.dark)
+            RowView(
+                representation: .hospitalizations,
+                dailyNumber: Int.random(in: 0...9999),
+                totalNumber: Int.random(in: 0...9999999),
+                trendNumber: Int.random(in: -9999...9999)
+            )
         }
-        .previewLayout(.sizeThatFits)
+        .previewLayout(.fixed(width: 350.0, height: /*@START_MENU_TOKEN@*/200.0/*@END_MENU_TOKEN@*/))
         .padding()
     }
 }

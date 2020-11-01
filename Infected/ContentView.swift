@@ -25,8 +25,14 @@ struct ContentView: View {
             if let national = numbersProvider.national {
                 List {
                     AreaView(area: national)
-                    ForEach(numbersProvider.provincial) { province in
-                        AreaView(area: province)
+                    NavigationLink(
+                        destination: AreasView(
+                            nationalNumbers: national,
+                            provincialNumbers: numbersProvider.provincial,
+                            municipalNumbers: numbersProvider.municipal
+                        )
+                    ) {
+                        Text("Areas")
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -38,6 +44,7 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: numbersProvider.reload)
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
