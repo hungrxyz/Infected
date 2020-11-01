@@ -33,16 +33,22 @@ struct RowView: View {
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.secondary)
-            VStack(alignment: .leading) {
-                Text("New")
-                    .font(Font.subheadline.bold())
-                    .foregroundColor(.secondary)
-                HStack(alignment: .lastTextBaseline) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text("New")
+                        .font(Font.subheadline.bold())
+                        .foregroundColor(.secondary)
                     Text(Self.numberFormatter.string(for: dailyNumber) ?? "--")
                         .font(.system(.title, design: .rounded)).bold()
-                    TrendNumberView(trendNumber: trendNumber)
-                    Spacer()
                 }
+                Divider()
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("Trend")
+                        .font(Font.subheadline.bold())
+                        .foregroundColor(.secondary)
+                    TrendNumberView(trendNumber: trendNumber)
+                }
+                Spacer()
             }
             VStack(alignment: .leading) {
                 Text("Total")
@@ -61,6 +67,7 @@ struct RowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             RowView(representation: .cases, dailyNumber: Int.random(in: 0...9999), totalNumber: Int.random(in: 0...Int.max), trendNumber: Int.random(in: -9999...9999))
+                .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
             RowView(representation: .hospitalizations, dailyNumber: Int.random(in: 0...9999), totalNumber: Int.random(in: 0...Int.max), trendNumber: Int.random(in: -9999...9999))
         }

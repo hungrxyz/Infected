@@ -42,7 +42,6 @@ struct AreaView: View {
             Text(text.capitalized)
                 .font(.title2).bold()
                 .foregroundColor(.primary)
-                .position(x: 47, y: 14) // not sure how else to change the inset
         }
     }
 
