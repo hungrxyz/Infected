@@ -23,9 +23,9 @@ struct TrendNumberView: View {
     var body: some View {
         HStack {
             Text(Self.numberFormatter.string(for: trendNumber) ?? "--")
-                .font(.system(.title3, design: .rounded)).bold()
+                .font(.system(.title2, design: .rounded)).bold()
             Image(systemName: trendNumber.imageName)
-                .font(Font.title3.weight(.bold))
+                .font(Font.title2.weight(.bold))
         }
         .foregroundColor(trendNumber.color)
     }

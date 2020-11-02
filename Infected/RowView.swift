@@ -36,26 +36,27 @@ struct RowView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("New")
-                        .font(Font.subheadline.bold())
+                        .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text(Self.numberFormatter.string(for: dailyNumber) ?? "--")
-                        .font(.system(.title, design: .rounded)).bold()
+                        .font(.system(.title2, design: .rounded)).bold()
                 }
                 Divider()
-                VStack(alignment: .leading, spacing: 7) {
+                VStack(alignment: .leading) {
                     Text("Trend")
-                        .font(Font.subheadline.bold())
+                        .font(.subheadline)
                         .foregroundColor(.secondary)
                     TrendNumberView(trendNumber: trendNumber)
                 }
+                Divider()
+                VStack(alignment: .leading) {
+                    Text("Total")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    Text(Self.numberFormatter.string(for: totalNumber) ?? "--")
+                        .font(.system(.title2, design: .rounded)).bold()
+                }
                 Spacer()
-            }
-            VStack(alignment: .leading) {
-                Text("Total")
-                    .font(Font.subheadline.bold())
-                    .foregroundColor(.secondary)
-                Text(Self.numberFormatter.string(for: totalNumber) ?? "--")
-                    .font(.system(.title, design: .rounded)).bold()
             }
         }
         .padding(.vertical, 8)
@@ -80,7 +81,7 @@ struct RowView_Previews: PreviewProvider {
                 trendNumber: Int.random(in: -9999...9999)
             )
         }
-        .previewLayout(.fixed(width: 350.0, height: /*@START_MENU_TOKEN@*/200.0/*@END_MENU_TOKEN@*/))
+        .previewLayout(.fixed(width: 350.0, height: 200))
         .padding()
     }
 }
