@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import WidgetKit
 
 final class NumbersProvider: ObservableObject {
 
@@ -17,9 +18,12 @@ final class NumbersProvider: ObservableObject {
     @Published var municipal: [MunicipalityNumbers] = []
 
     let api: CoronaWatchNLAPI
+    let widgetCenter: WidgetCenter
 
-    init(api: CoronaWatchNLAPI = CoronaWatchNLAPI()) {
+    init(api: CoronaWatchNLAPI = CoronaWatchNLAPI(),
+         widgetCenter: WidgetCenter = .shared) {
         self.api = api
+        self.widgetCenter = widgetCenter
     }
 
     func reload() {
@@ -42,6 +46,8 @@ final class NumbersProvider: ObservableObject {
                 self?.national = NationalNumbers(latest: nationalLatest,
                                                  previous: previousLatestNumbers(),
                                                  total: nationalTotal)
+
+                self?.widgetCenter.reloadAllTimelines()
             }
             .store(in: &cancellables)
 
