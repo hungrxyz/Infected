@@ -26,7 +26,13 @@ final class NumbersProvider: ObservableObject {
         self.widgetCenter = widgetCenter
     }
 
-    func reload() {
+    func reloadAllAreas() {
+        reloadNational()
+        reloadProvincial()
+        reloadMunicipal()
+    }
+
+    func reloadNational() {
         var nationalLatest: Numbers!
         var nationalTotal: Numbers!
 
@@ -43,14 +49,20 @@ final class NumbersProvider: ObservableObject {
             .sink { (completion) in
                 print(completion, "=> National")
             } receiveValue: { [weak self] previousLatestNumbers in
-                self?.national = NationalNumbers(latest: nationalLatest,
-                                                 previous: previousLatestNumbers(),
-                                                 total: nationalTotal)
+                let nationalNumbers = NationalNumbers(
+                    latest: nationalLatest,
+                    previous: previousLatestNumbers(),
+                    total: nationalTotal
+                )
+
+                self?.national = nationalNumbers
 
                 self?.widgetCenter.reloadAllTimelines()
             }
             .store(in: &cancellables)
+    }
 
+    func reloadProvincial() {
         var provincialDTOs = [NumbersDTO]()
 
         api.latestProvincial()
@@ -69,7 +81,9 @@ final class NumbersProvider: ObservableObject {
                 self?.provincial = numbers
             }
             .store(in: &cancellables)
+    }
 
+    func reloadMunicipal() {
         var municipalDTOs = [NumbersDTO]()
 
         api.latestMunicipal()
@@ -88,7 +102,6 @@ final class NumbersProvider: ObservableObject {
                 self?.municipal = numbers
             }
             .store(in: &cancellables)
-
     }
 
 }

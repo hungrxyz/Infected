@@ -41,8 +41,7 @@ final class Provider: TimelineProvider {
                 completion(timeline)
             }.store(in: &cancellables)
 
-        numbersProvider.reload()
-
+        numbersProvider.reloadNational()
     }
 
 }
@@ -121,9 +120,9 @@ struct InfectedWidgetEntryView : View {
                     Text(Self.numberFormatter.string(for: latestNumber) ?? "--")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
                         .foregroundColor(.primary)
-                        Text(Self.trendNumberFormatter.string(for: trendNumber) ?? "--")
-                            .font(.system(size: 13, weight: .bold, design: .rounded))
-                            .foregroundColor(trendNumber.color)
+                    Text(Self.trendNumberFormatter.string(for: trendNumber) ?? "--")
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
+                        .foregroundColor(trendNumber.color)
                 }
             }
         }

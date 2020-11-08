@@ -42,7 +42,7 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: numbersProvider.reload)
+        .onAppear(perform: numbersProvider.reloadAllAreas)
     }
 
 }

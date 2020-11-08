@@ -9,14 +9,16 @@ import SwiftUI
 
 struct AreasView: View {
 
-    let nationalNumbers: NationalNumbers
+    let nationalNumbers: NationalNumbers?
     let provincialNumbers: [ProvinceNumbers]
     let municipalNumbers: [MunicipalityNumbers]
 
     var body: some View {
         List {
-            NavigationLink(destination: NetherlandsView(numbers: nationalNumbers)) {
-                Text("Netherlands")
+            if let nationalNumbers = nationalNumbers {
+                NavigationLink(destination: NetherlandsView(numbers: nationalNumbers)) {
+                    Text("Netherlands")
+                }
             }
             NavigationLink(destination: ProvincesView(numbers: provincialNumbers)) {
                 Text("Provinces")
