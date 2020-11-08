@@ -32,7 +32,7 @@ struct ContentView: View {
                             municipalNumbers: numbersProvider.municipal
                         )
                     ) {
-                        Text("Areas")
+                        Text("All Areas")
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -43,6 +43,8 @@ struct ContentView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: numbersProvider.reloadAllAreas)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification),
+                   perform: { _ in  numbersProvider.reloadAllAreas() })
     }
 
 }
