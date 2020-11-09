@@ -75,7 +75,7 @@ extension Numbers {
 extension NationalNumbers: Area {
 
     var name: String {
-        "Netherlands"
+        NSLocalizedString("Netherlands", comment: "")
     }
 
     static var demo: NationalNumbers {

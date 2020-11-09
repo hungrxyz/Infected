@@ -29,7 +29,7 @@ struct RowView: View {
                 default:
                     Image(systemName: representation.symbolName)
                 }
-                Text(representation.displayName)
+                Text(representation.displayNameLocalizedStringKey)
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.secondary)
@@ -84,4 +84,30 @@ struct RowView_Previews: PreviewProvider {
         .previewLayout(.fixed(width: 350.0, height: 200))
         .padding()
     }
+}
+
+private extension NumberRepresentation {
+
+    var displayNameLocalizedStringKey: LocalizedStringKey {
+        switch self {
+        case .cases:
+            return "Cases"
+        case .hospitalizations:
+            return "Hospitalizations"
+        case .deaths:
+            return "Deaths"
+        }
+    }
+
+    var symbolName: String {
+        switch self {
+        case .cases:
+            return "folder.fill.badge.plus"
+        case .hospitalizations:
+            return "cross.case.fill"
+        case .deaths:
+            return "heart.broken.fill"
+        }
+    }
+
 }

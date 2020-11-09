@@ -67,20 +67,20 @@ struct InfectedWidgetEntryView : View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text("NL - \(Self.dateFormatter.string(from: entry.numbers.latest.date))")
-                    .font(Font.system(size: 15, weight: .semibold))
+                    .font(Font.system(size: 14, weight: .semibold))
                     .foregroundColor(.secondary)
                 NumbersView(
-                    kindText: "New Cases",
+                    kindLocalizedStringKey: "New Cases",
                     latestNumber: entry.numbers.latest.cases ?? 0,
                     trendNumber: entry.numbers.casesDifferenceToPreviousDay ?? 0
                 )
                 NumbersView(
-                    kindText: "Hospitalizations",
+                    kindLocalizedStringKey: "Hospitalizations",
                     latestNumber: entry.numbers.latest.hospitalizations ?? 0,
                     trendNumber: entry.numbers.hospitalizationsDifferenceToPreviousDay ?? 0
                 )
                 NumbersView(
-                    kindText: "Deaths",
+                    kindLocalizedStringKey: "Deaths",
                     latestNumber: entry.numbers.latest.deaths ?? 0,
                     trendNumber: entry.numbers.deathsDifferenceToPreviousDay ?? 0
                 )
@@ -107,13 +107,13 @@ struct InfectedWidgetEntryView : View {
             return formatter
         }()
 
-        let kindText: String
+        let kindLocalizedStringKey: LocalizedStringKey
         let latestNumber: Int
         let trendNumber: Int
 
         var body: some View {
             VStack(alignment: .leading) {
-                Text(kindText)
+                Text(kindLocalizedStringKey)
                     .font(.system(size: 12, weight: .regular))
                     .foregroundColor(.secondary)
                 HStack(alignment: .lastTextBaseline, spacing: 4) {
@@ -139,7 +139,7 @@ struct InfectedWidget: Widget {
             InfectedWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Latest Numbers")
-        .description("Displays latest infection numbers in the Netherlands.")
+        .description("Shows latest COVID-19 numbers in the Netherlands.")
         .supportedFamilies([.systemSmall])
     }
 }

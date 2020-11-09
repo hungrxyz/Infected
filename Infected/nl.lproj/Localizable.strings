@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Infected
+
+  Created by marko on 11/9/20.
+  
+*/
+
+"Netherlands" = "Nederland";
+"Unknown" = "Onbekend";
+"Provinces" = "Provincies";
+"Municipalities" = "Gemeenten";
+"Cases" = "Gevallen";
+"New Cases" = "Nieuw Gevallen";
+"Hospitalizations" = "Ziekenhuisopnames";
+"Deaths" = "Overlijdens";
+"Areas" = "Gebieden";
+"All Areas" = "Alle Gebieden";
+"No latest numbers" = "Geen laatste cijfers.";
+"New" = "Nieuw";
+"Trend" = "Trend";
+"Total" = "Totaal";
+"Latest Numbers" = "Nieuwste Nummers";
+"Shows latest COVID-19 numbers in the Netherlands." = "Toont de nieuwste COVID-19 nummers in Nederland.";

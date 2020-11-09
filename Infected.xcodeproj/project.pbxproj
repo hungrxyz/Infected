@@ -11,6 +11,8 @@
 		AD07C24625521A6E009B27B2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07C24425521A6E009B27B2 /* Area.swift */; };
 		AD07C24C25521AA3009B27B2 /* AnyArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07C24B25521AA3009B27B2 /* AnyArea.swift */; };
 		AD07C24D25521AA3009B27B2 /* AnyArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07C24B25521AA3009B27B2 /* AnyArea.swift */; };
+		AD131CBE2559D393003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
+		AD131CCA2559D94C003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
 		AD327F26254629EC002CCE01 /* NumbersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F25254629EC002CCE01 /* NumbersDTO.swift */; };
 		AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		AD327F32254633B7002CCE01 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F31254633B7002CCE01 /* Numbers.swift */; };
@@ -87,6 +89,8 @@
 /* Begin PBXFileReference section */
 		AD07C24425521A6E009B27B2 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		AD07C24B25521AA3009B27B2 /* AnyArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyArea.swift; sourceTree = "<group>"; };
+		AD131CBF2559D393003077F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD131CC52559D39D003077F3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD327F25254629EC002CCE01 /* NumbersDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersDTO.swift; sourceTree = "<group>"; };
 		AD327F2B2546332E002CCE01 /* NumbersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersProvider.swift; sourceTree = "<group>"; };
 		AD327F31254633B7002CCE01 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
+				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30E251627920064A959 /* Info.plist */,
 				ADD4C30B251627920064A959 /* Preview Content */,
 			);
@@ -365,7 +370,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				nl,
 			);
 			mainGroup = ADD4C2F9251627910064A959;
 			packageReferences = (
@@ -389,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBB7CE72517C1DC00F3C8B4 /* Assets.xcassets in Resources */,
+				AD131CCA2559D94C003077F3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD4C30D251627920064A959 /* Preview Assets.xcassets in Resources */,
+				AD131CBE2559D393003077F3 /* Localizable.strings in Resources */,
 				ADD4C30A251627920064A959 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +501,18 @@
 			targetProxy = ADD4C31F251627920064A959 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD131CC02559D393003077F3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD131CBF2559D393003077F3 /* en */,
+				AD131CC52559D39D003077F3 /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ADBB7CED2517C1DC00F3C8B4 /* Debug */ = {
