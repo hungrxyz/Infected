@@ -13,7 +13,7 @@ struct NetherlandsView: View {
 
     var body: some View {
         List {
-            AreaView(area: numbers)
+            RegionView(region: numbers)
         }
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Netherlands", displayMode: .inline)

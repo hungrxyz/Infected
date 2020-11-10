@@ -1,5 +1,5 @@
 //
-//  AnyArea.swift
+//  AnyRegion.swift
 //  Infected
 //
 //  Created by marko on 11/4/20.
@@ -7,32 +7,32 @@
 
 import Foundation
 
-struct AnyArea {
+struct AnyRegion {
 
-    let area: Area
+    let region: Region
 
 }
 
-extension AnyArea: Area, Identifiable {
+extension AnyRegion: Region, Identifiable {
     
     var id: Int {
-        area.id
+        region.id
     }
 
     var name: String {
-        area.name
+        region.name
     }
 
     var latest: Numbers {
-        area.latest
+        region.latest
     }
 
     var previous: Numbers {
-        area.previous
+        region.previous
     }
 
     var total: Numbers {
-        area.total
+        region.total
     }
 
 }

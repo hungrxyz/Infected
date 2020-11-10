@@ -72,7 +72,7 @@ extension Numbers {
 
 }
 
-extension NationalNumbers: Area {
+extension NationalNumbers: Region {
 
     var name: String {
         NSLocalizedString("Netherlands", comment: "")
@@ -88,7 +88,7 @@ extension NationalNumbers: Area {
 
 }
 
-extension ProvinceNumbers: Area {
+extension ProvinceNumbers: Region {
 
     var name: String {
         provinceName ?? "Unknown"
@@ -96,7 +96,7 @@ extension ProvinceNumbers: Area {
 
 }
 
-extension MunicipalityNumbers: Area {
+extension MunicipalityNumbers: Region {
 
     var name: String {
         [municipalityName ?? "Unknown", provinceName]

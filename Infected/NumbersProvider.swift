@@ -26,7 +26,7 @@ final class NumbersProvider: ObservableObject {
         self.widgetCenter = widgetCenter
     }
 
-    func reloadAllAreas() {
+    func reloadAllRegions() {
         reloadNational()
         reloadProvincial()
         reloadMunicipal()

@@ -1,5 +1,5 @@
 //
-//  Area.swift
+//  Region.swift
 //  Infected
 //
 //  Created by marko on 11/4/20.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Area {
+protocol Region {
 
     var id: Int { get }
     var name: String { get }
@@ -20,7 +20,7 @@ protocol Area {
 
 }
 
-extension Area {
+extension Region {
 
     var casesDifferenceToPreviousDay: Int? {
         guard

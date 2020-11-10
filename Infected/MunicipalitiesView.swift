@@ -14,7 +14,7 @@ struct MunicipalitiesView: View {
     var body: some View {
         List {
             ForEach(numbers) { municipality in
-                AreaView(area: municipality)
+                RegionView(region: municipality)
             }
         }
         .listStyle(InsetGroupedListStyle())

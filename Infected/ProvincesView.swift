@@ -14,7 +14,7 @@ struct ProvincesView: View {
     var body: some View {
         List {
             ForEach(numbers) { province in
-                AreaView(area: province)
+                RegionView(region: province)
             }
         }
         .listStyle(InsetGroupedListStyle())

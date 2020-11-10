@@ -24,15 +24,15 @@ struct ContentView: View {
         NavigationView {
             if let national = numbersProvider.national {
                 List {
-                    AreaView(area: national)
+                    RegionView(region: national)
                     NavigationLink(
-                        destination: AreasView(
+                        destination: AllRegionsView(
                             nationalNumbers: national,
                             provincialNumbers: numbersProvider.provincial,
                             municipalNumbers: numbersProvider.municipal
                         )
                     ) {
-                        Text("All Areas")
+                        Text("All Regions")
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -42,9 +42,9 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: numbersProvider.reloadAllAreas)
+        .onAppear(perform: numbersProvider.reloadAllRegions)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification),
-                   perform: { _ in  numbersProvider.reloadAllAreas() })
+                   perform: { _ in  numbersProvider.reloadAllRegions() })
     }
 
 }

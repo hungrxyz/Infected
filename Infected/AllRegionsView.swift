@@ -1,5 +1,5 @@
 //
-//  AreasView.swift
+//  AllRegionsView.swift
 //  Infected
 //
 //  Created by marko on 11/1/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AreasView: View {
+struct AllRegionsView: View {
 
     let nationalNumbers: NationalNumbers?
     let provincialNumbers: [ProvinceNumbers]
@@ -28,12 +28,12 @@ struct AreasView: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarTitle("Areas")
+        .navigationBarTitle("Regions")
     }
 }
 
 struct AreasView_Previews: PreviewProvider {
     static var previews: some View {
-        AreasView(nationalNumbers: .demo, provincialNumbers: [], municipalNumbers: [])
+        AllRegionsView(nationalNumbers: .demo, provincialNumbers: [], municipalNumbers: [])
     }
 }
