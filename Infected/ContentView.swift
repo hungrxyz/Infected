@@ -19,6 +19,10 @@ struct ContentView: View {
         return formatter
     }()
 
+    private let willEnterForegroundPublisher = NotificationCenter.default
+        .publisher(for: UIApplication.willEnterForegroundNotification)
+        .map { _ in }
+
     @ViewBuilder
     var body: some View {
         NavigationView {
@@ -43,8 +47,7 @@ struct ContentView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: numbersProvider.reloadAllRegions)
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification),
-                   perform: { _ in  numbersProvider.reloadAllRegions() })
+        .onReceive(willEnterForegroundPublisher, perform: numbersProvider.reloadAllRegions)
     }
 
 }
