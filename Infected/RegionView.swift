@@ -12,7 +12,7 @@ struct RegionView: View {
     let region: Region
 
     var body: some View {
-        Section(header: Header(text: region.name)) {
+        Section(header: SectionHeader(text: region.name)) {
             RowView(
                 representation: .cases,
                 dailyNumber: region.latest.cases ?? 0,
@@ -33,16 +33,6 @@ struct RegionView: View {
             )
         }
         .textCase(.none)
-    }
-
-    struct Header: View {
-        let text: String
-
-        var body: some View {
-            Text(text.capitalized)
-                .font(.title2).bold()
-                .foregroundColor(.primary)
-        }
     }
 
 }

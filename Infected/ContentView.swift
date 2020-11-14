@@ -9,23 +9,48 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject var numbersProvider = NumbersProvider()
+    @StateObject var numbersProvider = NumbersProvider()
+    @State var isAboutShown = false
 
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.doesRelativeDateFormatting = true
-        return formatter
-    }()
+    private var aboutButton: some View {
+        Button(action: {
+            isAboutShown.toggle()
+        }, label: {
+            Image("virus")
+                .imageScale(.large)
+        })
+    }
 
     private let willEnterForegroundPublisher = NotificationCenter.default
         .publisher(for: UIApplication.willEnterForegroundNotification)
         .map { _ in }
 
-    @ViewBuilder
     var body: some View {
         NavigationView {
+            DailyView(numbersProvider: numbersProvider)
+                .navigationBarItems(trailing: aboutButton)
+                .sheet(isPresented: $isAboutShown, content: {
+                    AboutView()
+                })
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: numbersProvider.reloadAllRegions)
+        .onReceive(willEnterForegroundPublisher, perform: numbersProvider.reloadAllRegions)
+    }
+
+    private struct DailyView: View {
+
+        private static let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            formatter.doesRelativeDateFormatting = true
+            return formatter
+        }()
+
+        @ObservedObject var numbersProvider: NumbersProvider
+
+        var body: some View {
             if let national = numbersProvider.national {
                 List {
                     RegionView(region: national)
@@ -45,9 +70,6 @@ struct ContentView: View {
                 Text("No latest numbers")
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: numbersProvider.reloadAllRegions)
-        .onReceive(willEnterForegroundPublisher, perform: numbersProvider.reloadAllRegions)
     }
 
 }

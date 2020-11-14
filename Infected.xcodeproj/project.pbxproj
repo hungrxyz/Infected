@@ -20,6 +20,8 @@
 		AD5C7329253300C800E32B5E /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = AD5C7328253300C800E32B5E /* CodableCSV */; };
 		AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* RegionView.swift */; };
 		AD6680C22520832800E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
+		AD74CCC6255DF7B200002500 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74CCC5255DF7B200002500 /* AboutView.swift */; };
+		AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74CCCB255DF8B500002500 /* SectionHeader.swift */; };
 		AD78EBB32548C6D00021ECA2 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F31254633B7002CCE01 /* Numbers.swift */; };
 		AD7C67752532FBB10037716F /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = AD7C67742532FBB10037716F /* CodableCSV */; };
 		ADB2641D25474C0C00231946 /* NumbersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F25254629EC002CCE01 /* NumbersDTO.swift */; };
@@ -43,6 +45,7 @@
 		ADE10F02254F52650080B975 /* Municipality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10F01254F52650080B975 /* Municipality.swift */; };
 		ADE10F08254F56AE0080B975 /* MunicipalitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10F07254F56AE0080B975 /* MunicipalitiesView.swift */; };
 		ADE10F0D254F57400080B975 /* Municipality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10F01254F52650080B975 /* Municipality.swift */; };
+		ADE4EDE725604F530035CBE5 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4EDE625604F530035CBE5 /* CloseButton.swift */; };
 		ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */; };
 		ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
@@ -97,6 +100,8 @@
 		AD422CCB254E31FB005122CB /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		AD6680BB251F4C0800E669A7 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		AD6680C12520832800E669A7 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		AD74CCC5255DF7B200002500 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		AD74CCCB255DF8B500002500 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -121,6 +126,7 @@
 		ADE10EFB254F45930080B975 /* ProvincesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvincesView.swift; sourceTree = "<group>"; };
 		ADE10F01254F52650080B975 /* Municipality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Municipality.swift; sourceTree = "<group>"; };
 		ADE10F07254F56AE0080B975 /* MunicipalitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunicipalitiesView.swift; sourceTree = "<group>"; };
+		ADE4EDE625604F530035CBE5 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendNumberView.swift; sourceTree = "<group>"; };
 		ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +222,7 @@
 				AD07C24425521A6E009B27B2 /* Region.swift */,
 				AD07C24B25521AA3009B27B2 /* AnyRegion.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
+				AD74CCC5255DF7B200002500 /* AboutView.swift */,
 				AD6680BB251F4C0800E669A7 /* RegionView.swift */,
 				ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */,
 				ADE10EF5254F454D0080B975 /* NetherlandsView.swift */,
@@ -224,6 +231,8 @@
 				AD6680C12520832800E669A7 /* RowView.swift */,
 				ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
+				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
+				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30E251627920064A959 /* Info.plist */,
@@ -449,6 +458,7 @@
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
 				AD07C24C25521AA3009B27B2 /* AnyRegion.swift in Sources */,
+				ADE4EDE725604F530035CBE5 /* CloseButton.swift in Sources */,
 				AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */,
 				AD422CCC254E31FB005122CB /* Province.swift in Sources */,
 				ADE10EF0254F3FEA0080B975 /* AllRegionsView.swift in Sources */,
@@ -457,10 +467,12 @@
 				ADE10EFC254F45930080B975 /* ProvincesView.swift in Sources */,
 				AD327F32254633B7002CCE01 /* Numbers.swift in Sources */,
 				ADE10EF6254F454D0080B975 /* NetherlandsView.swift in Sources */,
+				AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */,
 				AD07C24525521A6E009B27B2 /* Region.swift in Sources */,
 				AD327F26254629EC002CCE01 /* NumbersDTO.swift in Sources */,
 				ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */,
 				ADE10F02254F52650080B975 /* Municipality.swift in Sources */,
+				AD74CCC6255DF7B200002500 /* AboutView.swift in Sources */,
 				ADE10F08254F56AE0080B975 /* MunicipalitiesView.swift in Sources */,
 				AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */,
 			);
@@ -594,7 +606,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -659,7 +671,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
