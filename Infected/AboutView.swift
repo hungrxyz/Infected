@@ -57,7 +57,7 @@ struct AboutView: View {
             HStack {
                 Link(titleKey, destination: url)
                 Spacer()
-                Image(systemName: "link")
+                Image(systemName: "arrow.turn.up.right")
             }
             .foregroundColor(.primary)
         }
