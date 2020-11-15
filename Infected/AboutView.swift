@@ -30,12 +30,8 @@ struct AboutView: View {
                             .foregroundColor(.secondary)
                     }
                 }
-                Section {
-                    LinkRow(titleKey: "View on GitHub",
-                            url: URL(string: "https://github.com/hungrxyz/Infected")!)
-                    LinkRow(titleKey: "Created by @hungrxyz",
-                            url: URL(string: "https://twitter.com/hungrxyz")!)
-                    if let appVersionText = Bundle.main.appVersionDisplayText {
+                if let appVersionText = Bundle.main.appVersionDisplayText {
+                    Section {
                         Text(appVersionText)
                     }
                 }
