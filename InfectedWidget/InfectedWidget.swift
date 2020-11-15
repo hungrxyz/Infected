@@ -16,11 +16,11 @@ final class Provider: TimelineProvider {
     private let numbersProvider = NumbersProvider()
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), numbers: .demo)
+        SimpleEntry(date: Date(), numbers: .dummyNumbers)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), numbers: .demo)
+        let entry = SimpleEntry(date: Date(), numbers: .dummyNumbers)
         completion(entry)
     }
 
@@ -144,16 +144,17 @@ struct InfectedWidget: Widget {
     }
 }
 
-struct InfectedWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .random))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .demo))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .environment(\.colorScheme, .dark)
-        }
-    }
+private extension NationalNumbers {
+
+    static let dummyNumbers: NationalNumbers = {
+        let now = Date()
+        return NationalNumbers(
+            latest: Numbers(date: now, cases: 12939, hospitalizations: 238, deaths: 42),
+            previous: Numbers(date: now, cases: 9020, hospitalizations: 238, deaths: 67),
+            total: Numbers(date: now, cases: 432032, hospitalizations: 10429, deaths: 4389)
+        )
+    }()
+
 }
 
 private extension Int {
@@ -173,3 +174,16 @@ private extension Int {
 
 }
 
+#if DEBUG
+struct InfectedWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .dummyNumbers))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .dummyNumbers))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .environment(\.colorScheme, .dark)
+        }
+    }
+}
+#endif

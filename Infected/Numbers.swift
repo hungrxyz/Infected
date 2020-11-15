@@ -60,30 +60,10 @@ struct MunicipalityNumbers: Hashable, Identifiable {
 
 }
 
-extension Numbers {
-
-    static var demo: Numbers {
-        Numbers(date: Date(), cases: 1234, hospitalizations: 567, deaths: 89)
-    }
-
-    static var random: Numbers {
-        Numbers(date: Date(), cases: Int.random(in: 0...999999), hospitalizations: Int.random(in: 0...9999), deaths: Int.random(in: 0...999))
-    }
-
-}
-
 extension NationalNumbers: Region {
 
     var name: String {
         NSLocalizedString("Netherlands", comment: "")
-    }
-
-    static var demo: NationalNumbers {
-        NationalNumbers(latest: .demo, previous: .demo, total: .demo)
-    }
-
-    static var random: NationalNumbers {
-        NationalNumbers(latest: .random, previous: .random, total: .random)
     }
 
 }
@@ -106,3 +86,21 @@ extension MunicipalityNumbers: Region {
 
 }
 
+#if DEBUG
+extension Numbers {
+
+    static let demo = Numbers(date: Date(), cases: 1234, hospitalizations: 567, deaths: 89)
+    static let random = Numbers(date: Date(),
+                                cases: Int.random(in: 0...9999999),
+                                hospitalizations: Int.random(in: 0...999999),
+                                deaths: Int.random(in: 0...99999))
+
+}
+
+extension NationalNumbers {
+
+    static let demo = NationalNumbers(latest: .demo, previous: .demo, total: .demo)
+    static let random = NationalNumbers(latest: .random, previous: .random, total: .random)
+
+}
+#endif

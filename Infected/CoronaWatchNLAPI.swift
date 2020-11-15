@@ -18,46 +18,46 @@ final class CoronaWatchNLAPI: ObservableObject {
     }
 
     func latestNational() -> AnyPublisher<[NumbersDTO], Error> {
-        numbers(forAreaKind: .national, date: nil)
+        numbers(forRegions: .national, date: nil)
     }
 
     func national(forDate date: Date) -> AnyPublisher<[NumbersDTO], Error> {
-        numbers(forAreaKind: .national, date: date)
+        numbers(forRegions: .national, date: date)
     }
 
     func latestProvincial() -> AnyPublisher<[NumbersDTO], Error> {
-        numbers(forAreaKind: .provincial, date: nil)
+        numbers(forRegions: .provincial, date: nil)
     }
 
     func provincial(forDate date: Date) -> AnyPublisher<[NumbersDTO], Error> {
-        numbers(forAreaKind: .provincial, date: date)
+        numbers(forRegions: .provincial, date: date)
     }
 
     func latestMunicipal() -> AnyPublisher<[NumbersDTO], Error> {
-        numbers(forAreaKind: .municipal, date: nil)
+        numbers(forRegions: .municipal, date: nil)
     }
 
     func municipal(forDate date: Date) -> AnyPublisher<[NumbersDTO], Error> {
-        numbers(forAreaKind: .municipal, date: date)
+        numbers(forRegions: .municipal, date: date)
     }
 
 }
 
 private extension CoronaWatchNLAPI {
 
-    func numbers(forAreaKind areaKind: AreaKind, date: Date?) -> AnyPublisher<[NumbersDTO], Error> {
+    func numbers(forRegions regions: Regions, date: Date?) -> AnyPublisher<[NumbersDTO], Error> {
         let baseURL = URL(string: "https://raw.githubusercontent.com/J535D165/CoronaWatchNL/master/data-geo/")!
 
         let fileNameDateFormatter = DateFormatter()
         fileNameDateFormatter.dateFormat = "yyyyMMdd"
 
         let filenameDate = date.flatMap(fileNameDateFormatter.string) ?? "latest"
-        let filename = ["RIVM_NL", areaKind.rawValue, filenameDate]
+        let filename = ["RIVM_NL", regions.rawValue, filenameDate]
             .joined(separator: "_")
             .appending(".csv")
 
         let url = baseURL
-            .appendingPathComponent(["data", areaKind.rawValue].joined(separator: "-"))
+            .appendingPathComponent(["data", regions.rawValue].joined(separator: "-"))
             .appendingPathComponent(filename)
 
         let dateFormatter = DateFormatter()
@@ -75,7 +75,7 @@ private extension CoronaWatchNLAPI {
 
 }
 
-private enum AreaKind: String {
+private enum Regions: String {
 
     case national
     case provincial

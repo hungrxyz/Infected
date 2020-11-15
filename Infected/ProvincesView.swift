@@ -22,8 +22,10 @@ struct ProvincesView: View {
     }
 }
 
+#if DEBUG
 struct ProvincesView_Previews: PreviewProvider {
     static var previews: some View {
         ProvincesView(numbers: [])
     }
 }
+#endif

@@ -32,8 +32,10 @@ struct AllRegionsView: View {
     }
 }
 
+#if DEBUG
 struct AreasView_Previews: PreviewProvider {
     static var previews: some View {
         AllRegionsView(nationalNumbers: .demo, provincialNumbers: [], municipalNumbers: [])
     }
 }
+#endif

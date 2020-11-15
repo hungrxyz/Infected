@@ -20,8 +20,10 @@ struct NetherlandsView: View {
     }
 }
 
+#if DEBUG
 struct NetherlandsView_Previews: PreviewProvider {
     static var previews: some View {
         NetherlandsView(numbers: .demo)
     }
 }
+#endif

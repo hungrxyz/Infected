@@ -64,28 +64,6 @@ struct RowView: View {
 
 }
 
-struct RowView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            RowView(
-                representation: .cases,
-                dailyNumber: Int.random(in: 0...9999),
-                totalNumber: Int.random(in: 0...9999999),
-                trendNumber: Int.random(in: -9999...9999)
-            )
-            .preferredColorScheme(.dark)
-            RowView(
-                representation: .hospitalizations,
-                dailyNumber: Int.random(in: 0...9999),
-                totalNumber: Int.random(in: 0...9999999),
-                trendNumber: Int.random(in: -9999...9999)
-            )
-        }
-        .previewLayout(.fixed(width: 350.0, height: 200))
-        .padding()
-    }
-}
-
 private extension NumberRepresentation {
 
     var displayNameLocalizedStringKey: LocalizedStringKey {
@@ -111,3 +89,27 @@ private extension NumberRepresentation {
     }
 
 }
+
+#if DEBUG
+struct RowView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            RowView(
+                representation: .cases,
+                dailyNumber: Int.random(in: 0...9999),
+                totalNumber: Int.random(in: 0...9999999),
+                trendNumber: Int.random(in: -9999...9999)
+            )
+            .preferredColorScheme(.dark)
+            RowView(
+                representation: .hospitalizations,
+                dailyNumber: Int.random(in: 0...9999),
+                totalNumber: Int.random(in: 0...9999999),
+                trendNumber: Int.random(in: -9999...9999)
+            )
+        }
+        .previewLayout(.fixed(width: 350.0, height: 200))
+        .padding()
+    }
+}
+#endif

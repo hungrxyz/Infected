@@ -26,6 +26,7 @@ struct CloseButton: View {
     }
 }
 
+#if DEBUG
 struct CloseButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -36,3 +37,4 @@ struct CloseButton_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
+#endif

@@ -17,6 +17,7 @@ struct SectionHeader: View {
     }
 }
 
+#if DEBUG
 struct SectionHeader_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -40,3 +41,4 @@ struct SectionHeader_Previews: PreviewProvider {
         }
     }
 }
+#endif

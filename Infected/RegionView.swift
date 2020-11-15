@@ -37,6 +37,7 @@ struct RegionView: View {
 
 }
 
+#if DEBUG
 struct DaySectionView_Previews: PreviewProvider {
     static var previews: some View {
         List {
@@ -47,3 +48,4 @@ struct DaySectionView_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
+#endif

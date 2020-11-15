@@ -65,12 +65,6 @@ struct AboutView: View {
     }
 }
 
-struct AboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutView()
-    }
-}
-
 private extension Bundle {
 
     var appVersionDisplayText: String? {
@@ -84,3 +78,11 @@ private extension Bundle {
     }
 
 }
+
+#if DEBUG
+struct AboutView_Previews: PreviewProvider {
+    static var previews: some View {
+        AboutView()
+    }
+}
+#endif

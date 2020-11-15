@@ -61,6 +61,7 @@ private extension Int {
 
 }
 
+#if DEBUG
 struct TrendView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -72,3 +73,4 @@ struct TrendView_Previews: PreviewProvider {
         .padding()
     }
 }
+#endif

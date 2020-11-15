@@ -46,9 +46,7 @@ final class NumbersProvider: ObservableObject {
             .flatMap(api.national)
             .map { $0.nationalDailyNumbers }
             .receive(on: DispatchQueue.main)
-            .sink { (completion) in
-                print(completion, "=> National")
-            } receiveValue: { [weak self] previousLatestNumbers in
+            .sink { _ in } receiveValue: { [weak self] previousLatestNumbers in
                 let nationalNumbers = NationalNumbers(
                     latest: nationalLatest,
                     previous: previousLatestNumbers(),
@@ -75,9 +73,7 @@ final class NumbersProvider: ObservableObject {
             .map { [weak self] previous in self?.mergeLatestAndPreviousProvincialDTOs(latest: provincialDTOs, previous: previous) ?? [] }
             .map { $0.sorted { $0.provinceName ?? "zzz" < $1.provinceName ?? "zzz" } }
             .receive(on: DispatchQueue.main)
-            .sink { (completion) in
-                print(completion, "=> Provincial")
-            } receiveValue: { [weak self] numbers in
+            .sink { _ in } receiveValue: { [weak self] numbers in
                 self?.provincial = numbers
             }
             .store(in: &cancellables)
@@ -96,9 +92,7 @@ final class NumbersProvider: ObservableObject {
             .map { [weak self] previous in self?.mergeLatestAndPreviousMunicipalDTOs(latest: municipalDTOs, previous: previous) ?? [] }
             .map { $0.sorted { $0.municipalityName ?? "zzz" < $1.municipalityName ?? "zzz" } }
             .receive(on: DispatchQueue.main)
-            .sink { (completion) in
-                print(completion, "=> Municipal")
-            } receiveValue: { [weak self] numbers in
+            .sink { _ in } receiveValue: { [weak self] numbers in
                 self?.municipal = numbers
             }
             .store(in: &cancellables)
