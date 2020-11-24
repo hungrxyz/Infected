@@ -13,7 +13,7 @@ final class Provider: TimelineProvider {
 
     private var cancellables = Set<AnyCancellable>()
 
-    private let numbersProvider = NumbersProvider()
+    private var numbersProvider: NumbersProvider?
 
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), numbers: .dummyNumbers)
@@ -26,22 +26,26 @@ final class Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
 
-        numbersProvider.$national
+        numbersProvider = NumbersProvider()
+        
+        numbersProvider?.$national
             .filter { $0 != nil }
             .sink { completion in
                 print(completion)
-            } receiveValue: { numbers in
+            } receiveValue: { [weak self] numbers in
                 let now = Date()
                 let entry = SimpleEntry(date: now, numbers: numbers!)
 
                 let after1Hour = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
 
                 let timeline = Timeline(entries: [entry], policy: .after(after1Hour))
+                
+                self?.numbersProvider = nil
 
                 completion(timeline)
             }.store(in: &cancellables)
 
-        numbersProvider.reloadNational()
+        numbersProvider?.reloadNational()
     }
 
 }
