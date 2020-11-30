@@ -24,6 +24,10 @@
 		AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74CCCB255DF8B500002500 /* SectionHeader.swift */; };
 		AD78EBB32548C6D00021ECA2 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F31254633B7002CCE01 /* Numbers.swift */; };
 		AD7C67752532FBB10037716F /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = AD7C67742532FBB10037716F /* CodableCSV */; };
+		AD825CD6257596D400CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
+		AD825CDC25759D8400CF681B /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CDB25759D8400CF681B /* Summary.swift */; };
+		AD825CE12575A6F800CF681B /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CDB25759D8400CF681B /* Summary.swift */; };
+		AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
 		ADB2641D25474C0C00231946 /* NumbersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F25254629EC002CCE01 /* NumbersDTO.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
@@ -102,6 +106,8 @@
 		AD6680C12520832800E669A7 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		AD74CCC5255DF7B200002500 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		AD74CCCB255DF8B500002500 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		AD825CD5257596D400CF681B /* InfectedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedAPI.swift; sourceTree = "<group>"; };
+		AD825CDB25759D8400CF681B /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -214,6 +220,8 @@
 			children = (
 				ADD4C305251627910064A959 /* InfectedApp.swift */,
 				ADD4C333251628640064A959 /* CoronaWatchNLAPI.swift */,
+				AD825CD5257596D400CF681B /* InfectedAPI.swift */,
+				AD825CDB25759D8400CF681B /* Summary.swift */,
 				AD327F2B2546332E002CCE01 /* NumbersProvider.swift */,
 				AD422CCB254E31FB005122CB /* Province.swift */,
 				ADE10F01254F52650080B975 /* Municipality.swift */,
@@ -444,9 +452,11 @@
 				AD07C24D25521AA3009B27B2 /* AnyRegion.swift in Sources */,
 				ADD2D16D254EBADD00FB678A /* Province.swift in Sources */,
 				ADE10F0D254F57400080B975 /* Municipality.swift in Sources */,
+				AD825CE12575A6F800CF681B /* Summary.swift in Sources */,
 				ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */,
 				AD07C24625521A6E009B27B2 /* Region.swift in Sources */,
 				ADB2641D25474C0C00231946 /* NumbersDTO.swift in Sources */,
+				AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +474,8 @@
 				ADE10EF0254F3FEA0080B975 /* AllRegionsView.swift in Sources */,
 				ADD4C334251628640064A959 /* CoronaWatchNLAPI.swift in Sources */,
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
+				AD825CD6257596D400CF681B /* InfectedAPI.swift in Sources */,
+				AD825CDC25759D8400CF681B /* Summary.swift in Sources */,
 				ADE10EFC254F45930080B975 /* ProvincesView.swift in Sources */,
 				AD327F32254633B7002CCE01 /* Numbers.swift in Sources */,
 				ADE10EF6254F454D0080B975 /* NetherlandsView.swift in Sources */,

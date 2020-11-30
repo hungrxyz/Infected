@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllRegionsView: View {
 
-    let nationalNumbers: NationalNumbers?
+    let nationalNumbers: Summary?
     let provincialNumbers: [ProvinceNumbers]
     let municipalNumbers: [MunicipalityNumbers]
 

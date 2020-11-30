@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NetherlandsView: View {
 
-    let numbers: NationalNumbers
+    let numbers: Summary
 
     var body: some View {
         List {

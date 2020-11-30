@@ -16,11 +16,11 @@ final class Provider: TimelineProvider {
     private var numbersProvider: NumbersProvider?
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), numbers: .dummyNumbers)
+        SimpleEntry(date: Date(), summary: .dummyNumbers)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), numbers: .dummyNumbers)
+        let entry = SimpleEntry(date: Date(), summary: .dummyNumbers)
         completion(entry)
     }
 
@@ -32,9 +32,9 @@ final class Provider: TimelineProvider {
             .filter { $0 != nil }
             .sink { completion in
                 print(completion)
-            } receiveValue: { [weak self] numbers in
+            } receiveValue: { [weak self] summary in
                 let now = Date()
-                let entry = SimpleEntry(date: now, numbers: numbers!)
+                let entry = SimpleEntry(date: now, summary: summary!)
 
                 let after1Hour = Calendar.current.date(byAdding: .hour, value: 1, to: now)!
 
@@ -52,7 +52,7 @@ final class Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let numbers: NationalNumbers
+    let summary: Summary
 }
 
 struct InfectedWidgetEntryView : View {
@@ -70,23 +70,23 @@ struct InfectedWidgetEntryView : View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text("NL - \(Self.dateFormatter.string(from: entry.numbers.latest.date))")
+                Text("NL - \(Self.dateFormatter.string(from: entry.summary.updatedAt ?? Date()))")
                     .font(Font.system(size: 14, weight: .semibold))
                     .foregroundColor(.secondary)
                 NumbersView(
                     kindLocalizedStringKey: "New Cases",
-                    latestNumber: entry.numbers.latest.cases ?? 0,
-                    trendNumber: entry.numbers.casesDifferenceToPreviousDay ?? 0
+                    latestNumber: entry.summary.positiveCases.new ?? 0,
+                    trendNumber: entry.summary.positiveCases.trend ?? 0
                 )
                 NumbersView(
                     kindLocalizedStringKey: "Hospitalizations",
-                    latestNumber: entry.numbers.latest.hospitalizations ?? 0,
-                    trendNumber: entry.numbers.hospitalizationsDifferenceToPreviousDay ?? 0
+                    latestNumber: entry.summary.hospitalAdmissions.new ?? 0,
+                    trendNumber: entry.summary.hospitalAdmissions.trend ?? 0
                 )
                 NumbersView(
                     kindLocalizedStringKey: "Deaths",
-                    latestNumber: entry.numbers.latest.deaths ?? 0,
-                    trendNumber: entry.numbers.deathsDifferenceToPreviousDay ?? 0
+                    latestNumber: entry.summary.deaths.new ?? 0,
+                    trendNumber: entry.summary.deaths.trend ?? 0
                 )
             }
             Spacer()
@@ -148,6 +148,37 @@ struct InfectedWidget: Widget {
     }
 }
 
+private extension Summary {
+
+    static let dummyNumbers: Summary = {
+        let now = Date()
+        return Summary(
+            updatedAt: now,
+            numbersDate: now,
+            regionCode: "NL00",
+            municupalityName: nil,
+            provinceName: nil,
+            securityRegionName: nil,
+            positiveCases: SummaryNumbers(
+                new: 3764,
+                trend: 320,
+                total: 329402
+            ),
+            hospitalAdmissions: SummaryNumbers(
+                new: 85,
+                trend: 0,
+                total: 42304
+            ),
+            deaths: SummaryNumbers(
+                new: 48,
+                trend: -16,
+                total: 8932
+            )
+        )
+    }()
+
+}
+
 private extension NationalNumbers {
 
     static let dummyNumbers: NationalNumbers = {
@@ -182,9 +213,9 @@ private extension Int {
 struct InfectedWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .dummyNumbers))
+            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), summary: .dummyNumbers))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), numbers: .dummyNumbers))
+            InfectedWidgetEntryView(entry: SimpleEntry(date: Date(), summary: .dummyNumbers))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .environment(\.colorScheme, .dark)
         }

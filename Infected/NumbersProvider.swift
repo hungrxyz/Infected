@@ -13,16 +13,19 @@ final class NumbersProvider: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    @Published var national: NationalNumbers?
+    @Published var national: Summary?
     @Published var provincial: [ProvinceNumbers] = []
     @Published var municipal: [MunicipalityNumbers] = []
 
-    let api: CoronaWatchNLAPI
+    let coronaWatchAPI: CoronaWatchNLAPI
+    let infectedAPI: InfectedAPI
     let widgetCenter: WidgetCenter
 
-    init(api: CoronaWatchNLAPI = CoronaWatchNLAPI(),
+    init(coronaWatchAPI: CoronaWatchNLAPI = CoronaWatchNLAPI(),
+         infectedAPI: InfectedAPI = InfectedAPI(),
          widgetCenter: WidgetCenter = .shared) {
-        self.api = api
+        self.coronaWatchAPI = coronaWatchAPI
+        self.infectedAPI = infectedAPI
         self.widgetCenter = widgetCenter
     }
 
@@ -33,43 +36,24 @@ final class NumbersProvider: ObservableObject {
     }
 
     func reloadNational() {
-        var nationalLatest: Numbers!
-        var nationalTotal: Numbers!
-
-        api.latestNational()
-            .filter { $0.isEmpty == false }
-            .handleEvents(receiveOutput: { dtos in
-                nationalLatest = dtos.nationalDailyNumbers()
-                nationalTotal = dtos.nationalTotalNumbers()
-            })
-            .mappedToPreviousDayDate()
-            .flatMap(api.national)
-            .map { $0.nationalDailyNumbers }
+        infectedAPI.national()
             .receive(on: DispatchQueue.main)
-            .sink { _ in } receiveValue: { [weak self] previousLatestNumbers in
-                let nationalNumbers = NationalNumbers(
-                    latest: nationalLatest,
-                    previous: previousLatestNumbers(),
-                    total: nationalTotal
-                )
-
-                self?.national = nationalNumbers
-
-                self?.widgetCenter.reloadAllTimelines()
-            }
+            .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] summary in
+                self?.national = summary
+            })
             .store(in: &cancellables)
     }
 
     func reloadProvincial() {
         var provincialDTOs = [NumbersDTO]()
 
-        api.latestProvincial()
+        coronaWatchAPI.latestProvincial()
             .filter { $0.isEmpty == false }
             .handleEvents(receiveOutput: { dtos in
                 provincialDTOs = dtos
             })
             .mappedToPreviousDayDate()
-            .flatMap(api.provincial)
+            .flatMap(coronaWatchAPI.provincial)
             .map { [weak self] previous in self?.mergeLatestAndPreviousProvincialDTOs(latest: provincialDTOs, previous: previous) ?? [] }
             .map { $0.sorted { $0.provinceName ?? "zzz" < $1.provinceName ?? "zzz" } }
             .receive(on: DispatchQueue.main)
@@ -82,13 +66,13 @@ final class NumbersProvider: ObservableObject {
     func reloadMunicipal() {
         var municipalDTOs = [NumbersDTO]()
 
-        api.latestMunicipal()
+        coronaWatchAPI.latestMunicipal()
             .filter { $0.isEmpty == false }
             .handleEvents(receiveOutput: { dtos in
                 municipalDTOs = dtos
             })
             .mappedToPreviousDayDate()
-            .flatMap(api.municipal)
+            .flatMap(coronaWatchAPI.municipal)
             .map { [weak self] previous in self?.mergeLatestAndPreviousMunicipalDTOs(latest: municipalDTOs, previous: previous) ?? [] }
             .map { $0.sorted { $0.municipalityName ?? "zzz" < $1.municipalityName ?? "zzz" } }
             .receive(on: DispatchQueue.main)
