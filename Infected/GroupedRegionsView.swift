@@ -14,7 +14,7 @@ struct GroupedRegionsView: View {
 
     var body: some View {
         List {
-            ForEach(summaries) { summary in
+            ForEach(summaries.sorted(by: { $0.regionName < $1.regionName })) { summary in
                 RegionView(summary: summary)
             }
         }

@@ -32,4 +32,34 @@ final class InfectedAPI {
             .eraseToAnyPublisher()
     }
 
+    func provincialGroupedSummaries() -> AnyPublisher<GroupedSummaries, Error> {
+        let url = URL(string: "https://github.com/hungrxyz/infected-data/raw/main/data/latest/provinces.json")!
+
+        return urlSession.dataTaskPublisher(for: url)
+            .map(\.data)
+            .mapError { error -> Error in return error }
+            .decode(type: GroupedSummaries.self, decoder: jsonDecoder)
+            .eraseToAnyPublisher()
+    }
+
+    func securityRegionsGroupedSummaries() -> AnyPublisher<GroupedSummaries, Error> {
+        let url = URL(string: "https://github.com/hungrxyz/infected-data/raw/main/data/latest/security_regions.json")!
+
+        return urlSession.dataTaskPublisher(for: url)
+            .map(\.data)
+            .mapError { error -> Error in return error }
+            .decode(type: GroupedSummaries.self, decoder: jsonDecoder)
+            .eraseToAnyPublisher()
+    }
+
+    func municipalGroupedSummaries() -> AnyPublisher<GroupedSummaries, Error> {
+        let url = URL(string: "https://github.com/hungrxyz/infected-data/raw/main/data/latest/municipalities.json")!
+
+        return urlSession.dataTaskPublisher(for: url)
+            .map(\.data)
+            .mapError { error -> Error in return error }
+            .decode(type: GroupedSummaries.self, decoder: jsonDecoder)
+            .eraseToAnyPublisher()
+    }
+
 }

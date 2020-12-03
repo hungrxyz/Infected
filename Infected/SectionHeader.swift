@@ -27,7 +27,7 @@ struct SectionHeader: View {
 private extension Summary {
 
     var isMunicipalityOrSecurityRegion: Bool {
-        regionCode.hasPrefix("GM") || regionCode.hasPrefix("SV")
+        regionCode.hasPrefix("GM") || regionCode.hasPrefix("VR")
     }
 
 }

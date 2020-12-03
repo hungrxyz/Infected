@@ -28,7 +28,7 @@ final class Provider: TimelineProvider {
 
         numbersProvider = NumbersProvider()
         
-        numbersProvider?.$national
+        numbersProvider?.$nationalSummary
             .filter { $0 != nil }
             .sink { completion in
                 print(completion)

@@ -51,15 +51,15 @@ struct ContentView: View {
         @ObservedObject var numbersProvider: NumbersProvider
 
         var body: some View {
-            if let national = numbersProvider.national {
+            if let national = numbersProvider.nationalSummary {
                 List {
                     RegionView(summary: national)
                     NavigationLink(
                         destination: AllRegionsView(
                             national: national,
-                            provinces: numbersProvider.provincialSummaries,
-                            securityRegions: numbersProvider.securityRegionsSummaries,
-                            municipalities: numbersProvider.municipalSummaries
+                            provinces: numbersProvider.provincialSummaries?.regions ?? [],
+                            securityRegions: numbersProvider.securityRegionsSummaries?.regions ?? [],
+                            municipalities: numbersProvider.municipalSummaries?.regions ?? []
                         )
                     ) {
                         Text("All Regions")
@@ -90,7 +90,7 @@ private extension NumbersProvider {
 
     static var demo: NumbersProvider {
         let provider = NumbersProvider()
-        provider.national = .demo
+        provider.nationalSummary = .demo
         return provider
     }
 
