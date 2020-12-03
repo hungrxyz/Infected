@@ -179,19 +179,6 @@ private extension Summary {
 
 }
 
-private extension NationalNumbers {
-
-    static let dummyNumbers: NationalNumbers = {
-        let now = Date()
-        return NationalNumbers(
-            latest: Numbers(date: now, cases: 12939, hospitalizations: 238, deaths: 42),
-            previous: Numbers(date: now, cases: 9020, hospitalizations: 238, deaths: 67),
-            total: Numbers(date: now, cases: 432032, hospitalizations: 10429, deaths: 4389)
-        )
-    }()
-
-}
-
 private extension Int {
 
     var color: Color {
