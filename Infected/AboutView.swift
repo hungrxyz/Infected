@@ -17,12 +17,8 @@ struct AboutView: View {
                 Section(header: Text("Data Sources")) {
                     LinkRow(titleKey: "RIVM COVID-19 Dataset",
                             url: URL(string: "https://data.rivm.nl/covid-19/")!)
-                    LinkRow(titleKey: "CoronaWatchNL",
-                            url: URL(string: "https://github.com/J535D165/CoronaWatchNL")!)
                 }
                 Section(header: Text("Acknowledgements")) {
-                    LinkRow(titleKey: "CodableCSV",
-                            url: URL(string: "https://github.com/dehesa/CodableCSV")!)
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Dennis Koolwijk")
                         Text("App icon; virus and broken heart symbols.")
@@ -32,7 +28,11 @@ struct AboutView: View {
                 }
                 if let appVersionText = Bundle.main.appVersionDisplayText {
                     Section {
-                        Text(appVersionText)
+                        HStack {
+                            Text("App Version")
+                            Spacer()
+                            Text(appVersionText)
+                        }
                     }
                 }
             }
