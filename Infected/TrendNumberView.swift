@@ -18,16 +18,16 @@ struct TrendNumberView: View {
         return formatter
     }()
 
-    let trendNumber: Int
+    let number: Int
 
     var body: some View {
         HStack {
-            Text(Self.numberFormatter.string(for: trendNumber) ?? "--")
+            Text(Self.numberFormatter.string(for: number) ?? "--")
                 .font(.system(.title2, design: .rounded)).bold()
-            Image(systemName: trendNumber.imageName)
+            Image(systemName: number.imageName)
                 .font(Font.title2.weight(.bold))
         }
-        .foregroundColor(trendNumber.color)
+        .foregroundColor(number.color)
     }
 }
 
@@ -65,9 +65,9 @@ private extension Int {
 struct TrendView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TrendNumberView(trendNumber: 1234)
-            TrendNumberView(trendNumber: 0)
-            TrendNumberView(trendNumber: -1234567)
+            TrendNumberView(number: 1234)
+            TrendNumberView(number: 0)
+            TrendNumberView(number: -1234567)
         }
         .previewLayout(.sizeThatFits)
         .padding()

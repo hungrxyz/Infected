@@ -9,22 +9,36 @@ import SwiftUI
 
 struct AllRegionsView: View {
 
-    let nationalNumbers: Summary?
-    let provincialNumbers: [ProvinceNumbers]
-    let municipalNumbers: [MunicipalityNumbers]
+    let national: Summary?
+    let provinces: [Summary]
+    let securityRegions: [Summary]
+    let municipalities: [Summary]
 
     var body: some View {
         List {
-            if let nationalNumbers = nationalNumbers {
-                NavigationLink(destination: NetherlandsView(numbers: nationalNumbers)) {
-                    Text("Netherlands")
+            if let national = national {
+                let geoArea = GeoArea.national
+                NavigationLink(destination: GroupedRegionsView(geoArea: geoArea, summaries: [national])) {
+                    Text(geoArea.localizedName)
                 }
             }
-            NavigationLink(destination: ProvincesView(numbers: provincialNumbers)) {
-                Text("Provinces")
+            if provinces.isEmpty == false {
+                let geoArea = GeoArea.provincial
+                NavigationLink(destination: GroupedRegionsView(geoArea: geoArea, summaries: provinces)) {
+                    Text(geoArea.localizedName)
+                }
             }
-            NavigationLink(destination: MunicipalitiesView(numbers: municipalNumbers)) {
-                Text("Municipalities")
+            if securityRegions.isEmpty == false {
+                let geoArea = GeoArea.securityRegional
+                NavigationLink(destination: GroupedRegionsView(geoArea: geoArea, summaries: securityRegions)) {
+                    Text(geoArea.localizedName)
+                }
+            }
+            if municipalities.isEmpty == false {
+                let geoArea = GeoArea.municipal
+                NavigationLink(destination: GroupedRegionsView(geoArea: geoArea, summaries: municipalities)) {
+                    Text(geoArea.localizedName)
+                }
             }
         }
         .listStyle(InsetGroupedListStyle())
@@ -35,7 +49,12 @@ struct AllRegionsView: View {
 #if DEBUG
 struct AreasView_Previews: PreviewProvider {
     static var previews: some View {
-        AllRegionsView(nationalNumbers: .demo, provincialNumbers: [], municipalNumbers: [])
+        AllRegionsView(
+            national: .random,
+            provinces: [.random],
+            securityRegions: [.random],
+            municipalities: [.random]
+        )
     }
 }
 #endif

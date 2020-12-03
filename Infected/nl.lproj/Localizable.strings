@@ -7,8 +7,9 @@
 */
 
 "Netherlands" = "Nederland";
-"Unknown" = "Onbekend";
+"Unlocated" = "Niet Gelokaliseerd";
 "Provinces" = "Provincies";
+"Security Regions" = "Veiligheidsregio's";
 "Municipalities" = "Gemeenten";
 "Cases" = "Gevallen";
 "New Cases" = "Nieuw Gevallen";

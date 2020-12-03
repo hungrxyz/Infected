@@ -11,7 +11,7 @@ struct Summary: Decodable {
 
     let updatedAt: Date?
     let numbersDate: Date?
-    let regionCode: String?
+    let regionCode: String
     let municupalityName: String?
     let provinceName: String?
     let securityRegionName: String?
@@ -29,26 +29,30 @@ struct SummaryNumbers: Decodable {
 
 }
 
-extension Summary: Region {
+extension Summary {
 
-    var id: Int {
-        00
+    var regionName: String {
+        if regionCode == "NL00" {
+            return NSLocalizedString("Netherlands", comment: "")
+        }
+        switch String(regionCode.prefix(2)) {
+        case "GM":
+            return municupalityName ?? NSLocalizedString("Unlocated", comment: "")
+        case "NL":
+            return provinceName ?? NSLocalizedString("Unlocated", comment: "")
+        case "VR":
+            return securityRegionName ?? NSLocalizedString("Unlocated", comment: "")
+        default:
+            return NSLocalizedString("Unlocated", comment: "")
+        }
     }
 
-    var name: String {
-        NSLocalizedString("Netherlands", comment: "")
-    }
+}
 
-    var latest: Numbers {
-        Numbers(date: updatedAt!, cases: positiveCases.new, hospitalizations: hospitalAdmissions.new, deaths: deaths.new)
-    }
+extension Summary: Identifiable {
 
-    var previous: Numbers {
-        Numbers(date: updatedAt!, cases: positiveCases.trend, hospitalizations: hospitalAdmissions.trend, deaths: deaths.trend)
-    }
-
-    var total: Numbers {
-        Numbers(date: updatedAt!, cases: positiveCases.total, hospitalizations: hospitalAdmissions.total, deaths: deaths.total)
+    var id: String {
+        regionCode
     }
 
 }
@@ -58,7 +62,7 @@ extension Summary {
     static let demo = Summary(
         updatedAt: Date(),
         numbersDate: Date(),
-        regionCode: "Code",
+        regionCode: "GM1234",
         municupalityName: "Muni",
         provinceName: "Provi",
         securityRegionName: "Sec Reg",
@@ -102,6 +106,19 @@ extension Summary {
         )
     )
 
+}
+
+extension SummaryNumbers {
+    static let demo = SummaryNumbers(
+        new: 3764,
+        trend: 320,
+        total: 329402
+    )
+    static let random = SummaryNumbers(
+        new: Int.random(in: 0...99999),
+        trend: Int.random(in: -99999...99999),
+        total: Int.random(in: 0...999999999)
+    )
 }
 #endif
 

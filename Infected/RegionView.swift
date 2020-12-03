@@ -9,27 +9,21 @@ import SwiftUI
 
 struct RegionView: View {
 
-    let region: Region
+    let summary: Summary
 
     var body: some View {
-        Section(header: SectionHeader(text: region.name)) {
+        Section(header: SectionHeader(summary: summary)) {
             RowView(
                 representation: .cases,
-                dailyNumber: region.latest.cases ?? 0,
-                totalNumber: region.total.cases ?? 0,
-                trendNumber: region.casesDifferenceToPreviousDay ?? 0
+                numbers: summary.positiveCases
             )
             RowView(
                 representation: .hospitalizations,
-                dailyNumber: region.latest.hospitalizations ?? 0,
-                totalNumber: region.total.hospitalizations ?? 0,
-                trendNumber: region.hospitalizationsDifferenceToPreviousDay ?? 0
+                numbers: summary.hospitalAdmissions
             )
             RowView(
                 representation: .deaths,
-                dailyNumber: region.latest.deaths ?? 0,
-                totalNumber: region.total.deaths ?? 0,
-                trendNumber: region.deathsDifferenceToPreviousDay ?? 0
+                numbers: summary.deaths
             )
         }
         .textCase(.none)
@@ -41,8 +35,8 @@ struct RegionView: View {
 struct DaySectionView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            RegionView(region: NationalNumbers.random)
-            RegionView(region: NationalNumbers.demo)
+            RegionView(summary: .random)
+            RegionView(summary: .demo)
         }
         .listStyle(InsetGroupedListStyle())
         .previewLayout(.sizeThatFits)

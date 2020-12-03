@@ -9,16 +9,8 @@ import SwiftUI
 
 struct RowView: View {
 
-    private static let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
-
     let representation: NumberRepresentation
-    let dailyNumber: Int
-    let totalNumber: Int
-    let trendNumber: Int
+    let numbers: SummaryNumbers
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -35,31 +27,59 @@ struct RowView: View {
             .foregroundColor(.secondary)
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text("New")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    Text(Self.numberFormatter.string(for: dailyNumber) ?? "--")
-                        .font(.system(.title2, design: .rounded)).bold()
+                    HeadlineView(text: "New")
+                    NumberView(number: numbers.new)
                 }
                 Divider()
                 VStack(alignment: .leading) {
-                    Text("Trend")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    TrendNumberView(trendNumber: trendNumber)
+                    HeadlineView(text: "Trend")
+                    TrendNumberView(number: numbers.trend ?? 0)
                 }
                 Divider()
                 VStack(alignment: .leading) {
-                    Text("Total")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    Text(Self.numberFormatter.string(for: totalNumber) ?? "--")
-                        .font(.system(.title2, design: .rounded)).bold()
+                    HeadlineView(text: "Total")
+                    NumberView(number: numbers.total)
                 }
                 Spacer()
             }
         }
         .padding(.vertical, 8)
+    }
+
+    private struct HeadlineView: View {
+
+        let text: String
+
+        var body: some View {
+            Text(text)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+        }
+
+    }
+
+    private struct NumberView: View {
+
+        private static let numberFormatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            return formatter
+        }()
+
+        let number: Int?
+
+        var numberString: String {
+            guard let number = number else {
+                return "--"
+            }
+            return Self.numberFormatter.string(for: number) ?? "--"
+        }
+
+        var body: some View {
+            Text(numberString)
+                .font(.system(.title2, design: .rounded)).bold()
+        }
+
     }
 
 }
@@ -96,16 +116,12 @@ struct RowView_Previews: PreviewProvider {
         Group {
             RowView(
                 representation: .cases,
-                dailyNumber: Int.random(in: 0...9999),
-                totalNumber: Int.random(in: 0...9999999),
-                trendNumber: Int.random(in: -9999...9999)
+                numbers: .random
             )
             .preferredColorScheme(.dark)
             RowView(
                 representation: .hospitalizations,
-                dailyNumber: Int.random(in: 0...9999),
-                totalNumber: Int.random(in: 0...9999999),
-                trendNumber: Int.random(in: -9999...9999)
+                numbers: .random
             )
         }
         .previewLayout(.fixed(width: 350.0, height: 200))

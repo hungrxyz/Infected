@@ -53,19 +53,20 @@ struct ContentView: View {
         var body: some View {
             if let national = numbersProvider.national {
                 List {
-                    RegionView(region: national)
+                    RegionView(summary: national)
                     NavigationLink(
                         destination: AllRegionsView(
-                            nationalNumbers: national,
-                            provincialNumbers: numbersProvider.provincial,
-                            municipalNumbers: numbersProvider.municipal
+                            national: national,
+                            provinces: numbersProvider.provincialSummaries,
+                            securityRegions: numbersProvider.securityRegionsSummaries,
+                            municipalities: numbersProvider.municipalSummaries
                         )
                     ) {
                         Text("All Regions")
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle(Self.dateFormatter.string(from: national.latest.date))
+                .navigationBarTitle(Self.dateFormatter.string(from: national.numbersDate!))
             } else {
                 Text("No latest numbers")
             }

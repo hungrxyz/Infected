@@ -7,8 +7,9 @@
 */
 
 "Netherlands" = "Netherlands";
-"Unknown" = "Unknown";
+"Unlocated" = "Unlocated";
 "Provinces" = "Provinces";
+"Security Regions" = "Security Regions";
 "Municipalities" = "Municipalities";
 "Cases" = "Cases";
 "New Cases" = "New Cases";
@@ -27,3 +28,4 @@
 "App icon; virus and broken heart symbols." = "App icon; virus and broken heart symbols.";
 "View on GitHub" = "View on GitHub";
 "Created by @hungrxyz" = "Created by @hungrxyz";
+

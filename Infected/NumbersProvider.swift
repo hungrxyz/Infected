@@ -17,6 +17,11 @@ final class NumbersProvider: ObservableObject {
     @Published var provincial: [ProvinceNumbers] = []
     @Published var municipal: [MunicipalityNumbers] = []
 
+    @Published var nationalSummary: Summary?
+    @Published var provincialSummaries: [Summary] = []
+    @Published var securityRegionsSummaries: [Summary] = []
+    @Published var municipalSummaries: [Summary] = []
+
     let coronaWatchAPI: CoronaWatchNLAPI
     let infectedAPI: InfectedAPI
     let widgetCenter: WidgetCenter
