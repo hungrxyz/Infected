@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct GroupedSummaries: Decodable {
+struct GroupedSummaries {
 
     let updatedAt: Date
     let numbersDate: Date
     let regions: [Summary]
 
 }
+
+extension GroupedSummaries: Decodable {}

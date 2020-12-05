@@ -62,4 +62,17 @@ final class InfectedAPI {
             .eraseToAnyPublisher()
     }
 
+    func region(regionCode: String) -> AnyPublisher<Summary, Error> {
+        let regionURL = URL(string: "https://github.com/hungrxyz/infected-data/raw/main/data/latest/region")!
+        let url = regionURL
+            .appendingPathComponent(regionCode)
+            .appendingPathExtension("json")
+
+        return urlSession.dataTaskPublisher(for: url)
+            .map(\.data)
+            .mapError { error -> Error in return error }
+            .decode(type: Summary.self, decoder: jsonDecoder)
+            .eraseToAnyPublisher()
+    }
+
 }

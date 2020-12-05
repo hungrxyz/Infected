@@ -17,14 +17,18 @@ final class NumbersProvider: ObservableObject {
     @Published var provincialSummaries: GroupedSummaries?
     @Published var securityRegionsSummaries: GroupedSummaries?
     @Published var municipalSummaries: GroupedSummaries?
+    @Published var watchlistSummaries: GroupedSummaries?
 
     let infectedAPI: InfectedAPI
     let widgetCenter: WidgetCenter
+    let watchlistKeeper: WatchlistKeeper
 
     init(infectedAPI: InfectedAPI = InfectedAPI(),
-         widgetCenter: WidgetCenter = .shared) {
+         widgetCenter: WidgetCenter = .shared,
+         watchlistKeeper: WatchlistKeeper = WatchlistKeeper()) {
         self.infectedAPI = infectedAPI
         self.widgetCenter = widgetCenter
+        self.watchlistKeeper = watchlistKeeper
     }
 
     func reloadAllRegions() {
@@ -32,6 +36,7 @@ final class NumbersProvider: ObservableObject {
         reloadProvincial()
         reloadSecurityRegions()
         reloadMunicipal()
+        reloadWatchlistRegions()
     }
 
     func reloadNational() {
@@ -68,6 +73,26 @@ final class NumbersProvider: ObservableObject {
                 self?.municipalSummaries = groupedSummaries
             })
             .store(in: &cancellables)
+    }
+
+    func reloadWatchlistRegions() {
+        let regionCodes = watchlistKeeper.list()
+
+        let publishers = regionCodes.map {
+            infectedAPI.region(regionCode: $0)
+        }
+        let basePublisher = publishers[0].map { [$0] }.eraseToAnyPublisher()
+
+        let zipped = publishers.dropFirst().reduce(into: basePublisher) { (result, publisher) in
+            result = result.zip(publisher, { $0 + [$1] }).eraseToAnyPublisher()
+        }
+        zipped
+            .map { GroupedSummaries(updatedAt: $0[0].updatedAt!, numbersDate: $0[0].numbersDate!, regions: $0) }
+            .sink { _ in } receiveValue: { [weak self] summaries in
+                self?.watchlistSummaries = summaries
+        }
+        .store(in: &cancellables)
+
     }
 
 }

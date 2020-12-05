@@ -22,6 +22,7 @@
 		AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
 		AD825D042578306C00CF681B /* GeoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825D032578306C00CF681B /* GeoArea.swift */; };
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
+		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
@@ -418,6 +419,7 @@
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
 				AD825CE12575A6F800CF681B /* Summary.swift in Sources */,
 				ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */,
+				ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */,
 				AD0F97A82579781700030E7C /* GroupedSummaries.swift in Sources */,
 				AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */,
 			);
