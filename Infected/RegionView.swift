@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegionView: View {
 
+    @EnvironmentObject var numbersProvider: NumbersProvider
     @State private var isOnWatchlist: Bool
 
     let summary: Summary
@@ -55,6 +56,7 @@ struct RegionView: View {
         let regionCode = summary.regionCode
         watchlistKeeper.add(regionCode: regionCode)
         isOnWatchlist = watchlistKeeper.isRegionOnWatchlist(regionCode: regionCode)
+        numbersProvider.reloadWatchlistRegions()
     }
 
 }

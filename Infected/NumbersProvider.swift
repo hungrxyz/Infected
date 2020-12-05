@@ -88,6 +88,7 @@ final class NumbersProvider: ObservableObject {
         }
         zipped
             .map { GroupedSummaries(updatedAt: $0[0].updatedAt!, numbersDate: $0[0].numbersDate!, regions: $0) }
+            .receive(on: DispatchQueue.main)
             .sink { _ in } receiveValue: { [weak self] summaries in
                 self?.watchlistSummaries = summaries
         }

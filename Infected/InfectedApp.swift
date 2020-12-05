@@ -12,6 +12,7 @@ struct InfectedApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(NumbersProvider())
         }
     }
 }

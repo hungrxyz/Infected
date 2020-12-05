@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var numbersProvider = NumbersProvider()
+    @EnvironmentObject var numbersProvider: NumbersProvider
     @State var isAboutShown = false
 
     private var aboutButton: some View {
@@ -27,7 +27,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            DailyView(numbersProvider: numbersProvider)
+            WatchlistView()
                 .navigationBarItems(trailing: aboutButton)
                 .sheet(isPresented: $isAboutShown, content: {
                     AboutView()
@@ -38,25 +38,36 @@ struct ContentView: View {
         .onReceive(willEnterForegroundPublisher, perform: numbersProvider.reloadAllRegions)
     }
 
-    private struct DailyView: View {
+    private struct WatchlistView: View {
 
         private static let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
-            formatter.timeStyle = .none
+            formatter.timeStyle = .medium
             formatter.doesRelativeDateFormatting = true
             return formatter
         }()
 
-        @ObservedObject var numbersProvider: NumbersProvider
+        @EnvironmentObject var numbersProvider: NumbersProvider
 
         var body: some View {
-            if let national = numbersProvider.nationalSummary {
+            if let watchlist = numbersProvider.watchlistSummaries {
                 List {
-                    RegionView(summary: national)
+                    if let dateString = Self.dateFormatter.string(from: watchlist.updatedAt) {
+                        let displayString = [
+                            NSLocalizedString("Last updated", comment: ""),
+                            dateString
+                        ].joined(separator: " ")
+                        Text(displayString)
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                    }
+                    ForEach(watchlist.regions) { summary in
+                        RegionView(summary: summary, showWatchlistStatus: false)
+                    }
                     NavigationLink(
                         destination: AllRegionsView(
-                            national: national,
+                            national: numbersProvider.nationalSummary,
                             provinces: numbersProvider.provincialSummaries?.regions ?? [],
                             securityRegions: numbersProvider.securityRegionsSummaries?.regions ?? [],
                             municipalities: numbersProvider.municipalSummaries?.regions ?? []
@@ -66,7 +77,7 @@ struct ContentView: View {
                     }
                 }
                 .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle(Self.dateFormatter.string(from: national.numbersDate!))
+                .navigationBarTitle("Watchlist")
             } else {
                 Text("No latest numbers")
             }
@@ -79,7 +90,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(numbersProvider: .demo)
+            ContentView()
             ContentView()
         }
         .previewDevice("iPhone 12 mini")
