@@ -22,6 +22,7 @@ struct SectionHeader: View {
                 .foregroundColor(.primary)
         }
     }
+
 }
 
 private extension Summary {
@@ -37,10 +38,12 @@ struct SectionHeader_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             List {
-                Section(header: SectionHeader(summary: .random)) {
+                Section(header: SectionHeader(summary: .demo)) {
                     Text(UUID().uuidString)
                 }
+                .textCase(.none)
             }
+            .listStyle(InsetGroupedListStyle())
             List {
                 Section(header: SectionHeader(summary: .random)) {
                     Text(UUID().uuidString)
@@ -52,7 +55,6 @@ struct SectionHeader_Previews: PreviewProvider {
                     Text(UUID().uuidString)
                 }
             }
-            .listStyle(InsetGroupedListStyle())
         }
     }
 }
