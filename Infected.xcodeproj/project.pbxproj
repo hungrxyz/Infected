@@ -22,6 +22,7 @@
 		AD825CE12575A6F800CF681B /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CDB25759D8400CF681B /* Summary.swift */; };
 		AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
 		AD825D042578306C00CF681B /* GeoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825D032578306C00CF681B /* GeoArea.swift */; };
+		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
@@ -95,6 +96,7 @@
 		AD825CD5257596D400CF681B /* InfectedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedAPI.swift; sourceTree = "<group>"; };
 		AD825CDB25759D8400CF681B /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		AD825D032578306C00CF681B /* GeoArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoArea.swift; sourceTree = "<group>"; };
+		ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistKeeper.swift; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -218,6 +220,7 @@
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
 				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
+				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30E251627920064A959 /* Info.plist */,
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */,
 				ADD4C308251627910064A959 /* ContentView.swift in Sources */,
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
