@@ -12,18 +12,22 @@ iOS app built in SwiftUI to bring you the latest COVID-19 numbers in the Netherl
 ## Run the App
 1. Clone this repository.
 1. Open _Infected.xcodeproj_ in Xcode.
-1. Add required configuration files:  
+1. Add required configuration files ([Templates](./config-templates) provided for all files.):  
 `Infected/Infected.xcconfig`  
 `Infected/Infected.entitlements`  
 `InfectedWidget/InfectedWidgetExtension.entitlements`  
-[Templates](./config-templates) provided for all files.
 1. Run _Infected_ scheme on preferred device.
 
 ## Upcoming Features
-1. Watchlist - similar to iOS Stocks app.
-1. Medium / large widget showing regions from watchlist.
-1. Test information - how many tests done, positivity rate,...
-1. ... Propose It by opening an Issue. Build It by opening a Pull Request.
+- [ ] Watchlist (similar to iOS Stocks app).
+- [ ] Medium/large widget showing regions from Watchlist.
+- [ ] Sorting options for regions.
+- [ ] Mortality/Survival rate.
+- [ ] ICU occupancy.
+- [ ] Positive cases per population
+- [ ] Test information (how many tests done, positivity rate,...).
+
+Feel free to propose a feature by opening an Issue or reaching out to me on [Twitter](https://twitter.com/hungrxyz). Or even better, build the feature you want to see and open a pull request.
 
 ## License
-Code base is licensed under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/). Original data is copyright RIVM, collected data is copyright CoronaWatchNL. 
+Code base is licensed under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/). Original data is copyright RIVM.
