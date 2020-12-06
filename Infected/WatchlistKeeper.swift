@@ -47,6 +47,12 @@ final class WatchlistKeeper {
     }
 
     @discardableResult
+    func replaceList(newRegionsCodes codes: [String]) -> [String] {
+        regionCodes = codes
+        return regionCodes
+    }
+
+    @discardableResult
     func remove(regionCode: String) -> [String] {
         var codes = regionCodes
         codes.removeAll { $0 == regionCode }

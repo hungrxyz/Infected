@@ -18,6 +18,7 @@ final class NumbersProvider: ObservableObject {
     @Published var securityRegionsSummaries: GroupedSummaries?
     @Published var municipalSummaries: GroupedSummaries?
     @Published var watchlistSummaries: GroupedSummaries?
+    @Published var watchedSummaries: [Summary] = []
 
     let infectedAPI: InfectedAPI
     let widgetCenter: WidgetCenter
@@ -91,6 +92,7 @@ final class NumbersProvider: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { _ in } receiveValue: { [weak self] summaries in
                 self?.watchlistSummaries = summaries
+                self?.watchedSummaries = summaries.regions
         }
         .store(in: &cancellables)
 

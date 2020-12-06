@@ -11,6 +11,7 @@ struct ContentView: View {
 
     @EnvironmentObject var numbersProvider: NumbersProvider
     @State var isAboutShown = false
+    @State var editMode = EditMode.inactive
 
     private var aboutButton: some View {
         Button(action: {
@@ -27,11 +28,17 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            WatchlistView()
-                .navigationBarItems(trailing: aboutButton)
-                .sheet(isPresented: $isAboutShown, content: {
-                    AboutView()
-                })
+            if let watchlist = numbersProvider.watchlistSummaries {
+                WatchlistView(editMode: $editMode,
+                              lastUpdated: watchlist.updatedAt)
+                    .navigationBarItems(leading: EditButton(), trailing: aboutButton)
+                    .environment(\.editMode, $editMode)
+                    .sheet(isPresented: $isAboutShown, content: {
+                        AboutView()
+                    })
+            } else {
+                Text("No latest numbers")
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: numbersProvider.reloadAllRegions)
@@ -48,12 +55,17 @@ struct ContentView: View {
             return formatter
         }()
 
+        private let watchlistKeeper = WatchlistKeeper()
+
         @EnvironmentObject var numbersProvider: NumbersProvider
+        @Binding var editMode: EditMode
+        let lastUpdated: Date
 
         var body: some View {
-            if let watchlist = numbersProvider.watchlistSummaries {
-                List {
-                    if let dateString = Self.dateFormatter.string(from: watchlist.updatedAt) {
+            List {
+                switch editMode {
+                case .inactive:
+                    if let dateString = Self.dateFormatter.string(from: lastUpdated) {
                         let displayString = [
                             NSLocalizedString("Last updated", comment: ""),
                             dateString
@@ -62,7 +74,7 @@ struct ContentView: View {
                             .font(.callout)
                             .foregroundColor(.secondary)
                     }
-                    ForEach(watchlist.regions) { summary in
+                    ForEach(numbersProvider.watchedSummaries) { summary in
                         RegionView(summary: summary, showWatchlistStatus: false)
                     }
                     NavigationLink(
@@ -75,13 +87,34 @@ struct ContentView: View {
                     ) {
                         Text("All Regions")
                     }
+                default:
+                    ForEach(numbersProvider.watchedSummaries) { summary in
+                        Text(summary.regionName)
+                    }
+                    .onMove(perform: onMove)
+                    .onDelete(perform: onDelete)
                 }
-                .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle("Watchlist")
-            } else {
-                Text("No latest numbers")
+
             }
+            .listStyle(InsetGroupedListStyle())
+            .navigationBarTitle("Watchlist")
         }
+
+        private func onMove(source: IndexSet, destination: Int) {
+            numbersProvider.watchedSummaries.move(fromOffsets: source, toOffset: destination)
+            updateWatchlist()
+        }
+
+        private func onDelete(offsets: IndexSet) {
+            numbersProvider.watchedSummaries.remove(atOffsets: offsets)
+            updateWatchlist()
+        }
+
+        private func updateWatchlist() {
+            let regionCodes = numbersProvider.watchedSummaries.map(\.regionCode)
+            watchlistKeeper.replaceList(newRegionsCodes: regionCodes)
+        }
+
     }
 
 }
