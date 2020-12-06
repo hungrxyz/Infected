@@ -26,7 +26,7 @@ final class WatchlistKeeper {
     }
 
     private let defaults: UserDefaults
-    init(defaults: UserDefaults = .standard) {
+    init(defaults: UserDefaults = .infected) {
         self.defaults = defaults
     }
 

@@ -24,6 +24,8 @@
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB72700257CFDAA00AB2DB1 /* Infected.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */; };
+		ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
+		ADB7274D257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
@@ -89,6 +91,7 @@
 		ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Infected.entitlements; sourceTree = "<group>"; };
 		ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Infected.xcconfig; sourceTree = "<group>"; };
 		ADB7273E257D03C900AB2DB1 /* InfectedWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InfectedWidgetExtension.entitlements; sourceTree = "<group>"; };
+		ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Infected.swift"; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -201,6 +204,7 @@
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
 				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
 				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
+				ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30E251627920064A959 /* Info.plist */,
@@ -366,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
+				ADB7274D257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */,
 				AD825CE12575A6F800CF681B /* Summary.swift in Sources */,
 				ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */,
 				ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */,
@@ -388,6 +393,7 @@
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
 				AD825CD6257596D400CF681B /* InfectedAPI.swift in Sources */,
 				AD0F97A32579763900030E7C /* GroupedSummaries.swift in Sources */,
+				ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */,
 				AD825CDC25759D8400CF681B /* Summary.swift in Sources */,
 				AD825D042578306C00CF681B /* GeoArea.swift in Sources */,
 				ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */,
