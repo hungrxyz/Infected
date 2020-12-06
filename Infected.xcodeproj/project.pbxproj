@@ -23,6 +23,7 @@
 		AD825D042578306C00CF681B /* GeoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825D032578306C00CF681B /* GeoArea.swift */; };
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
+		ADB72700257CFDAA00AB2DB1 /* Infected.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
@@ -33,7 +34,6 @@
 		ADD4C30A251627920064A959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD4C309251627920064A959 /* Assets.xcassets */; };
 		ADD4C30D251627920064A959 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD4C30C251627920064A959 /* Preview Assets.xcassets */; };
 		ADD4C318251627920064A959 /* InfectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C317251627920064A959 /* InfectedTests.swift */; };
-		ADD4C323251627920064A959 /* InfectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C322251627920064A959 /* InfectedUITests.swift */; };
 		ADE10EF0254F3FEA0080B975 /* AllRegionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */; };
 		ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE10EFB254F45930080B975 /* GroupedRegionsView.swift */; };
 		ADE4EDE725604F530035CBE5 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4EDE625604F530035CBE5 /* CloseButton.swift */; };
@@ -51,13 +51,6 @@
 			remoteInfo = InfectedWidgetExtension;
 		};
 		ADD4C314251627920064A959 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADD4C2FA251627910064A959 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADD4C301251627910064A959;
-			remoteInfo = Infected;
-		};
-		ADD4C31F251627920064A959 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADD4C2FA251627910064A959 /* Project object */;
 			proxyType = 1;
@@ -93,6 +86,9 @@
 		AD825CDB25759D8400CF681B /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		AD825D032578306C00CF681B /* GeoArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoArea.swift; sourceTree = "<group>"; };
 		ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistKeeper.swift; sourceTree = "<group>"; };
+		ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Infected.entitlements; sourceTree = "<group>"; };
+		ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Infected.xcconfig; sourceTree = "<group>"; };
+		ADB7273E257D03C900AB2DB1 /* InfectedWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InfectedWidgetExtension.entitlements; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -108,9 +104,6 @@
 		ADD4C313251627920064A959 /* InfectedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfectedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD4C317251627920064A959 /* InfectedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedTests.swift; sourceTree = "<group>"; };
 		ADD4C319251627920064A959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADD4C31E251627920064A959 /* InfectedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfectedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADD4C322251627920064A959 /* InfectedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedUITests.swift; sourceTree = "<group>"; };
-		ADD4C324251627920064A959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRegionsView.swift; sourceTree = "<group>"; };
 		ADE10EFB254F45930080B975 /* GroupedRegionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedRegionsView.swift; sourceTree = "<group>"; };
 		ADE4EDE625604F530035CBE5 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -142,13 +135,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADD4C31B251627920064A959 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -164,6 +150,7 @@
 		ADBB7CE32517C1DA00F3C8B4 /* InfectedWidget */ = {
 			isa = PBXGroup;
 			children = (
+				ADB7273E257D03C900AB2DB1 /* InfectedWidgetExtension.entitlements */,
 				ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */,
 				ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */,
 				ADBB7CE82517C1DC00F3C8B4 /* Info.plist */,
@@ -174,9 +161,9 @@
 		ADD4C2F9251627910064A959 = {
 			isa = PBXGroup;
 			children = (
+				ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */,
 				ADD4C304251627910064A959 /* Infected */,
 				ADD4C316251627920064A959 /* InfectedTests */,
-				ADD4C321251627920064A959 /* InfectedUITests */,
 				ADBB7CE32517C1DA00F3C8B4 /* InfectedWidget */,
 				ADBB7CDE2517C1DA00F3C8B4 /* Frameworks */,
 				ADD4C303251627910064A959 /* Products */,
@@ -188,7 +175,6 @@
 			children = (
 				ADD4C302251627910064A959 /* Infected.app */,
 				ADD4C313251627920064A959 /* InfectedTests.xctest */,
-				ADD4C31E251627920064A959 /* InfectedUITests.xctest */,
 				ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */,
 			);
 			name = Products;
@@ -197,6 +183,7 @@
 		ADD4C304251627910064A959 /* Infected */ = {
 			isa = PBXGroup;
 			children = (
+				ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */,
 				ADD4C305251627910064A959 /* InfectedApp.swift */,
 				AD825CD5257596D400CF681B /* InfectedAPI.swift */,
 				AD825CDB25759D8400CF681B /* Summary.swift */,
@@ -237,15 +224,6 @@
 				ADD4C319251627920064A959 /* Info.plist */,
 			);
 			path = InfectedTests;
-			sourceTree = "<group>";
-		};
-		ADD4C321251627920064A959 /* InfectedUITests */ = {
-			isa = PBXGroup;
-			children = (
-				ADD4C322251627920064A959 /* InfectedUITests.swift */,
-				ADD4C324251627920064A959 /* Info.plist */,
-			);
-			path = InfectedUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,24 +287,6 @@
 			productReference = ADD4C313251627920064A959 /* InfectedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ADD4C31D251627920064A959 /* InfectedUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ADD4C32D251627920064A959 /* Build configuration list for PBXNativeTarget "InfectedUITests" */;
-			buildPhases = (
-				ADD4C31A251627920064A959 /* Sources */,
-				ADD4C31B251627920064A959 /* Frameworks */,
-				ADD4C31C251627920064A959 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ADD4C320251627920064A959 /* PBXTargetDependency */,
-			);
-			name = InfectedUITests;
-			productName = InfectedUITests;
-			productReference = ADD4C31E251627920064A959 /* InfectedUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -343,10 +303,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					ADD4C312251627920064A959 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = ADD4C301251627910064A959;
-					};
-					ADD4C31D251627920064A959 = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = ADD4C301251627910064A959;
 					};
@@ -369,7 +325,6 @@
 			targets = (
 				ADD4C301251627910064A959 /* Infected */,
 				ADD4C312251627920064A959 /* InfectedTests */,
-				ADD4C31D251627920064A959 /* InfectedUITests */,
 				ADBB7CDC2517C1DA00F3C8B4 /* InfectedWidgetExtension */,
 			);
 		};
@@ -391,18 +346,12 @@
 			files = (
 				ADD4C30D251627920064A959 /* Preview Assets.xcassets in Resources */,
 				AD131CBE2559D393003077F3 /* Localizable.strings in Resources */,
+				ADB72700257CFDAA00AB2DB1 /* Infected.xcconfig in Resources */,
 				ADD4C30A251627920064A959 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADD4C311251627920064A959 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADD4C31C251627920064A959 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,14 +406,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADD4C31A251627920064A959 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADD4C323251627920064A959 /* InfectedUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -477,11 +418,6 @@
 			isa = PBXTargetDependency;
 			target = ADD4C301251627910064A959 /* Infected */;
 			targetProxy = ADD4C314251627920064A959 /* PBXContainerItemProxy */;
-		};
-		ADD4C320251627920064A959 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ADD4C301251627910064A959 /* Infected */;
-			targetProxy = ADD4C31F251627920064A959 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -503,8 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = InfectedWidget/InfectedWidgetExtension.entitlements;
 				INFOPLIST_FILE = InfectedWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,7 +448,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,8 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = InfectedWidget/InfectedWidgetExtension.entitlements;
 				INFOPLIST_FILE = InfectedWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,7 +468,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -544,6 +476,7 @@
 		};
 		ADD4C325251627920064A959 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -576,9 +509,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -597,11 +528,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -610,6 +539,7 @@
 		};
 		ADD4C326251627920064A959 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -642,9 +572,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -657,10 +585,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -674,10 +600,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = Infected/Infected.entitlements;
 				DEVELOPMENT_ASSET_PATHS = "\"Infected/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Infected/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -686,7 +610,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -698,10 +621,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = Infected/Infected.entitlements;
 				DEVELOPMENT_ASSET_PATHS = "\"Infected/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Infected/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -710,7 +631,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -721,8 +641,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InfectedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -731,8 +649,6 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Infected.app/Infected";
@@ -744,8 +660,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InfectedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -754,53 +668,9 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Infected.app/Infected";
-			};
-			name = Release;
-		};
-		ADD4C32E251627920064A959 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = InfectedUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Infected;
-			};
-			name = Debug;
-		};
-		ADD4C32F251627920064A959 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = InfectedUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Infected;
 			};
 			name = Release;
 		};
@@ -839,15 +709,6 @@
 			buildConfigurations = (
 				ADD4C32B251627920064A959 /* Debug */,
 				ADD4C32C251627920064A959 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ADD4C32D251627920064A959 /* Build configuration list for PBXNativeTarget "InfectedUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ADD4C32E251627920064A959 /* Debug */,
-				ADD4C32F251627920064A959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
