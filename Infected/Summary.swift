@@ -38,7 +38,7 @@ extension Summary {
         switch String(regionCode.prefix(2)) {
         case "GM":
             return municupalityName ?? NSLocalizedString("Unlocated", comment: "")
-        case "NL":
+        case "PV":
             return provinceName ?? NSLocalizedString("Unlocated", comment: "")
         case "VR":
             return securityRegionName ?? NSLocalizedString("Unlocated", comment: "")
