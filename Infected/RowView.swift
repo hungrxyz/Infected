@@ -30,11 +30,13 @@ struct RowView: View {
                     HeadlineView(text: "New")
                     NumberView(number: numbers.new)
                 }
+                .layoutPriority(10)
                 Divider()
                 VStack(alignment: .leading) {
                     HeadlineView(text: "Trend")
                     TrendNumberView(number: numbers.trend ?? 0)
                 }
+                .layoutPriority(9)
                 Divider()
                 VStack(alignment: .leading) {
                     HeadlineView(text: "Total")
