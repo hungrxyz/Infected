@@ -9,8 +9,8 @@ import Foundation
 
 struct GroupedSummaries {
 
-    let updatedAt: Date
-    let numbersDate: Date
+    let updatedAt: Date?
+    let numbersDate: Date?
     let regions: [Summary]
 
 }

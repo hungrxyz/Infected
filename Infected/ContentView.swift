@@ -59,13 +59,13 @@ struct ContentView: View {
 
         @EnvironmentObject var numbersProvider: NumbersProvider
         @Binding var editMode: EditMode
-        let lastUpdated: Date
+        let lastUpdated: Date?
 
         var body: some View {
             List {
                 switch editMode {
                 case .inactive:
-                    if let dateString = Self.dateFormatter.string(from: lastUpdated) {
+                    if let dateString = lastUpdated.flatMap(Self.dateFormatter.string) {
                         let displayString = [
                             NSLocalizedString("Last updated", comment: ""),
                             dateString
