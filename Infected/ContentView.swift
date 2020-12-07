@@ -37,7 +37,11 @@ struct ContentView: View {
                         AboutView()
                     })
             } else {
-                Text("No latest numbers")
+                HStack(spacing: 8) {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                    Text("Loading...")
+                }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
