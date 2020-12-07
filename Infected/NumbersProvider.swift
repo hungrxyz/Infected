@@ -83,7 +83,7 @@ final class NumbersProvider: ObservableObject {
             infectedAPI.region(regionCode: $0)
                 .subscribe(on: DispatchQueue.global(qos: .userInitiated))
                 .map { $0 as Summary? }
-                .compactMap { $0 }
+                .replaceError(with: nil)
         }
         guard let basePublisher = publishers.first?.map({ [$0] }).eraseToAnyPublisher() else {
             return
@@ -93,7 +93,7 @@ final class NumbersProvider: ObservableObject {
             result = result.zip(publisher, { $0 + [$1] }).eraseToAnyPublisher()
         }
         zipped
-            .map { GroupedSummaries(updatedAt: $0.first?.updatedAt, numbersDate: $0.first?.numbersDate, regions: $0) }
+            .map { GroupedSummaries(updatedAt: $0.first??.updatedAt, numbersDate: $0.first??.numbersDate, regions: $0.compactMap { $0 }) }
             .receive(on: DispatchQueue.main)
             .sink { _ in } receiveValue: { [weak self] summaries in
                 self?.watchlistSummaries = summaries
