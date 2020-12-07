@@ -11,8 +11,8 @@
 "Provinces" = "Provinces";
 "Security Regions" = "Security Regions";
 "Municipalities" = "Municipalities";
-"Cases" = "Cases";
-"New Cases" = "New Cases";
+"Cases" = "Confirmed Cases";
+"New Cases" = "Confirmed Cases";
 "Hospitalizations" = "Hospitalizations";
 "Deaths" = "Deaths";
 "Regions" = "Regions";

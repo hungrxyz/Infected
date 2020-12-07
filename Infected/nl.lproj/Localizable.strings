@@ -11,10 +11,10 @@
 "Provinces" = "Provincies";
 "Security Regions" = "Veiligheidsregio's";
 "Municipalities" = "Gemeenten";
-"Cases" = "Gevallen";
-"New Cases" = "Nieuw Gevallen";
+"Cases" = "Positieve Testen";
+"New Cases" = "Positieve Testen";
 "Hospitalizations" = "Ziekenhuisopnames";
-"Deaths" = "Overlijdens";
+"Deaths" = "Sterfgevallen";
 "Regions" = "Regio's";
 "All Regions" = "Alle Regio's";
 "No latest numbers" = "Geen laatste cijfers.";
@@ -28,7 +28,7 @@
 "App icon; virus and broken heart symbols." = "App icon; virus en gebroken hart symbolen.";
 "App Version" = "App Versie";
 "View on GitHub" = "Bekijk op GitHub";
-"Watchlist" = "Kijklijst";
+"Watchlist" = "Volglijst";
 "Last updated" = "Laatst bijgewerkt";
-"Add to Watchlist" = "Toevoegen aan Kijklijst";
-"On Watchlist" = "Op Kijklijst";
+"Add to Watchlist" = "Toevoegen aan Volglijst";
+"On Watchlist" = "Op Volglijst";
