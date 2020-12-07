@@ -15,8 +15,10 @@ struct AboutView: View {
         NavigationView {
             List {
                 Section(header: Text("Data Sources")) {
-                    LinkRow(titleKey: "RIVM COVID-19 Dataset",
-                            url: URL(string: "https://data.rivm.nl/covid-19/")!)
+                    LinkRow(
+                        titleKey: "RIVM",
+                        url: URL( "https://data.rivm.nl/geonetwork/srv/dut/catalog.search#/metadata/5f6bc429-1596-490e-8618-1ed8fd768427")
+                    )
                 }
                 Section(header: Text("Acknowledgements")) {
                     VStack(alignment: .leading, spacing: 4) {
@@ -25,6 +27,16 @@ struct AboutView: View {
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
+                }
+                Section {
+                    LinkRow(
+                        titleKey: "Follow us on Twitter",
+                        url: URL("https://twitter.com/Infected_App")
+                    )
+                    LinkRow(
+                        titleKey: "View on GitHub",
+                        url: URL("https://github.com/hungrxyz/Infected")
+                    )
                 }
                 if let appVersionText = Bundle.main.appVersionDisplayText {
                     Section {
@@ -55,7 +67,7 @@ struct AboutView: View {
                 Spacer()
                 Image(systemName: "link")
             }
-            .foregroundColor(.primary)
+            .foregroundColor(.blue)
         }
 
     }
@@ -71,6 +83,14 @@ private extension Bundle {
             return nil
         }
         return "\(marketingVersion) (\(buildNumber))"
+    }
+
+}
+
+private extension URL {
+
+    init(_ string: StaticString) {
+        self.init(string: String("\(string)"))!
     }
 
 }
