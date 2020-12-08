@@ -42,7 +42,7 @@ struct AllRegionsView: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarTitle("Regions")
+        .navigationBarTitle("Regions", displayMode: .inline)
     }
 }
 
