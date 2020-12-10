@@ -4,7 +4,7 @@
 # Infected – COVID-19 NL
 iOS app built in SwiftUI to bring you the latest COVID-19 numbers in the Netherlands as reported by [RIVM](https://data.rivm.nl/covid-19/).
 
-<img src=./assets/my-regions.png width=250><img src=./assets/my-regions-edit.png width=250><img src=./assets/all-regions.png width=250><img src=./assets/provinces.png width=250>
+<img src=./assets/my-regions.png width=250><img src=./assets/all-regions.png width=250><img src=./assets/provinces.png width=250>
 
 ## Data Sources
 - [RIVM](https://data.rivm.nl/covid-19/)
