@@ -169,6 +169,18 @@ private extension Summary {
                 trend: 0,
                 total: 42304
             ),
+            hospitalOccupancy: Occupancy(
+                newAdmissions: 287,
+                newAdmissionsTrend: 23,
+                currentlyOccupied: 1842,
+                currentlyOccupiedTrend: -38
+            ),
+            intensiveCareOccupancy: Occupancy(
+                newAdmissions: 48,
+                newAdmissionsTrend: -2,
+                currentlyOccupied: 492,
+                currentlyOccupiedTrend: 8
+            ),
             deaths: SummaryNumbers(
                 new: 48,
                 trend: -16,
