@@ -29,9 +29,28 @@ struct RegionView: View {
 
     var body: some View {
         Section(header: SectionHeader(summary: summary)) {
-            RowView(representation: .cases, numbers: summary.positiveCases)
-            RowView(representation: .hospitalizations, numbers: summary.hospitalAdmissions)
-            RowView(representation: .deaths, numbers: summary.deaths)
+            RowView(representation: .cases, numbers: summary.positiveCases, occupancy: nil)
+            if let hospitalOccupancy = summary.hospitalOccupancy {
+                RowView(
+                    representation: .hospitalOccupancy,
+                    numbers: nil,
+                    occupancy: hospitalOccupancy
+                )
+            } else {
+                RowView(
+                    representation: .hospitalizations,
+                    numbers: summary.hospitalAdmissions,
+                    occupancy: nil
+                )
+            }
+            if let intensiveCareOccupancy = summary.intensiveCareOccupancy {
+                RowView(
+                    representation: .intensiveCareOccupancy,
+                    numbers: nil,
+                    occupancy: intensiveCareOccupancy
+                )
+            }
+            RowView(representation: .deaths, numbers: summary.deaths, occupancy: nil)
             if showWatchlistStatus {
                 if isOnWatchlist {
                     HStack {

@@ -12,8 +12,8 @@ struct TrendNumberView: View {
     private static let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.positivePrefix = "+"
-        formatter.negativePrefix = "-"
+        formatter.positivePrefix = ""
+        formatter.negativePrefix = ""
         formatter.zeroSymbol = "0"
         return formatter
     }()
@@ -21,11 +21,12 @@ struct TrendNumberView: View {
     let number: Int
 
     var body: some View {
-        HStack {
+        HStack(spacing: 2) {
             Text(Self.numberFormatter.string(for: number) ?? "--")
-                .font(.system(.title2, design: .rounded)).bold()
+                .font(.system(.callout, design: .rounded)).bold()
+                .layoutPriority(10)
             Image(systemName: number.imageName)
-                .font(Font.title2.weight(.bold))
+                .font(Font.footnote.weight(.bold))
         }
         .foregroundColor(number.color)
     }
@@ -36,11 +37,11 @@ private extension Int {
     var imageName: String {
         switch signum() {
         case -1:
-            return "arrow.down.forward"
+            return "arrow.down"
         case 0:
             return "arrow.forward"
         case 1:
-            return "arrow.up.forward"
+            return "arrow.up"
         default:
             fatalError()
         }
