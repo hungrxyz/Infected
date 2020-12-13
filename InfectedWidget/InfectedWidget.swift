@@ -69,23 +69,38 @@ struct InfectedWidgetEntryView : View {
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("NL - \(Self.dateFormatter.string(from: entry.summary.updatedAt ?? Date()))")
                     .font(Font.system(size: 14, weight: .semibold))
                     .foregroundColor(.secondary)
                 NumbersView(
-                    kindLocalizedStringKey: "New Cases",
-                    latestNumber: entry.summary.positiveCases.new ?? 0,
+                    numberRepresentation: .cases,
+                    latestNumber: entry.summary.positiveCases.new ?? -1,
                     trendNumber: entry.summary.positiveCases.trend ?? 0
                 )
+                if let hospitalOccupancy = entry.summary.hospitalOccupancy {
+                    NumbersView(
+                        numberRepresentation: .hospitalOccupancy,
+                        latestNumber: hospitalOccupancy.newAdmissions ?? -1,
+                        trendNumber: hospitalOccupancy.newAdmissionsTrend ?? 0
+                    )
+                } else {
+                    NumbersView(
+                        numberRepresentation: .hospitalizations,
+                        latestNumber: entry.summary.hospitalAdmissions.new ?? -1,
+                        trendNumber: entry.summary.hospitalAdmissions.trend ?? 0
+                    )
+                }
+                if let intensiveCareOccupancy = entry.summary.intensiveCareOccupancy {
+                    NumbersView(
+                        numberRepresentation: .intensiveCareOccupancy,
+                        latestNumber: intensiveCareOccupancy.newAdmissions ?? -1,
+                        trendNumber: intensiveCareOccupancy.newAdmissionsTrend ?? 0
+                    )
+                }
                 NumbersView(
-                    kindLocalizedStringKey: "Hospitalizations",
-                    latestNumber: entry.summary.hospitalAdmissions.new ?? 0,
-                    trendNumber: entry.summary.hospitalAdmissions.trend ?? 0
-                )
-                NumbersView(
-                    kindLocalizedStringKey: "Deaths",
-                    latestNumber: entry.summary.deaths.new ?? 0,
+                    numberRepresentation: .deaths,
+                    latestNumber: entry.summary.deaths.new ?? -1,
                     trendNumber: entry.summary.deaths.trend ?? 0
                 )
             }
@@ -111,22 +126,37 @@ struct InfectedWidgetEntryView : View {
             return formatter
         }()
 
-        let kindLocalizedStringKey: LocalizedStringKey
+        let numberRepresentation: NumberRepresentation
         let latestNumber: Int
         let trendNumber: Int
 
+        var image: Image {
+            switch numberRepresentation {
+            case .deaths:
+                return Image(numberRepresentation.symbolName)
+            default:
+                return Image(systemName: numberRepresentation.symbolName)
+            }
+        }
+
         var body: some View {
-            VStack(alignment: .leading) {
-                Text(kindLocalizedStringKey)
-                    .font(.system(size: 12, weight: .regular))
-                    .foregroundColor(.secondary)
-                HStack(alignment: .lastTextBaseline, spacing: 4) {
-                    Text(Self.numberFormatter.string(for: latestNumber) ?? "--")
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundColor(.primary)
-                    Text(Self.trendNumberFormatter.string(for: trendNumber) ?? "--")
-                        .font(.system(size: 13, weight: .bold, design: .rounded))
-                        .foregroundColor(trendNumber.color)
+            ZStack(alignment: .leading) {
+                HStack {
+                    image
+                        .frame(width: 15, height: 15)
+                        .font(.system(size: 18, weight: .light, design: .rounded))
+                        .imageScale(.small)
+                        .layoutPriority(50)
+                    HStack(alignment: .lastTextBaseline, spacing: 2) {
+                        Text(Self.numberFormatter.string(for: latestNumber) ?? "--")
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .foregroundColor(.primary)
+                            .layoutPriority(100)
+                        Text(Self.trendNumberFormatter.string(for: trendNumber) ?? "--")
+                            .font(.system(size: 13, weight: .bold, design: .rounded))
+                            .foregroundColor(trendNumber.color)
+                            .lineLimit(1)
+                    }
                 }
             }
         }
@@ -203,6 +233,23 @@ private extension Int {
             return .red
         default:
             fatalError()
+        }
+    }
+
+}
+
+private extension NumberRepresentation {
+
+    var symbolName: String {
+        switch self {
+        case .cases:
+            return "plus.rectangle.on.folder"
+        case .hospitalizations, .hospitalOccupancy:
+            return "cross"
+        case .intensiveCareOccupancy:
+            return "waveform.path.ecg.rectangle"
+        case .deaths:
+            return "heart.broken"
         }
     }
 
