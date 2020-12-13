@@ -12,14 +12,12 @@
 "Security Regions" = "Veiligheidsregio's";
 "Municipalities" = "Gemeenten";
 "Cases" = "Positieve Testen";
-"New Cases" = "Positieve Testen";
 "Hospitalizations" = "Ziekenhuisopnames";
 "Deaths" = "Sterfgevallen";
 "Regions" = "Regio's";
 "All Regions" = "Alle Regio's";
 "Loading..." = "Bezig met laden...";
 "New" = "Nieuw";
-"Trend" = "Trend";
 "Total" = "Totaal";
 "Latest Numbers" = "Nieuwste Nummers";
 "Shows latest COVID-19 numbers in the Netherlands." = "Toont de nieuwste COVID-19 nummers in Nederland.";
@@ -33,3 +31,5 @@
 "Last updated" = "Laatst bijgewerkt";
 "Add to Watchlist" = "Toevoegen aan Mijn Regio's";
 "On Watchlist" = "Mijn Regio";
+"Intensive Care" = "Intensive Care";
+"Occupied Beds" = "Bezette Bedden";

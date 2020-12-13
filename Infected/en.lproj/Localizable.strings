@@ -12,14 +12,12 @@
 "Security Regions" = "Security Regions";
 "Municipalities" = "Municipalities";
 "Cases" = "Confirmed Cases";
-"New Cases" = "Confirmed Cases";
 "Hospitalizations" = "Hospitalizations";
 "Deaths" = "Deaths";
 "Regions" = "Regions";
 "All Regions" = "All Regions";
 "Loading..." = "Loading...";
 "New" = "New";
-"Trend" = "Trend";
 "Total" = "Total";
 "Latest Numbers" = "Latest Numbers";
 "Shows latest COVID-19 numbers in the Netherlands." = "Shows latest COVID-19 numbers in the Netherlands.";
@@ -33,4 +31,5 @@
 "Last updated" = "Last updated";
 "Add to Watchlist" = "Add to My Regions";
 "On Watchlist" = "My Region";
-
+"Intensive Care" = "Intensive Care";
+"Occupied Beds" = "Occupied Beds";
