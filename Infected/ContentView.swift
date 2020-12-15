@@ -54,7 +54,7 @@ struct ContentView: View {
         private static let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
-            formatter.timeStyle = .medium
+            formatter.timeStyle = .short
             formatter.doesRelativeDateFormatting = true
             return formatter
         }()
