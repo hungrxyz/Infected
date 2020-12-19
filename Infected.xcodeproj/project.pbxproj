@@ -24,7 +24,6 @@
 		AD825D042578306C00CF681B /* GeoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825D032578306C00CF681B /* GeoArea.swift */; };
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
-		ADB72700257CFDAA00AB2DB1 /* Infected.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */; };
 		ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
 		ADB7274D257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
@@ -299,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					ADBB7CDC2517C1DA00F3C8B4 = {
 						CreatedOnToolsVersion = 12.0;
@@ -351,7 +350,6 @@
 			files = (
 				ADD4C30D251627920064A959 /* Preview Assets.xcassets in Resources */,
 				AD131CBE2559D393003077F3 /* Localizable.strings in Resources */,
-				ADB72700257CFDAA00AB2DB1 /* Infected.xcconfig in Resources */,
 				ADD4C30A251627920064A959 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
