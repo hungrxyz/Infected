@@ -19,6 +19,14 @@ struct AboutView: View {
                         titleKey: "RIVM",
                         url: URL( "https://data.rivm.nl/geonetwork/srv/dut/catalog.search#/metadata/5f6bc429-1596-490e-8618-1ed8fd768427")
                     )
+                    LinkView(
+                        titleKey: "NICE",
+                        url: URL( "https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie")
+                    )
+                    LinkView(
+                        titleKey: "LCPS",
+                        url: URL("https://lcps.nu/datafeed/")
+                    )
                 }
                 Section(header: Text("Acknowledgements")) {
                     VStack(alignment: .leading, spacing: 4) {
