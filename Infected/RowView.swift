@@ -13,6 +13,8 @@ struct RowView: View {
     let numbers: SummaryNumbers?
     let occupancy: Occupancy?
 
+    @State private var isInfoShown = false
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
@@ -23,9 +25,18 @@ struct RowView: View {
                     Image(systemName: representation.symbolName)
                 }
                 Text(representation.displayNameLocalizedStringKey)
+                if occupancy != nil {
+                    Spacer()
+                    Image(systemName: "info.circle")
+                        .onTapGesture { isInfoShown.toggle() }
+                        .foregroundColor(.blue)
+                }
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.secondary)
+            .sheet(isPresented: $isInfoShown, content: {
+                NationalHospitalInfoView()
+            })
             HStack(alignment: .top) {
                 if let numbers = numbers {
                     DataPointView(

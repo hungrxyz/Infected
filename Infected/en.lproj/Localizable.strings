@@ -33,3 +33,15 @@
 "On Watchlist" = "My Region";
 "Intensive Care" = "Intensive Care";
 "Occupied Beds" = "Occupied Beds";
+"Hospital / Intensive Care Occupancy" = "Hospital / Intensive Care Occupancy";
+"Numbers of " = "Numbers of ";
+" and " = " and ";
+" are coming from different sources and are not directly corelated." = " are coming from different sources at different times, therefore trends of new admissions and currently occupied beds should not be compared.";
+"Why are numbers of New and Occupied Beds coming from different sources" = "Why are numbers of New and Occupied Beds coming from different sources";
+"LCPS - NICE difference FAQ quote" = "The figures from the LCPS are often compared with the figures from the NICE registration. However, the two data sets contain different data and serve different purposes. For LCPS it is important to have insight into the number of required and occupied COVID and non-COVID beds in hospitals. The LCPS therefore has a capacity perspective and for this uses aggregated information collected by the RCPSs. For the NICE it is important to have insight into the number of (new) COVID-19 patients per day in the ICU and in the clinic and use data at patient level (BSN) for this. The figures from the NICE and the LCPS cannot therefore be directly compared with each other, as these figures relate to other concepts (patient vs occupation) and are not obtained continuously but with fixed snapshots. In addition, the status of the patient (\"still suspicious\" or \"no longer positive\") can lead to differences. For more information about NICE, see the NICE website (www.stichting-nice.nl). — LCPS (Translated from Dutch by Google Translate)";
+"Source - LCPS FAQ" = "Source - LCPS (in Dutch)";
+"New Admissions" = "New Admissions";
+"New hospital and intensive care admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three." = "New hospital and intensive care admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three.";
+"Trend for new admissions is calculated by subtracting the average of yesterday, two and three days ago from the average of four, five and six days ago." = "Trend for new admissions is calculated by subtracting the average of yesterday, two and three days ago from the average of four, five and six days ago.";
+"Currently Occupied Beds is displayed as provided by the LCPS. Values are for today." = "Currently Occupied Beds is displayed as provided by the LCPS. Values are for today.";
+"Trend is caluclated by subtracting todays value with the value from yesterday." = "Trend is calculated by subtracting today's value with the value from yesterday.";

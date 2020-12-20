@@ -15,7 +15,7 @@ struct AboutView: View {
         NavigationView {
             List {
                 Section(header: Text("Data Sources")) {
-                    LinkRow(
+                    LinkView(
                         titleKey: "RIVM",
                         url: URL( "https://data.rivm.nl/geonetwork/srv/dut/catalog.search#/metadata/5f6bc429-1596-490e-8618-1ed8fd768427")
                     )
@@ -29,11 +29,11 @@ struct AboutView: View {
                     }
                 }
                 Section {
-                    LinkRow(
+                    LinkView(
                         titleKey: "Follow us on Twitter",
                         url: URL("https://twitter.com/Infected_App")
                     )
-                    LinkRow(
+                    LinkView(
                         titleKey: "View on GitHub",
                         url: URL("https://github.com/hungrxyz/Infected")
                     )
@@ -50,27 +50,13 @@ struct AboutView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle("Infected")
-            .navigationBarItems(trailing: CloseButton { presentationMode.wrappedValue.dismiss() })
+            .navigationBarItems(trailing: CloseButton { presentationMode.wrappedValue.dismiss()
+            })
             .navigationBarTitleDisplayMode(.inline)
         }
 
     }
 
-    private struct LinkRow: View {
-
-        let titleKey: LocalizedStringKey
-        let url: URL
-
-        var body: some View {
-            HStack {
-                Link(titleKey, destination: url)
-                Spacer()
-                Image(systemName: "link")
-            }
-            .foregroundColor(.blue)
-        }
-
-    }
 }
 
 private extension Bundle {

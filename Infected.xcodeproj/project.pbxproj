@@ -13,8 +13,10 @@
 		AD131CCA2559D94C003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
 		AD187E922586785800C5BCD7 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
 		AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
+		AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638D8D258FAF6000EDE19B /* LinkView.swift */; };
 		AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* RegionView.swift */; };
 		AD6680C22520832800E669A7 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680C12520832800E669A7 /* RowView.swift */; };
+		AD71549C258E4F450059DD0C /* NationalHospitalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD71549B258E4F450059DD0C /* NationalHospitalInfoView.swift */; };
 		AD74CCC6255DF7B200002500 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74CCC5255DF7B200002500 /* AboutView.swift */; };
 		AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74CCCB255DF8B500002500 /* SectionHeader.swift */; };
 		AD825CD6257596D400CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
@@ -80,8 +82,10 @@
 		AD131CBF2559D393003077F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD131CC52559D39D003077F3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD327F2B2546332E002CCE01 /* NumbersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersProvider.swift; sourceTree = "<group>"; };
+		AD638D8D258FAF6000EDE19B /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 		AD6680BB251F4C0800E669A7 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		AD6680C12520832800E669A7 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		AD71549B258E4F450059DD0C /* NationalHospitalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalHospitalInfoView.swift; sourceTree = "<group>"; };
 		AD74CCC5255DF7B200002500 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		AD74CCCB255DF8B500002500 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		AD825CD5257596D400CF681B /* InfectedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedAPI.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */,
 				ADD4C30E251627920064A959 /* Info.plist */,
 				AD74CCC5255DF7B200002500 /* AboutView.swift */,
+				AD638D8D258FAF6000EDE19B /* LinkView.swift */,
 				ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */,
 				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
@@ -201,6 +206,7 @@
 				AD327F2B2546332E002CCE01 /* NumbersProvider.swift */,
 				AD6680BB251F4C0800E669A7 /* RegionView.swift */,
 				AD6680C12520832800E669A7 /* RowView.swift */,
+				AD71549B258E4F450059DD0C /* NationalHospitalInfoView.swift */,
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
 				AD825CDB25759D8400CF681B /* Summary.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
@@ -383,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD71549C258E4F450059DD0C /* NationalHospitalInfoView.swift in Sources */,
 				ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */,
 				ADD4C308251627910064A959 /* ContentView.swift in Sources */,
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
@@ -396,6 +403,7 @@
 				ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */,
 				AD825CDC25759D8400CF681B /* Summary.swift in Sources */,
 				AD825D042578306C00CF681B /* GeoArea.swift in Sources */,
+				AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */,
 				ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */,
 				AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */,
 				ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */,

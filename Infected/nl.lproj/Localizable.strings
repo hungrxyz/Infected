@@ -33,3 +33,16 @@
 "On Watchlist" = "Mijn Regio";
 "Intensive Care" = "Intensive Care";
 "Occupied Beds" = "Bezette Bedden";
+"Hospital / Intensive Care Occupancy" = "Ziekenhuis / Intensive Care Bezetting";
+"Numbers of " = "Nummers van ";
+" and " = " en ";
+" are coming from different sources and are not directly corelated." = " komen uit verschillende bronnen op verschillende tijdstippen, daarom moeten trends van nieuwe opnames en momenteel bezette bedden niet worden vergeleken.";
+"Why are numbers of New and Occupied Beds coming from different sources" = "Waarom komen de aantallen Nieuwe en Bezette Bedden uit verschillende bronnen";
+"LCPS - NICE difference FAQ quote" = "De cijfers van het LCPS worden vaak vergeleken met de cijfers uit de NICE registratie. Echter, de twee dataverzamelingen bevatten verschillende gegevens en dienen andere doelen. Voor LCPS is het belangrijk om inzicht te hebben in het aantal benodigde en bezette COVID- en non-COVID bedden in de ziekenhuizen. Het LCPS heeft dan ook een capaciteitsperspectief en gebruikt hiervoor geaggregeerd informatie die door de RCPS’en worden verzameld. Voor de NICE is het belangrijk om inzicht te hebben in het aantal (nieuwe) COVID-19 patiënten per dag op de IC en in de kliniek en gebruikt hiervoor gegevens op patiëntniveau (BSN). De cijfers van de NICE en de LCPS kunnen dus niet zonder meer met elkaar vergeleken worden aangezien deze cijfers betrekking hebben op andere concepten (patiënt vs bezetting) en niet continue maar met vaste momentopnamen worden verkregen. Daarnaast kan de status van de patiënt (‘nog verdacht’ of ‘inmiddels niet meer positief’) tot verschillen leiden. Zie voor meer informatie over NICE de website van NICE (www.stichting-nice.nl). — LCPS";
+"Source - LCPS FAQ" = "LCPS FAQ";
+"New Admissions" = "Nieuwe Opnames";
+"New hospital and intensive care admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three." = "Nieuwe ziekenhuisopnames en opnames op de intensive care worden berekend door nieuwe opnames voor gisteren, twee en drie dagen geleden op te tellen, en vervolgens de som met drie te verlagen.";
+"Trend for new admissions is calculated by subtracting the average of yesterday, two and three days ago from the average of four, five and six days ago." = "De trend voor nieuwe opnames wordt berekend door het gemiddelde van gisteren, twee en drie dagen geleden af te trekken van het gemiddelde van vier, vijf en zes dagen geleden.";
+"Currently Occupied Beds is displayed as provided by the LCPS. Values are for today." = "Momenteel bezette bedden wordt weergegeven zoals verstrekt door het LCPS. Waarden zijn voor vandaag.";
+"Trend is caluclated by subtracting todays value with the value from yesterday." = "De trend wordt berekend door de waarde van vandaag af te trekken van de waarde van gisteren.";
+
