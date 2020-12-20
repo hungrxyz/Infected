@@ -150,7 +150,7 @@ private extension NumberRepresentation {
     var symbolName: String {
         switch self {
         case .cases:
-            return "plus.rectangle.fill.on.folder.fill"
+        return "plus.rectangle.fill.on.folder.fill"
         case .hospitalizations, .hospitalOccupancy:
             return "cross.fill"
         case .intensiveCareOccupancy:

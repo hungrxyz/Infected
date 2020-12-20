@@ -11,7 +11,6 @@
 		AD0F97A82579781700030E7C /* GroupedSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F97A22579763900030E7C /* GroupedSummaries.swift */; };
 		AD131CBE2559D393003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
 		AD131CCA2559D94C003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
-		AD187E922586785800C5BCD7 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
 		AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638D8D258FAF6000EDE19B /* LinkView.swift */; };
 		AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* RegionView.swift */; };
@@ -375,7 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */,
-				AD187E922586785800C5BCD7 /* NumberRepresentation.swift in Sources */,
 				ADB7274D257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */,
 				AD825CE12575A6F800CF681B /* Summary.swift in Sources */,
 				ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */,
