@@ -38,6 +38,10 @@ struct AboutView: View {
                 }
                 Section {
                     LinkView(
+                        titleKey: "Leave a Review on App Store",
+                        url: URL("https://apps.apple.com/app/id1537441887?action=write-review")
+                    )
+                    LinkView(
                         titleKey: "Follow us on Twitter",
                         url: URL("https://twitter.com/Infected_App")
                     )
@@ -72,7 +76,7 @@ private extension Bundle {
     var appVersionDisplayText: String? {
         guard
             let marketingVersion = infoDictionary?["CFBundleShortVersionString"] as? String,
-            let buildNumber = infoDictionary?["CFBundleVersion"] as? String
+            let buildNumber = infoDictionary?[kCFBundleVersionKey as String] as? String
         else {
             return nil
         }

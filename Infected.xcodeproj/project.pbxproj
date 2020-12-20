@@ -23,6 +23,7 @@
 		AD825CE12575A6F800CF681B /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CDB25759D8400CF681B /* Summary.swift */; };
 		AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
 		AD825D042578306C00CF681B /* GeoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825D032578306C00CF681B /* GeoArea.swift */; };
+		AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */; };
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
@@ -90,6 +91,7 @@
 		AD825CD5257596D400CF681B /* InfectedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedAPI.swift; sourceTree = "<group>"; };
 		AD825CDB25759D8400CF681B /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		AD825D032578306C00CF681B /* GeoArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoArea.swift; sourceTree = "<group>"; };
+		AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHandler.swift; sourceTree = "<group>"; };
 		ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistKeeper.swift; sourceTree = "<group>"; };
 		ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Infected.entitlements; sourceTree = "<group>"; };
 		ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Infected.xcconfig; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */,
 				ADD4C30E251627920064A959 /* Info.plist */,
 				AD74CCC5255DF7B200002500 /* AboutView.swift */,
+				AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */,
 				AD638D8D258FAF6000EDE19B /* LinkView.swift */,
 				ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */,
 				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
@@ -392,6 +395,7 @@
 				ADD4C308251627910064A959 /* ContentView.swift in Sources */,
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
+				AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */,
 				ADE4EDE725604F530035CBE5 /* CloseButton.swift in Sources */,
 				AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */,
 				ADE10EF0254F3FEA0080B975 /* AllRegionsView.swift in Sources */,

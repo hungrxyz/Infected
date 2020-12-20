@@ -46,7 +46,10 @@ struct ContentView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: numbersProvider.reloadAllRegions)
-        .onReceive(willEnterForegroundPublisher, perform: numbersProvider.reloadAllRegions)
+        .onReceive(willEnterForegroundPublisher) {
+            numbersProvider.reloadAllRegions()
+            StoreReviewHandler.requestIfNeeded()
+        }
     }
 
     private struct WatchlistView: View {
