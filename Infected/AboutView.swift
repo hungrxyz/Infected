@@ -43,6 +43,10 @@ struct AboutView: View {
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
+                    LinkView(
+                        url: URL("https://github.com/Geri-Borbas/iOS.Blog.SwiftUI_Search_Bar_in_Navigation_Bar"),
+                        titleKey: "SwiftUI Search Bar in Navigation Bar"
+                    )
                 }
                 Section {
                     LinkView(
