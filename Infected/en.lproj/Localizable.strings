@@ -45,3 +45,6 @@
 "Trend for new admissions is calculated by subtracting the average of yesterday, two and three days ago from the average of four, five and six days ago." = "Trend for new admissions is calculated by subtracting the average of yesterday, two and three days ago from the average of four, five and six days ago.";
 "Currently Occupied Beds is displayed as provided by the LCPS. Values are for today." = "Currently Occupied Beds is displayed as provided by the LCPS. Values are for today.";
 "Trend is caluclated by subtracting todays value with the value from yesterday." = "Trend is calculated by subtracting today's value with the value from yesterday.";
+"New hospital admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three." = "New hospital admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three.";
+"Total number of hospital admissions is calculated by summing up all of the admissions since " = "Total number of hospital admissions is calculated by summing up all of the admissions since ";
+" to this day." = " to this day.";

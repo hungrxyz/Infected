@@ -13,7 +13,7 @@ struct RowView: View {
     let numbers: SummaryNumbers?
     let occupancy: Occupancy?
 
-    @State private var isInfoShown = false
+    @State private var isInfoSheetShown = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -25,17 +25,24 @@ struct RowView: View {
                     Image(systemName: representation.symbolName)
                 }
                 Text(representation.displayNameLocalizedStringKey)
-                if occupancy != nil {
+                if occupancy != nil || representation == .hospitalizations {
                     Spacer()
                     Image(systemName: "info.circle")
-                        .onTapGesture { isInfoShown.toggle() }
+                        .onTapGesture { isInfoSheetShown.toggle() }
                         .foregroundColor(.blue)
                 }
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.secondary)
-            .sheet(isPresented: $isInfoShown, content: {
-                NationalHospitalInfoView()
+            .sheet(isPresented: $isInfoSheetShown, content: {
+                switch representation {
+                case .hospitalizations:
+                    HospitalAdmissionsInfoView()
+                case .hospitalOccupancy, .intensiveCareOccupancy:
+                    NationalHospitalInfoView()
+                default:
+                    fatalError()
+                }
             })
             HStack(alignment: .top) {
                 if let numbers = numbers {
