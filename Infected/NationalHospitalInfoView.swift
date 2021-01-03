@@ -31,6 +31,22 @@ struct NationalHospitalInfoView: View {
         }
     }
 
+    private var differentSourcesView: some View {
+        Group {
+            Text("Why are numbers of New and Occupied Beds coming from different sources")
+                .font(.headline)
+            HStack {
+                Rectangle()
+                    .frame(width: 4)
+                Text("LCPS - NICE difference FAQ quote")
+                    .italic()
+            }
+            .foregroundColor(.secondary)
+            Link("Source - LCPS FAQ", destination: URL(string: "https://lcps.nu/veelgestelde-vragen/")!)
+                .foregroundColor(.blue)
+        }
+    }
+
     @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
@@ -40,23 +56,14 @@ struct NationalHospitalInfoView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Hospital / Intensive Care Occupancy")
                             .font(.title).bold()
+                        Spacer()
                         subheadlineText
                         Spacer()
                         newAdmissionsView
                         Spacer()
                         occupiedBedsView
                         Spacer()
-                        Text("Why are numbers of New and Occupied Beds coming from different sources")
-                            .font(.headline)
-                        HStack {
-                            Rectangle()
-                                .frame(width: 4)
-                            Text("LCPS - NICE difference FAQ quote")
-                                .italic()
-                        }
-                        .foregroundColor(.secondary)
-                        Link("Source - LCPS FAQ", destination: URL(string: "https://lcps.nu/veelgestelde-vragen/")!)
-                            .foregroundColor(.blue)
+                        differentSourcesView
                     }
                     Spacer()
                 }
