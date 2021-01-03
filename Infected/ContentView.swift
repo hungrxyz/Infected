@@ -87,9 +87,9 @@ struct ContentView: View {
                     NavigationLink(
                         destination: AllRegionsView(
                             national: numbersProvider.nationalSummary,
-                            provinces: numbersProvider.provincialSummaries?.regions ?? [],
-                            securityRegions: numbersProvider.securityRegionsSummaries?.regions ?? [],
-                            municipalities: numbersProvider.municipalSummaries?.regions ?? []
+                            provinces: numbersProvider.provincialSummaries?.sortedSummaries() ?? [],
+                            securityRegions: numbersProvider.securityRegionsSummaries?.sortedSummaries() ?? [],
+                            municipalities: numbersProvider.municipalSummaries?.sortedSummaries() ?? []
                         )
                     ) {
                         Text("All Regions")

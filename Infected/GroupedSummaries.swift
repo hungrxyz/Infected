@@ -13,6 +13,10 @@ struct GroupedSummaries {
     let numbersDate: Date?
     let regions: [Summary]
 
+    func sortedSummaries() -> [Summary] {
+        regions.sorted(by: { $0.regionName < $1.regionName })
+    }
+
 }
 
 extension GroupedSummaries: Decodable {}

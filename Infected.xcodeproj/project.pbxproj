@@ -24,6 +24,8 @@
 		AD825CE12575A6F800CF681B /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CDB25759D8400CF681B /* Summary.swift */; };
 		AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825CD5257596D400CF681B /* InfectedAPI.swift */; };
 		AD825D042578306C00CF681B /* GeoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD825D032578306C00CF681B /* GeoArea.swift */; };
+		AD82EB3425A24CD200864A78 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82EB3325A24CD200864A78 /* SearchBar.swift */; };
+		AD82EB3D25A24D0200864A78 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82EB3C25A24D0200864A78 /* ViewControllerResolver.swift */; };
 		AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */; };
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
@@ -93,6 +95,8 @@
 		AD825CD5257596D400CF681B /* InfectedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedAPI.swift; sourceTree = "<group>"; };
 		AD825CDB25759D8400CF681B /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		AD825D032578306C00CF681B /* GeoArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoArea.swift; sourceTree = "<group>"; };
+		AD82EB3325A24CD200864A78 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		AD82EB3C25A24D0200864A78 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 		AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHandler.swift; sourceTree = "<group>"; };
 		ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistKeeper.swift; sourceTree = "<group>"; };
 		ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Infected.entitlements; sourceTree = "<group>"; };
@@ -148,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD82EB3825A24CD600864A78 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				AD82EB3325A24CD200864A78 /* SearchBar.swift */,
+				AD82EB3C25A24D0200864A78 /* ViewControllerResolver.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		ADBB7CDE2517C1DA00F3C8B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +230,7 @@
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
 				ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */,
 				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
+				AD82EB3825A24CD600864A78 /* SearchBar */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30B251627920064A959 /* Preview Content */,
@@ -409,6 +423,8 @@
 				AD825CDC25759D8400CF681B /* Summary.swift in Sources */,
 				AD825D042578306C00CF681B /* GeoArea.swift in Sources */,
 				AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */,
+				AD82EB3D25A24D0200864A78 /* ViewControllerResolver.swift in Sources */,
+				AD82EB3425A24CD200864A78 /* SearchBar.swift in Sources */,
 				ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */,
 				AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */,
 				AD74495025A1325C00C7A658 /* HospitalAdmissionsInfoView.swift in Sources */,
