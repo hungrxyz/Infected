@@ -20,14 +20,14 @@ Listed in [infected-data#sources](https://github.com/hungrxyz/infected-data#sour
 
 ## Upcoming Features
 - [ ] Medium/large widget showing regions from Watchlist.
-- [ ] Sorting options for regions.
 - [ ] Mortality/Survival rate.
 - [ ] Positive cases per population
 - [ ] Test information (how many tests done, positivity rate,...).
+- [x] Sorting options for regions. [Region Search in [1.3.0](https://github.com/hungrxyz/Infected/releases/tag/1.3.0)]
 - [x] ICU occupancy. [Released with Hospital Occupancy in [1.2.0](https://github.com/hungrxyz/Infected/releases/tag/1.2.0)]
 - [x] Watchlist (similar to iOS Stocks app). [My Regions [1.1.0](https://github.com/hungrxyz/Infected/releases/tag/1.1.0)]
 
 Feel free to propose a feature by opening an Issue or reaching out to me on [Twitter](https://twitter.com/hungrxyz). Or even better, build the feature you want to see and open a pull request.
 
 ## License
-Code base is licensed under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/). Original data is copyright RIVM.
+Code base is licensed under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/). Original data is copyright RIVM, NICE and LCPS.
