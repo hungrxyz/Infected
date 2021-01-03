@@ -16,16 +16,24 @@ struct AboutView: View {
             List {
                 Section(header: Text("Data Sources")) {
                     LinkView(
+                        url: URL( "https://data.rivm.nl/geonetwork/srv/dut/catalog.search#/metadata/5f6bc429-1596-490e-8618-1ed8fd768427"),
                         titleKey: "RIVM",
-                        url: URL( "https://data.rivm.nl/geonetwork/srv/dut/catalog.search#/metadata/5f6bc429-1596-490e-8618-1ed8fd768427")
+                        footnoteKey: "Confirmed cases and deaths."
                     )
                     LinkView(
+                        url: URL( "https://data.rivm.nl/geonetwork/srv/dut/catalog.search#/metadata/4f4ad069-8f24-4fe8-b2a7-533ef27a899f"),
+                        titleKey: "RIVM + NICE",
+                        footnoteKey: "Hospitalizations."
+                    )
+                    LinkView(
+                        url: URL( "https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie"),
                         titleKey: "NICE",
-                        url: URL( "https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie")
+                        footnoteKey: "New Intensive Care admissions."
                     )
                     LinkView(
+                        url: URL("https://lcps.nu/datafeed/"),
                         titleKey: "LCPS",
-                        url: URL("https://lcps.nu/datafeed/")
+                        footnoteKey: "Hospital occupancy."
                     )
                 }
                 Section(header: Text("Acknowledgements")) {
@@ -38,16 +46,16 @@ struct AboutView: View {
                 }
                 Section {
                     LinkView(
-                        titleKey: "Leave a Review on App Store",
-                        url: URL("https://apps.apple.com/app/id1537441887?action=write-review")
+                        url: URL("https://apps.apple.com/app/id1537441887?action=write-review"),
+                        titleKey: "Leave a Review on App Store"
                     )
                     LinkView(
-                        titleKey: "Follow us on Twitter",
-                        url: URL("https://twitter.com/Infected_App")
+                        url: URL("https://twitter.com/Infected_App"),
+                        titleKey: "Follow us on Twitter"
                     )
                     LinkView(
-                        titleKey: "View on GitHub",
-                        url: URL("https://github.com/hungrxyz/Infected")
+                        url: URL("https://github.com/hungrxyz/Infected"),
+                        titleKey: "View on GitHub"
                     )
                 }
                 if let appVersionText = Bundle.main.appVersionDisplayText {

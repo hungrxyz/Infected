@@ -21,10 +21,10 @@
 "Total" = "Totaal";
 "Latest Numbers" = "Nieuwste Nummers";
 "Shows latest COVID-19 numbers in the Netherlands." = "Toont de nieuwste COVID-19 nummers in Nederland.";
-"Data Sources" = "Data Bronnen";
+"Data Sources" = "Databronnen";
 "Acknowledgements" = "Erkenningen";
 "App icon; virus and broken heart symbols." = "App icon; virus en gebroken hart symbolen.";
-"App Version" = "App Versie";
+"App Version" = "Appversie";
 "View on GitHub" = "Bekijk op GitHub";
 "Follow us on Twitter" = "Volg ons op Twitter";
 "Watchlist" = "Mijn Regio's";
@@ -48,3 +48,8 @@
 "New hospital admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three." = "Nieuwe ziekenhuisopnames worden berekend door nieuwe opnames voor gisteren, twee en drie dagen geleden op te tellen, en vervolgens met drie te duiken.";
 "Total number of hospital admissions is calculated by summing up all of the admissions since " = "Het totaal aantal ziekenhuisopnames wordt berekend door alle opnames sinds ";
 " to this day." = " tot heden bij elkaar op te tellen.";
+"Confirmed cases and deaths." = "Positieve testen en sterfgevallen.";
+"Hospitalizations." = "Ziekenhuisopnames.";
+"New Intensive Care admissions." = "Nieuwe opnames op de Intensive Care.";
+"Hospital occupancy." = "Ziekenhuisbezetting.";
+"Leave a Review on App Store" = "Laat een recensie op App Store";

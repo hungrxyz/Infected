@@ -9,14 +9,30 @@ import SwiftUI
 
 struct LinkView: View {
 
-    let titleKey: LocalizedStringKey
     let url: URL
+    let titleKey: LocalizedStringKey
+    let footnoteKey: LocalizedStringKey?
+
+    init(url: URL,
+         titleKey: LocalizedStringKey,
+         footnoteKey: LocalizedStringKey? = nil) {
+        self.url = url
+        self.titleKey = titleKey
+        self.footnoteKey = footnoteKey
+    }
 
     var body: some View {
         HStack {
-            Link(titleKey, destination: url)
+            VStack(alignment: .leading) {
+                Link(titleKey, destination: url)
+                if let footnoteKey = footnoteKey {
+                    Text(footnoteKey)
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+            }
             Spacer()
-            Image(systemName: "link")
+            Image(systemName: "arrow.up.forward")
         }
         .foregroundColor(.blue)
     }
@@ -26,7 +42,9 @@ struct LinkView: View {
 #if DEBUG
 struct LinkView_Previews: PreviewProvider {
     static var previews: some View {
-        LinkView(titleKey: "Link", url: URL(string: "https://github.com/hungrxyz/Infected")!)
+        LinkView(url: URL(string: "https://github.com/hungrxyz/Infected")!,
+                 titleKey: "Link",
+                 footnoteKey: "Footnote")
     }
 }
 #endif
