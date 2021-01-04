@@ -19,13 +19,10 @@ struct GroupedRegionsView: View {
         } else {
             return summaries
                 .filter {
-                    let provinceName = $0.provinceName?.replacingOccurrences(of: " ", with: "")
-                    let regionName = $0.regionName.replacingOccurrences(of: " ", with: "")
-                    let query = searchBar.text.replacingOccurrences(of: " ", with: "")
-                    let variables = ["query": query]
+                    let variables = ["query": searchBar.text]
 
-                    return Self.predicate.evaluate(with: provinceName, substitutionVariables: variables)
-                        || Self.predicate.evaluate(with: regionName, substitutionVariables: variables)
+                    return Self.predicate.evaluate(with: $0.provinceName, substitutionVariables: variables)
+                        || Self.predicate.evaluate(with: $0.regionName, substitutionVariables: variables)
                 }
         }
     }
@@ -41,7 +38,7 @@ struct GroupedRegionsView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(geoArea.localizedName, displayMode: .inline)
-        .add(searchBar)
+        .add(geoArea != .national ? searchBar : nil)
     }
 
 }

@@ -33,22 +33,28 @@ extension SearchBar: UISearchResultsUpdating {
 
 struct SearchBarModifier: ViewModifier {
 
-    let searchBar: SearchBar
+    let searchBar: SearchBar?
 
+    @ViewBuilder
     func body(content: Content) -> some View {
-        content
-            .overlay(
-                ViewControllerResolver { viewController in
-                    viewController.navigationItem.searchController = self.searchBar.searchController
-                }
+        if let searchBar = searchBar {
+            content
+                .overlay(
+                    ViewControllerResolver { viewController in
+                        viewController.navigationItem.searchController = searchBar.searchController
+                        viewController.navigationItem.hidesSearchBarWhenScrolling = false
+                    }
                     .frame(width: 0, height: 0)
-            )
+                )
+        } else {
+            content
+        }
     }
 }
 
 extension View {
 
-    func add(_ searchBar: SearchBar) -> some View {
+    func add(_ searchBar: SearchBar?) -> some View {
         return self.modifier(SearchBarModifier(searchBar: searchBar))
     }
 }
