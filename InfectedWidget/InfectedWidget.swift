@@ -185,6 +185,11 @@ private extension Summary {
                 new: 48,
                 trend: -16,
                 total: 8932
+            ),
+            vaccinations: Vaccinations(
+                new: 43929,
+                total: 483293,
+                percentageOfPopulation: 34.8934332
             )
         )
     }()

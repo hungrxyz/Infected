@@ -29,28 +29,49 @@ struct RegionView: View {
 
     var body: some View {
         Section(header: SectionHeader(summary: summary)) {
-            RowView(representation: .cases, numbers: summary.positiveCases, occupancy: nil)
+            RowView(
+                representation: .cases,
+                numbers: summary.positiveCases,
+                occupancy: nil,
+                vaccinations: nil
+            )
             if let hospitalOccupancy = summary.hospitalOccupancy {
                 RowView(
                     representation: .hospitalOccupancy,
                     numbers: nil,
-                    occupancy: hospitalOccupancy
+                    occupancy: hospitalOccupancy,
+                    vaccinations: nil
                 )
             } else {
                 RowView(
                     representation: .hospitalizations,
                     numbers: summary.hospitalAdmissions,
-                    occupancy: nil
+                    occupancy: nil,
+                    vaccinations: nil
                 )
             }
             if let intensiveCareOccupancy = summary.intensiveCareOccupancy {
                 RowView(
                     representation: .intensiveCareOccupancy,
                     numbers: nil,
-                    occupancy: intensiveCareOccupancy
+                    occupancy: intensiveCareOccupancy,
+                    vaccinations: nil
                 )
             }
-            RowView(representation: .deaths, numbers: summary.deaths, occupancy: nil)
+            RowView(
+                representation: .deaths,
+                numbers: summary.deaths,
+                occupancy: nil,
+                vaccinations: nil
+            )
+            if let vaccinations = summary.vaccinations {
+                RowView(
+                    representation: .vaccinations,
+                    numbers: nil,
+                    occupancy: nil,
+                    vaccinations: vaccinations
+                )
+            }
             if showWatchlistStatus {
                 if isOnWatchlist {
                     HStack {

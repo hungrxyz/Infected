@@ -31,6 +31,8 @@
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
 		ADB7274D257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
+		ADB7D69025B32DED00AAAB42 /* Vaccinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7D68F25B32DED00AAAB42 /* Vaccinations.swift */; };
+		ADB7D69425B32EF100AAAB42 /* Vaccinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7D68F25B32DED00AAAB42 /* Vaccinations.swift */; };
 		ADBB7CE02517C1DA00F3C8B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */; };
 		ADBB7CE22517C1DA00F3C8B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */; };
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
@@ -103,6 +105,7 @@
 		ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Infected.xcconfig; sourceTree = "<group>"; };
 		ADB7273E257D03C900AB2DB1 /* InfectedWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InfectedWidgetExtension.entitlements; sourceTree = "<group>"; };
 		ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Infected.swift"; sourceTree = "<group>"; };
+		ADB7D68F25B32DED00AAAB42 /* Vaccinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccinations.swift; sourceTree = "<group>"; };
 		ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfectedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBB7CDF2517C1DA00F3C8B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		ADBB7CE12517C1DA00F3C8B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -227,6 +230,7 @@
 				AD74494F25A1325C00C7A658 /* HospitalAdmissionsInfoView.swift */,
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
 				AD825CDB25759D8400CF681B /* Summary.swift */,
+				ADB7D68F25B32DED00AAAB42 /* Vaccinations.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
 				ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */,
 				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
@@ -400,6 +404,7 @@
 				ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */,
 				AD0F97A82579781700030E7C /* GroupedSummaries.swift in Sources */,
 				AD825CE62575A7AF00CF681B /* InfectedAPI.swift in Sources */,
+				ADB7D69425B32EF100AAAB42 /* Vaccinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +433,7 @@
 				ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */,
 				AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */,
 				AD74495025A1325C00C7A658 /* HospitalAdmissionsInfoView.swift in Sources */,
+				ADB7D69025B32DED00AAAB42 /* Vaccinations.swift in Sources */,
 				ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */,
 				AD74CCC6255DF7B200002500 /* AboutView.swift in Sources */,
 				AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */,

@@ -20,6 +20,7 @@ struct Summary: Decodable {
     let hospitalOccupancy: Occupancy?
     let intensiveCareOccupancy: Occupancy?
     let deaths: SummaryNumbers
+    let vaccinations: Vaccinations?
 
 }
 
@@ -98,6 +99,11 @@ extension Summary {
             new: 48,
             trend: -16,
             total: 8932
+        ),
+        vaccinations: Vaccinations(
+            new: 43929,
+            total: 483293,
+            percentageOfPopulation: 34.8934332
         )
     )
     static let random = Summary(
@@ -123,7 +129,8 @@ extension Summary {
             new: Int.random(in: 0...999),
             trend: Int.random(in: -999...999),
             total: Int.random(in: 0...9999999)
-        )
+        ),
+        vaccinations: .random
     )
 
 }
