@@ -23,7 +23,7 @@
 "Shows latest COVID-19 numbers in the Netherlands." = "Toont de nieuwste COVID-19 nummers in Nederland.";
 "Data Sources" = "Databronnen";
 "Acknowledgements" = "Erkenningen";
-"App icon; virus and broken heart symbols." = "App icon; virus en gebroken hart symbolen.";
+"App icon; virus and broken heart symbols." = "App icon; virus, gebroken hart en spuit symbolen.";
 "App Version" = "Appversie";
 "View on GitHub" = "Bekijk op GitHub";
 "Follow us on Twitter" = "Volg ons op Twitter";
@@ -55,3 +55,4 @@
 "Leave a Review on App Store" = "Laat een recensie op App Store";
 "Vaccinations" = "Vaccinaties";
 "Coverage" = "Dekking";
+"Vaccinations." = "Vaccinaties.";

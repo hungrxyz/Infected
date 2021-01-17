@@ -35,6 +35,11 @@ struct AboutView: View {
                         titleKey: "LCPS",
                         footnoteKey: "Hospital occupancy."
                     )
+                    LinkView(
+                        url: URL("https://twitter.com/hugodejonge"),
+                        titleKey: "Hugo de Jonge",
+                        footnoteKey: "Vaccinations."
+                    )
                 }
                 Section(header: Text("Acknowledgements")) {
                     VStack(alignment: .leading, spacing: 4) {
