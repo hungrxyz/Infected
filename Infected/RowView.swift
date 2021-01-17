@@ -19,12 +19,7 @@ struct RowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                switch representation {
-                case .deaths:
-                    Image(representation.symbolName)
-                default:
-                    Image(systemName: representation.symbolName)
-                }
+                representation.image
                 Text(representation.displayNameLocalizedStringKey)
                 if occupancy != nil || representation == .hospitalizations {
                     Spacer()
@@ -65,7 +60,7 @@ struct RowView: View {
 
         var body: some View {
             Text(text)
-                .font(.subheadline)
+                .font(.footnote)
                 .foregroundColor(.secondary)
         }
 
@@ -252,18 +247,18 @@ private extension NumberRepresentation {
         }
     }
 
-    var symbolName: String {
+    var image: Image {
         switch self {
         case .cases:
-        return "plus.rectangle.fill.on.folder.fill"
+            return Image(systemName: "plus.rectangle.fill.on.folder.fill")
         case .hospitalizations, .hospitalOccupancy:
-            return "cross.fill"
+            return Image(systemName: "cross.fill")
         case .intensiveCareOccupancy:
-            return "waveform.path.ecg.rectangle.fill"
+            return Image(systemName: "waveform.path.ecg.rectangle.fill")
         case .deaths:
-            return "heart.broken.fill"
+            return Image("heart.broken.fill")
         case .vaccinations:
-            return "heart.text.square.fill"
+            return Image("syringe")
         }
     }
 
