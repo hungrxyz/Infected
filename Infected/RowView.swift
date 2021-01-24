@@ -12,7 +12,6 @@ struct RowView: View {
     let representation: NumberRepresentation
     let numbers: SummaryNumbers?
     let occupancy: Occupancy?
-    let vaccinations: Vaccinations?
 
     @State private var isInfoSheetShown = false
 
@@ -40,13 +39,16 @@ struct RowView: View {
                     fatalError()
                 }
             })
-            HStack(alignment: .top) {
+            HStack(alignment: .top, spacing: 6) {
                 if let numbers = numbers {
-                    DefaultNumbersView(numbers: numbers)
+                    switch representation {
+                    case .vaccinations:
+                        VaccinationsView(vaccinations: numbers)
+                    default:
+                        DefaultNumbersView(numbers: numbers)
+                    }
                 } else if let occupancy = occupancy {
                     OccupancyView(occupancy: occupancy)
-                } else if let vaccinations = vaccinations {
-                    VaccinationsView(vaccinations: vaccinations)
                 }
                 Spacer()
             }
@@ -66,39 +68,24 @@ struct RowView: View {
 
     }
 
+    private enum NumberStyle {
+        case integer
+        case decimal
+        case percent
+    }
+
     private struct DataPointView: View {
 
         let titleKey: LocalizedStringKey
-        let number: Int
+        let number: Float?
         let trend: Int?
+        let numberStyle: NumberStyle
 
         var body: some View {
             VStack(alignment: .leading) {
                 HeadlineView(text: titleKey)
-                HStack(alignment: .lastTextBaseline) {
-                    NumberView(number: number)
-                        .layoutPriority(10)
-                    if let trendNumber = trend {
-                        TrendNumberView(number: trendNumber)
-                            .layoutPriority(9)
-                    }
-                }
-            }
-        }
-
-    }
-
-    private struct PercentDataPointView: View {
-
-        let titleKey: LocalizedStringKey
-        let number: Float
-        let trend: Int?
-
-        var body: some View {
-            VStack(alignment: .leading) {
-                HeadlineView(text: titleKey)
-                HStack(alignment: .lastTextBaseline) {
-                    PercentNumberView(number: number)
+                HStack(alignment: .lastTextBaseline, spacing: 4) {
+                    NumberView(number: number, style: numberStyle)
                         .layoutPriority(10)
                     if let trendNumber = trend {
                         TrendNumberView(number: trendNumber)
@@ -115,28 +102,12 @@ struct RowView: View {
         private static let numberFormatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
+            formatter.minimumIntegerDigits = 1
+            formatter.maximumFractionDigits = 1
             return formatter
         }()
 
-        let number: Int?
-
-        var numberString: String {
-            guard let number = number else {
-                return "--"
-            }
-            return Self.numberFormatter.string(for: number) ?? "--"
-        }
-
-        var body: some View {
-            Text(numberString)
-                .font(.system(.title2, design: .rounded)).bold()
-        }
-
-    }
-
-    private struct PercentNumberView: View {
-
-        private static let numberFormatter: NumberFormatter = {
+        private static let percentNumberFormatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .percent
             formatter.minimumIntegerDigits = 1
@@ -145,17 +116,33 @@ struct RowView: View {
         }()
 
         let number: Float?
+        let style: NumberStyle
+
+        init(number: Int?, style: NumberStyle) {
+            self.number = number.flatMap(Float.init)
+            self.style = style
+        }
+
+        init(number: Float?, style: NumberStyle) {
+            self.number = number
+            self.style = style
+        }
 
         var numberString: String {
             guard let number = number else {
                 return "--"
             }
-            return Self.numberFormatter.string(for: number) ?? "--"
+            switch style {
+            case .integer, .decimal:
+                return Self.numberFormatter.string(for: number) ?? "--"
+            case .percent:
+                return Self.percentNumberFormatter.string(for: number) ?? "--"
+            }
         }
 
         var body: some View {
             Text(numberString)
-                .font(.system(.title2, design: .rounded)).bold()
+                .font(.system(.title3, design: .rounded)).bold()
         }
 
     }
@@ -166,15 +153,26 @@ struct RowView: View {
         var body: some View {
             DataPointView(
                 titleKey: "New",
-                number: numbers.new ?? -1,
-                trend: numbers.trend
+                number: numbers.new.flatMap(Float.init),
+                trend: numbers.trend,
+                numberStyle: .integer
             )
             .layoutPriority(10)
             Divider()
+            if let per100K = numbers.per100KInhabitants {
+                DataPointView(
+                    titleKey: "Per 100k",
+                    number: per100K,
+                    trend: nil,
+                    numberStyle: .decimal
+                )
+                Divider()
+            }
             DataPointView(
                 titleKey: "Total",
-                number: numbers.total ?? -1,
-                trend: nil
+                number: numbers.total.flatMap(Float.init),
+                trend: nil,
+                numberStyle: .integer
             )
         }
 
@@ -186,45 +184,73 @@ struct RowView: View {
         var body: some View {
             DataPointView(
                 titleKey: "New",
-                number: occupancy.newAdmissions ?? -1,
-                trend: occupancy.newAdmissionsTrend
+                number: occupancy.newAdmissions.flatMap(Float.init),
+                trend: occupancy.newAdmissionsTrend,
+                numberStyle: .integer
             )
             .layoutPriority(10)
             Divider()
+            if let per100K = occupancy.newAdmissionsPer100KInhabitants {
+                DataPointView(
+                    titleKey: "Per 100k",
+                    number: per100K,
+                    trend: nil,
+                    numberStyle: .decimal
+                )
+                Divider()
+            }
             DataPointView(
                 titleKey: "Occupied Beds",
-                number: occupancy.currentlyOccupied ?? -1,
-                trend: occupancy.currentlyOccupiedTrend
+                number: occupancy.currentlyOccupied.flatMap(Float.init),
+                trend: occupancy.currentlyOccupiedTrend,
+                numberStyle: .integer
             )
         }
     }
 
     private struct VaccinationsView: View {
-        let vaccinations: Vaccinations
+        let vaccinations: SummaryNumbers
 
         var body: some View {
-            if let new = vaccinations.new {
-                DataPointView(
-                    titleKey: "New",
-                    number: new,
-                    trend: nil
-                )
-                .layoutPriority(10)
-                Divider()
+            VStack {
+                HStack {
+                    if let new = vaccinations.new {
+                        DataPointView(
+                            titleKey: "New",
+                            number: Float(new),
+                            trend: nil,
+                            numberStyle: .integer
+                        )
+                        .layoutPriority(8)
+                        Divider()
+                    }
+                    DataPointView(
+                        titleKey: "Total",
+                        number: vaccinations.total.flatMap(Float.init),
+                        trend: nil,
+                        numberStyle: .integer
+                    )
+                    .layoutPriority(10)
+                }
+                HStack {
+                    DataPointView(
+                        titleKey: "Coverage",
+                        number: vaccinations.percentageOfPopulation,
+                        trend: nil,
+                        numberStyle: .percent
+                    )
+                    .layoutPriority(9)
+                    if let per100K = vaccinations.per100KInhabitants {
+                        Divider()
+                        DataPointView(
+                            titleKey: "Per 100k",
+                            number: per100K,
+                            trend: nil,
+                            numberStyle: .decimal
+                        )
+                    }
+                }
             }
-            DataPointView(
-                titleKey: "Total",
-                number: vaccinations.total ?? -1,
-                trend: nil
-            )
-            .layoutPriority(8)
-            Divider()
-            PercentDataPointView(
-                titleKey: "Coverage",
-                number: vaccinations.percentageOfPopulation ?? -1,
-                trend: nil
-            )
-            .layoutPriority(9)
         }
     }
 
@@ -271,28 +297,24 @@ struct RowView_Previews: PreviewProvider {
             RowView(
                 representation: .cases,
                 numbers: .random,
-                occupancy: nil,
-                vaccinations: nil
+                occupancy: nil
             )
             .preferredColorScheme(.dark)
             RowView(
                 representation: .vaccinations,
                 numbers: nil,
-                occupancy: nil,
-                vaccinations: .random
+                occupancy: nil
             )
             .preferredColorScheme(.dark)
             RowView(
                 representation: .hospitalizations,
                 numbers: .random,
-                occupancy: nil,
-                vaccinations: nil
+                occupancy: nil
             )
             RowView(
                 representation: .intensiveCareOccupancy,
                 numbers: nil,
-                occupancy: .random,
-                vaccinations: nil
+                occupancy: .random
             )
         }
         .previewLayout(.fixed(width: 350.0, height: 160))

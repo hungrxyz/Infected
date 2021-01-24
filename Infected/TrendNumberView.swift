@@ -21,12 +21,12 @@ struct TrendNumberView: View {
     let number: Int
 
     var body: some View {
-        HStack(spacing: 2) {
+        HStack(spacing: 0) {
             Text(Self.numberFormatter.string(for: number) ?? "--")
-                .font(.system(.callout, design: .rounded)).bold()
+                .font(.system(.footnote, design: .rounded)).bold()
                 .layoutPriority(10)
             Image(systemName: number.imageName)
-                .font(Font.footnote.weight(.bold))
+                .font(Font.caption2.weight(.bold))
         }
         .foregroundColor(number.color)
     }

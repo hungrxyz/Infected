@@ -32,44 +32,38 @@ struct RegionView: View {
             RowView(
                 representation: .cases,
                 numbers: summary.positiveCases,
-                occupancy: nil,
-                vaccinations: nil
+                occupancy: nil
             )
             if let hospitalOccupancy = summary.hospitalOccupancy {
                 RowView(
                     representation: .hospitalOccupancy,
                     numbers: nil,
-                    occupancy: hospitalOccupancy,
-                    vaccinations: nil
+                    occupancy: hospitalOccupancy
                 )
             } else {
                 RowView(
                     representation: .hospitalizations,
                     numbers: summary.hospitalAdmissions,
-                    occupancy: nil,
-                    vaccinations: nil
+                    occupancy: nil
                 )
             }
             if let intensiveCareOccupancy = summary.intensiveCareOccupancy {
                 RowView(
                     representation: .intensiveCareOccupancy,
                     numbers: nil,
-                    occupancy: intensiveCareOccupancy,
-                    vaccinations: nil
+                    occupancy: intensiveCareOccupancy
                 )
             }
             RowView(
                 representation: .deaths,
                 numbers: summary.deaths,
-                occupancy: nil,
-                vaccinations: nil
+                occupancy: nil
             )
             if let vaccinations = summary.vaccinations {
                 RowView(
                     representation: .vaccinations,
-                    numbers: nil,
-                    occupancy: nil,
-                    vaccinations: vaccinations
+                    numbers: vaccinations,
+                    occupancy: nil
                 )
             }
             if showWatchlistStatus {

@@ -162,34 +162,44 @@ private extension Summary {
             positiveCases: SummaryNumbers(
                 new: 3764,
                 trend: 320,
-                total: 329402
+                total: 329402,
+                per100KInhabitants: 483.2384,
+                percentageOfPopulation: 0.5
             ),
             hospitalAdmissions: SummaryNumbers(
                 new: 85,
                 trend: 0,
-                total: 42304
+                total: 42304,
+                per100KInhabitants: 483.2384,
+                percentageOfPopulation: 0.5
             ),
             hospitalOccupancy: Occupancy(
                 newAdmissions: 287,
                 newAdmissionsTrend: 23,
+                newAdmissionsPer100KInhabitants: 0.5,
                 currentlyOccupied: 1842,
                 currentlyOccupiedTrend: -38
             ),
             intensiveCareOccupancy: Occupancy(
                 newAdmissions: 48,
                 newAdmissionsTrend: -2,
+                newAdmissionsPer100KInhabitants: 0.5,
                 currentlyOccupied: 492,
                 currentlyOccupiedTrend: 8
             ),
             deaths: SummaryNumbers(
                 new: 48,
                 trend: -16,
-                total: 8932
+                total: 8932,
+                per100KInhabitants: 43.2384,
+                percentageOfPopulation: 0.5
             ),
-            vaccinations: Vaccinations(
-                new: 43929,
-                total: 483293,
-                percentageOfPopulation: 34.8934332
+            vaccinations: SummaryNumbers(
+                new: 48,
+                trend: -16,
+                total: 8932,
+                per100KInhabitants: 43.2384,
+                percentageOfPopulation: 0.5
             )
         )
     }()
