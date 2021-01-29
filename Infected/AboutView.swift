@@ -36,8 +36,8 @@ struct AboutView: View {
                         footnoteKey: "Hospital occupancy."
                     )
                     LinkView(
-                        url: URL("https://twitter.com/hugodejonge"),
-                        titleKey: "Hugo de Jonge",
+                        url: URL("https://coronadashboard.government.nl/landelijk/vaccinaties"),
+                        titleKey: "Coronavirus Dashboard",
                         footnoteKey: "Vaccinations."
                     )
                 }

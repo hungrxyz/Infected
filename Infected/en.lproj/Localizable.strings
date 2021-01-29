@@ -58,3 +58,4 @@
 "Vaccinations." = "Vaccinations.";
 "Per 100 000 (100k) People" = "Per 100,000 (100k) People";
 "Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "Per 100,000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100,000\n[(new admissions / population) * 100,000].";
+"Coronavirus Dashboard" = "Coronavirus Dashboard";
