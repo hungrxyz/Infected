@@ -74,7 +74,7 @@ struct InfectedWidgetEntryView : View {
                     .font(Font.system(size: 14, weight: .semibold))
                     .foregroundColor(.secondary)
                 NumbersView(
-                    kindLocalizedStringKey: "New Cases",
+                    kindLocalizedStringKey: "Cases",
                     latestNumber: entry.summary.positiveCases.new ?? 0,
                     trendNumber: entry.summary.positiveCases.trend ?? 0
                 )
