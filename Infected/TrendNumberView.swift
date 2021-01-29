@@ -23,10 +23,10 @@ struct TrendNumberView: View {
     var body: some View {
         HStack(spacing: 0) {
             Text(Self.numberFormatter.string(for: number) ?? "--")
-                .font(.system(.footnote, design: .rounded)).bold()
+                .font(.system(.callout, design: .rounded)).bold()
                 .layoutPriority(10)
             Image(systemName: number.imageName)
-                .font(Font.caption2.weight(.bold))
+                .font(Font.caption.weight(.bold))
         }
         .foregroundColor(number.color)
     }

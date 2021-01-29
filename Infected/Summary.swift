@@ -117,7 +117,6 @@ extension Summary {
             per100KInhabitants: 1.023,
             percentageOfPopulation: nil
         )
-
     )
     static let random = Summary(
         updatedAt: Date(),
@@ -165,7 +164,7 @@ extension SummaryNumbers {
     static let random = SummaryNumbers(
         new: Int.random(in: 0...99999),
         trend: Int.random(in: -99999...99999),
-        total: Int.random(in: 0...999999999),
+        total: Int.random(in: 0...99999999),
         per100KInhabitants: Float.random(in: 0...100000),
         percentageOfPopulation: Float.random(in: 0...1)
     )
