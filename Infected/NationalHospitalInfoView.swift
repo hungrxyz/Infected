@@ -22,6 +22,14 @@ struct NationalHospitalInfoView: View {
         }
     }
 
+    private var per100kView: some View {
+        Group {
+            Text("Per 100 000 (100k) People")
+                .font(.title2).bold()
+            Text("Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000].")
+        }
+    }
+
     private var occupiedBedsView: some View {
         Group {
             Text("Occupied Beds")
@@ -54,12 +62,16 @@ struct NationalHospitalInfoView: View {
             ScrollView {
                 HStack {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Hospital / Intensive Care Occupancy")
-                            .font(.title).bold()
-                        Spacer()
+                        Group {
+                            Text("Hospital / Intensive Care Occupancy")
+                                .font(.title).bold()
+                            Spacer()
+                        }
                         subheadlineText
                         Spacer()
                         newAdmissionsView
+                        Spacer()
+                        per100kView
                         Spacer()
                         occupiedBedsView
                         Spacer()

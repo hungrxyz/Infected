@@ -7,19 +7,19 @@
 */
 
 "Netherlands" = "Nederland";
-"Unlocated" = "Niet Gelokaliseerd";
+"Unlocated" = "Niet gelokaliseerd";
 "Provinces" = "Provincies";
 "Security Regions" = "Veiligheidsregio's";
 "Municipalities" = "Gemeenten";
-"Cases" = "Positieve Testen";
+"Cases" = "Positieve testen";
 "Hospitalizations" = "Ziekenhuisopnames";
 "Deaths" = "Sterfgevallen";
 "Regions" = "Regio's";
-"All Regions" = "Alle Regio's";
+"All Regions" = "Alle regio's";
 "Loading..." = "Bezig met laden...";
 "New" = "Nieuw";
 "Total" = "Totaal";
-"Latest Numbers" = "Nieuwste Nummers";
+"Latest Numbers" = "Nieuwste nummers";
 "Shows latest COVID-19 numbers in the Netherlands." = "Toont de nieuwste COVID-19 nummers in Nederland.";
 "Data Sources" = "Databronnen";
 "Acknowledgements" = "Erkenningen";
@@ -27,20 +27,20 @@
 "App Version" = "Appversie";
 "View on GitHub" = "Bekijk op GitHub";
 "Follow us on Twitter" = "Volg ons op Twitter";
-"Watchlist" = "Mijn Regio's";
+"Watchlist" = "Mijn regio's";
 "Last updated" = "Bijgewerkt";
-"Add to Watchlist" = "Toevoegen aan Mijn Regio's";
-"On Watchlist" = "Mijn Regio";
+"Add to Watchlist" = "Toevoegen aan Mijn regio's";
+"On Watchlist" = "Mijn regio";
 "Intensive Care" = "Intensive Care";
-"Occupied Beds" = "Bezette Bedden";
-"Hospital / Intensive Care Occupancy" = "Ziekenhuis / Intensive Care Bezetting";
+"Occupied Beds" = "Bezette bedden";
+"Hospital / Intensive Care Occupancy" = "Ziekenhuis / Intensive Care bezetting";
 "Numbers of " = "Nummers van ";
 " and " = " en ";
 " are coming from different sources and are not directly corelated." = " komen uit verschillende bronnen op verschillende tijdstippen, daarom moeten trends van nieuwe opnames en momenteel bezette bedden niet worden vergeleken.";
-"Why are numbers of New and Occupied Beds coming from different sources" = "Waarom komen de aantallen Nieuwe en Bezette Bedden uit verschillende bronnen";
+"Why are numbers of New and Occupied Beds coming from different sources" = "Waarom komen de aantallen Nieuwe en Bezette bedden uit verschillende bronnen";
 "LCPS - NICE difference FAQ quote" = "De cijfers van het LCPS worden vaak vergeleken met de cijfers uit de NICE registratie. Echter, de twee dataverzamelingen bevatten verschillende gegevens en dienen andere doelen. Voor LCPS is het belangrijk om inzicht te hebben in het aantal benodigde en bezette COVID- en non-COVID bedden in de ziekenhuizen. Het LCPS heeft dan ook een capaciteitsperspectief en gebruikt hiervoor geaggregeerd informatie die door de RCPS’en worden verzameld. Voor de NICE is het belangrijk om inzicht te hebben in het aantal (nieuwe) COVID-19 patiënten per dag op de IC en in de kliniek en gebruikt hiervoor gegevens op patiëntniveau (BSN). De cijfers van de NICE en de LCPS kunnen dus niet zonder meer met elkaar vergeleken worden aangezien deze cijfers betrekking hebben op andere concepten (patiënt vs bezetting) en niet continue maar met vaste momentopnamen worden verkregen. Daarnaast kan de status van de patiënt (‘nog verdacht’ of ‘inmiddels niet meer positief’) tot verschillen leiden. Zie voor meer informatie over NICE de website van NICE (www.stichting-nice.nl). — LCPS";
 "Source - LCPS FAQ" = "LCPS FAQ";
-"New Admissions" = "Nieuwe Opnames";
+"New Admissions" = "Nieuwe opnames";
 "New hospital and intensive care admissions are calculated by summing up new admissions for yesterday, two and three days ago, then diving the sum by three." = "Nieuwe ziekenhuisopnames en opnames op de intensive care worden berekend door nieuwe opnames voor gisteren, twee en drie dagen geleden op te tellen, en vervolgens de som met drie te verlagen.";
 "Trend for new admissions is calculated by subtracting the average of yesterday, two and three days ago from the average of four, five and six days ago." = "De trend voor nieuwe opnames wordt berekend door het gemiddelde van gisteren, twee en drie dagen geleden af te trekken van het gemiddelde van vier, vijf en zes dagen geleden.";
 "Currently Occupied Beds is displayed as provided by the LCPS. Values are for today." = "Momenteel bezette bedden wordt weergegeven zoals verstrekt door het LCPS. Waarden zijn voor vandaag.";
@@ -56,3 +56,5 @@
 "Vaccinations" = "Vaccinaties";
 "Coverage" = "Dekkingsgraad";
 "Vaccinations." = "Vaccinaties.";
+"Per 100 000 (100k) People" = "Per 100.000 (100k) mensen";
+"Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "De verhouding per 100.000 mensen wordt berekend door eerst het aantal nieuwe opnames te delen door de bevolking van de regio en vervolgens het resultaat te vermenigvuldigen met 100.000\n[(nieuwe opnames / populatie) * 100.000].";

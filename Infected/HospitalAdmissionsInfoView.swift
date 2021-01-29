@@ -18,6 +18,14 @@ struct HospitalAdmissionsInfoView: View {
         }
     }
 
+    private var per100kView: some View {
+        Group {
+            Text("Per 100 000 (100k) People")
+                .font(.title2).bold()
+            Text("Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000].")
+        }
+    }
+
     private static let totalsDateDisplayString: String = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "y-MM-dd"
@@ -49,6 +57,8 @@ struct HospitalAdmissionsInfoView: View {
                             .font(.title).bold()
                         Spacer()
                         newAdmissionsView
+                        Spacer()
+                        per100kView
                         Spacer()
                         totalView
                     }
