@@ -64,6 +64,7 @@ struct RowView: View {
             Text(text)
                 .font(.footnote)
                 .foregroundColor(.secondary)
+                .lineLimit(1)
         }
 
     }
@@ -214,7 +215,7 @@ struct RowView: View {
                     trend: nil,
                     numberStyle: .integer
                 )
-                .layoutPriority(8)
+                .layoutPriority(9)
                 Divider()
             }
             DataPointView(
@@ -231,7 +232,6 @@ struct RowView: View {
                 trend: nil,
                 numberStyle: .percent
             )
-            .layoutPriority(9)
         }
     }
 
@@ -283,7 +283,7 @@ struct RowView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             RowView(
                 representation: .vaccinations,
-                numbers: .demo,
+                numbers: .random,
                 occupancy: nil
             )
             .preferredColorScheme(.dark)
