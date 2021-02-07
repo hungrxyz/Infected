@@ -138,7 +138,7 @@ struct RowView: View {
 
         var body: some View {
             Text(numberString)
-                .font(.system(.title2, design: .rounded)).bold()
+                .font(.system(.title3, design: .rounded)).bold()
         }
 
     }
