@@ -98,6 +98,29 @@ struct RowView: View {
 
     }
 
+    private struct DataPointDateView: View {
+
+        private static let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .none
+            formatter.doesRelativeDateFormatting = true
+            return formatter
+        }()
+
+        let titleKey: LocalizedStringKey
+        let date: Date
+
+        var body: some View {
+            VStack(alignment: .leading) {
+                HeadlineView(text: titleKey)
+                Text(Self.dateFormatter.string(from: date))
+                    .font(.system(.title3, design: .rounded)).bold()
+            }
+        }
+
+    }
+
     private struct NumberView: View {
 
         private static let numberFormatter: NumberFormatter = {
@@ -208,30 +231,40 @@ struct RowView: View {
         let vaccinations: SummaryNumbers
 
         var body: some View {
-            if let new = vaccinations.new {
-                DataPointView(
-                    titleKey: "New",
-                    number: Float(new),
-                    trend: nil,
-                    numberStyle: .integer
-                )
-                .layoutPriority(9)
-                Divider()
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    if let new = vaccinations.new {
+                        DataPointView(
+                            titleKey: "New",
+                            number: Float(new),
+                            trend: nil,
+                            numberStyle: .integer
+                        )
+                        .layoutPriority(9)
+                        Divider()
+                    }
+                    DataPointView(
+                        titleKey: "Total",
+                        number: vaccinations.total.flatMap(Float.init),
+                        trend: nil,
+                        numberStyle: .integer
+                    )
+                    .layoutPriority(10)
+                    Divider()
+                    DataPointView(
+                        titleKey: "Coverage",
+                        number: vaccinations.percentageOfPopulation,
+                        trend: nil,
+                        numberStyle: .percent
+                    )
+                }
+                if let estimatedDate = vaccinations.herdImmunityEstimatedDate {
+                    DataPointDateView(titleKey: "Herd Immunity (Estimated)", date: estimatedDate)
+                }
+                if let currentTrendDate = vaccinations.herdImmunityCurrentTrendDate {
+                    DataPointDateView(titleKey: "Herd Immunity (Current Trend)", date: currentTrendDate)
+                }
             }
-            DataPointView(
-                titleKey: "Total",
-                number: vaccinations.total.flatMap(Float.init),
-                trend: nil,
-                numberStyle: .integer
-            )
-            .layoutPriority(10)
-            Divider()
-            DataPointView(
-                titleKey: "Coverage",
-                number: vaccinations.percentageOfPopulation,
-                trend: nil,
-                numberStyle: .percent
-            )
         }
     }
 

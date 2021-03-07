@@ -59,3 +59,5 @@
 "Per 100 000 (100k) People" = "Per 100.000 (100k) mensen";
 "Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "De verhouding per 100.000 mensen wordt berekend door eerst het aantal nieuwe opnames te delen door de bevolking van de regio en vervolgens het resultaat te vermenigvuldigen met 100.000\n[(nieuwe opnames / populatie) * 100.000].";
 "Coronavirus Dashboard" = "Dashboard coronavirus";
+"Herd Immunity (Estimated)" = "Kudde-immuniteit (geschat)";
+"Herd Immunity (Current Trend)" = "Kudde-immuniteit (huidige trend)";

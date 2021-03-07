@@ -164,14 +164,18 @@ private extension Summary {
                 trend: 320,
                 total: 329402,
                 per100KInhabitants: 483.2384,
-                percentageOfPopulation: 0.5
+                percentageOfPopulation: 0.5,
+                herdImmunityCurrentTrendDate: nil,
+                herdImmunityEstimatedDate: nil
             ),
             hospitalAdmissions: SummaryNumbers(
                 new: 85,
                 trend: 0,
                 total: 42304,
                 per100KInhabitants: 483.2384,
-                percentageOfPopulation: 0.5
+                percentageOfPopulation: 0.5,
+                herdImmunityCurrentTrendDate: nil,
+                herdImmunityEstimatedDate: nil
             ),
             hospitalOccupancy: Occupancy(
                 newAdmissions: 287,
@@ -192,14 +196,18 @@ private extension Summary {
                 trend: -16,
                 total: 8932,
                 per100KInhabitants: 43.2384,
-                percentageOfPopulation: 0.5
+                percentageOfPopulation: 0.5,
+                herdImmunityCurrentTrendDate: nil,
+                herdImmunityEstimatedDate: nil
             ),
             vaccinations: SummaryNumbers(
                 new: 48,
                 trend: -16,
                 total: 8932,
                 per100KInhabitants: 43.2384,
-                percentageOfPopulation: 0.5
+                percentageOfPopulation: 0.5,
+                herdImmunityCurrentTrendDate: nil,
+                herdImmunityEstimatedDate: nil
             )
         )
     }()
