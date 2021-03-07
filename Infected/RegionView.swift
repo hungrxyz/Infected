@@ -29,6 +29,13 @@ struct RegionView: View {
 
     var body: some View {
         Section(header: SectionHeader(summary: summary)) {
+            if let vaccinations = summary.vaccinations {
+                RowView(
+                    representation: .vaccinations,
+                    numbers: vaccinations,
+                    occupancy: nil
+                )
+            }
             RowView(
                 representation: .cases,
                 numbers: summary.positiveCases,
@@ -59,13 +66,6 @@ struct RegionView: View {
                 numbers: summary.deaths,
                 occupancy: nil
             )
-            if let vaccinations = summary.vaccinations {
-                RowView(
-                    representation: .vaccinations,
-                    numbers: vaccinations,
-                    occupancy: nil
-                )
-            }
             if showWatchlistStatus {
                 if isOnWatchlist {
                     HStack {
