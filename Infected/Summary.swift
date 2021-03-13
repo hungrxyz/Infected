@@ -29,6 +29,7 @@ struct SummaryNumbers: Decodable {
     let new: Int?
     let trend: Int?
     let total: Int?
+    let average: Int?
     let per100KInhabitants: Float?
     let percentageOfPopulation: Float?
     let herdImmunityCurrentTrendDate: Date?
@@ -87,6 +88,7 @@ extension Summary {
             new: 3764,
             trend: 320,
             total: 329402,
+            average: 837438,
             per100KInhabitants: 53.43,
             percentageOfPopulation: nil,
             herdImmunityCurrentTrendDate: nil,
@@ -96,6 +98,7 @@ extension Summary {
             new: 85,
             trend: 0,
             total: 42304,
+            average: 837438,
             per100KInhabitants: 2.53,
             percentageOfPopulation: nil,
             herdImmunityCurrentTrendDate: nil,
@@ -113,6 +116,7 @@ extension Summary {
             new: 48,
             trend: -16,
             total: 8932,
+            average: 837438,
             per100KInhabitants: 1.023,
             percentageOfPopulation: nil,
             herdImmunityCurrentTrendDate: nil,
@@ -122,6 +126,7 @@ extension Summary {
             new: 48,
             trend: -16,
             total: 8932,
+            average: 837438,
             per100KInhabitants: 1.023,
             percentageOfPopulation: nil,
             herdImmunityCurrentTrendDate: nil,
@@ -139,6 +144,7 @@ extension Summary {
             new: Int.random(in: 0...99999),
             trend: Int.random(in: -99999...99999),
             total: Int.random(in: 0...999999999),
+            average: Int.random(in: 0...999999),
             per100KInhabitants: Float.random(in: 0...1000),
             percentageOfPopulation: Float.random(in: 0...1),
             herdImmunityCurrentTrendDate: nil,
@@ -148,6 +154,7 @@ extension Summary {
             new: Int.random(in: 0...9999),
             trend: Int.random(in: -9999...9999),
             total: Int.random(in: 0...99999999),
+            average: Int.random(in: 0...999999),
             per100KInhabitants: Float.random(in: 0...1000),
             percentageOfPopulation: Float.random(in: 0...1),
             herdImmunityCurrentTrendDate: nil,
@@ -159,6 +166,7 @@ extension Summary {
             new: Int.random(in: 0...999),
             trend: Int.random(in: -999...999),
             total: Int.random(in: 0...9999999),
+            average: Int.random(in: 0...999999),
             per100KInhabitants: Float.random(in: 0...1000),
             percentageOfPopulation: Float.random(in: 0...1),
             herdImmunityCurrentTrendDate: nil,
@@ -174,6 +182,7 @@ extension SummaryNumbers {
         new: 3764,
         trend: 320,
         total: 329402,
+        average: 837438,
         per100KInhabitants: 439.30,
         percentageOfPopulation: 0.5,
         herdImmunityCurrentTrendDate: Date.distantFuture,
@@ -183,6 +192,7 @@ extension SummaryNumbers {
         new: Int.random(in: 0...99999),
         trend: Int.random(in: -99999...99999),
         total: Int.random(in: 0...99999999),
+        average: Int.random(in: 0...999999),
         per100KInhabitants: Float.random(in: 0...100000),
         percentageOfPopulation: Float.random(in: 0...1),
         herdImmunityCurrentTrendDate: Date.distantFuture,

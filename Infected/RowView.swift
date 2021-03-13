@@ -81,6 +81,7 @@ struct RowView: View {
         let number: Float?
         let trend: Int?
         let numberStyle: NumberStyle
+        let isPositiveTrendUp: Bool
 
         var body: some View {
             VStack(alignment: .leading) {
@@ -89,7 +90,7 @@ struct RowView: View {
                     NumberView(number: number, style: numberStyle)
                         .layoutPriority(10)
                     if let trendNumber = trend {
-                        TrendNumberView(number: trendNumber)
+                        TrendNumberView(number: trendNumber, isPositiveUp: isPositiveTrendUp)
                             .layoutPriority(9)
                     }
                 }
@@ -174,7 +175,8 @@ struct RowView: View {
                 titleKey: "New",
                 number: numbers.new.flatMap(Float.init),
                 trend: numbers.trend,
-                numberStyle: .integer
+                numberStyle: .integer,
+                isPositiveTrendUp: false
             )
             .layoutPriority(10)
             Divider()
@@ -183,7 +185,8 @@ struct RowView: View {
                     titleKey: "Per 100k",
                     number: per100K,
                     trend: nil,
-                    numberStyle: .decimal
+                    numberStyle: .decimal,
+                    isPositiveTrendUp: false
                 )
                 Divider()
             }
@@ -191,7 +194,8 @@ struct RowView: View {
                 titleKey: "Total",
                 number: numbers.total.flatMap(Float.init),
                 trend: nil,
-                numberStyle: .integer
+                numberStyle: .integer,
+                isPositiveTrendUp: false
             )
         }
 
@@ -205,7 +209,8 @@ struct RowView: View {
                 titleKey: "New",
                 number: occupancy.newAdmissions.flatMap(Float.init),
                 trend: occupancy.newAdmissionsTrend,
-                numberStyle: .integer
+                numberStyle: .integer,
+                isPositiveTrendUp: false
             )
             .layoutPriority(10)
             Divider()
@@ -214,7 +219,8 @@ struct RowView: View {
                     titleKey: "Per 100k",
                     number: per100K,
                     trend: nil,
-                    numberStyle: .decimal
+                    numberStyle: .decimal,
+                    isPositiveTrendUp: false
                 )
                 Divider()
             }
@@ -222,7 +228,8 @@ struct RowView: View {
                 titleKey: "Occupied Beds",
                 number: occupancy.currentlyOccupied.flatMap(Float.init),
                 trend: occupancy.currentlyOccupiedTrend,
-                numberStyle: .integer
+                numberStyle: .integer,
+                isPositiveTrendUp: false
             )
         }
     }
@@ -238,16 +245,29 @@ struct RowView: View {
                             titleKey: "New",
                             number: Float(new),
                             trend: nil,
-                            numberStyle: .integer
+                            numberStyle: .integer,
+                            isPositiveTrendUp: true
                         )
                         .layoutPriority(9)
                         Divider()
                     }
+                    if let average = vaccinations.average {
+                        DataPointView(
+                            titleKey: "New (7 day average)",
+                            number: Float(average),
+                            trend: vaccinations.trend,
+                            numberStyle: .integer,
+                            isPositiveTrendUp: true
+                        )
+                    }
+                }
+                HStack {
                     DataPointView(
                         titleKey: "Total",
                         number: vaccinations.total.flatMap(Float.init),
                         trend: nil,
-                        numberStyle: .integer
+                        numberStyle: .integer,
+                        isPositiveTrendUp: true
                     )
                     .layoutPriority(10)
                     Divider()
@@ -255,7 +275,8 @@ struct RowView: View {
                         titleKey: "Coverage",
                         number: vaccinations.percentageOfPopulation,
                         trend: nil,
-                        numberStyle: .percent
+                        numberStyle: .percent,
+                        isPositiveTrendUp: true
                     )
                 }
                 if let estimatedDate = vaccinations.herdImmunityEstimatedDate {
@@ -320,6 +341,7 @@ struct RowView_Previews: PreviewProvider {
                 occupancy: nil
             )
             .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width: 350.0, height: 300))
             RowView(
                 representation: .hospitalizations,
                 numbers: .random,

@@ -19,6 +19,7 @@ struct TrendNumberView: View {
     }()
 
     let number: Int
+    let isPositiveUp: Bool
 
     var body: some View {
         HStack(spacing: 0) {
@@ -28,7 +29,7 @@ struct TrendNumberView: View {
             Image(systemName: number.imageName)
                 .font(Font.caption.weight(.bold))
         }
-        .foregroundColor(number.color)
+        .foregroundColor(isPositiveUp ? number.positiveUpColor : number.positiveDownColor)
     }
 }
 
@@ -47,7 +48,7 @@ private extension Int {
         }
     }
 
-    var color: Color {
+    var positiveDownColor: Color {
         switch signum() {
         case -1:
             return .green
@@ -60,15 +61,28 @@ private extension Int {
         }
     }
 
+    var positiveUpColor: Color {
+        switch signum() {
+        case -1:
+            return .red
+        case 0:
+            return .orange
+        case 1:
+            return .green
+        default:
+            fatalError()
+        }
+    }
+
 }
 
 #if DEBUG
 struct TrendView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TrendNumberView(number: 1234)
-            TrendNumberView(number: 0)
-            TrendNumberView(number: -1234567)
+            TrendNumberView(number: 1234, isPositiveUp: true)
+            TrendNumberView(number: 0, isPositiveUp: false)
+            TrendNumberView(number: -1234567, isPositiveUp: true)
         }
         .previewLayout(.sizeThatFits)
         .padding()
