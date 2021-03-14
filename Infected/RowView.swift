@@ -20,7 +20,7 @@ struct RowView: View {
             HStack {
                 representation.image
                 Text(representation.displayNameLocalizedStringKey)
-                if occupancy != nil || representation == .hospitalizations {
+                if representation.hasInfo {
                     Spacer()
                     Image(systemName: "info.circle")
                         .onTapGesture { isInfoSheetShown.toggle() }
@@ -35,6 +35,8 @@ struct RowView: View {
                     HospitalAdmissionsInfoView()
                 case .hospitalOccupancy, .intensiveCareOccupancy:
                     NationalHospitalInfoView()
+                case .vaccinations:
+                    VaccinationsInfoView()
                 default:
                     fatalError()
                 }
@@ -320,6 +322,18 @@ private extension NumberRepresentation {
             return Image("heart.broken.fill")
         case .vaccinations:
             return Image("syringe")
+        }
+    }
+
+    var hasInfo: Bool {
+        switch self {
+        case .hospitalizations,
+             .hospitalOccupancy,
+             .intensiveCareOccupancy,
+             .vaccinations:
+            return true
+        default:
+            return false
         }
     }
 

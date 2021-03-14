@@ -36,6 +36,7 @@
 		ADBB7CE52517C1DA00F3C8B4 /* InfectedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */; };
 		ADBB7CE72517C1DC00F3C8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */; };
 		ADBB7CEB2517C1DC00F3C8B4 /* InfectedWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ADBB7CDD2517C1DA00F3C8B4 /* InfectedWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ADD01CD925FE39BD0015748D /* VaccinationsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD01CD825FE39BD0015748D /* VaccinationsInfoView.swift */; };
 		ADD4C306251627910064A959 /* InfectedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C305251627910064A959 /* InfectedApp.swift */; };
 		ADD4C308251627910064A959 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4C307251627910064A959 /* ContentView.swift */; };
 		ADD4C30A251627920064A959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD4C309251627920064A959 /* Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		ADBB7CE42517C1DA00F3C8B4 /* InfectedWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedWidget.swift; sourceTree = "<group>"; };
 		ADBB7CE62517C1DC00F3C8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADBB7CE82517C1DC00F3C8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD01CD825FE39BD0015748D /* VaccinationsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationsInfoView.swift; sourceTree = "<group>"; };
 		ADD4C302251627910064A959 /* Infected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD4C305251627910064A959 /* InfectedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfectedApp.swift; sourceTree = "<group>"; };
 		ADD4C307251627910064A959 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				AD6680BB251F4C0800E669A7 /* RegionView.swift */,
 				AD6680C12520832800E669A7 /* RowView.swift */,
 				AD71549B258E4F450059DD0C /* NationalHospitalInfoView.swift */,
+				ADD01CD825FE39BD0015748D /* VaccinationsInfoView.swift */,
 				AD74494F25A1325C00C7A658 /* HospitalAdmissionsInfoView.swift */,
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
 				AD825CDB25759D8400CF681B /* Summary.swift */,
@@ -420,6 +423,7 @@
 				ADD4C306251627910064A959 /* InfectedApp.swift in Sources */,
 				AD825CD6257596D400CF681B /* InfectedAPI.swift in Sources */,
 				AD0F97A32579763900030E7C /* GroupedSummaries.swift in Sources */,
+				ADD01CD925FE39BD0015748D /* VaccinationsInfoView.swift in Sources */,
 				ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */,
 				AD825CDC25759D8400CF681B /* Summary.swift in Sources */,
 				AD825D042578306C00CF681B /* GeoArea.swift in Sources */,
