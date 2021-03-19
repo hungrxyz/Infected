@@ -4,8 +4,6 @@
 # Infected – COVID-19 NL
 iOS app built in SwiftUI to bring you the latest COVID-19 numbers in the Netherlands as reported by RIVM, NICE and LCPS.
 
-<img src=./assets/my-regions.png width=250><img src=./assets/all-regions.png width=250><img src=./assets/provinces.png width=250>
-
 ## Data Sources
 Listed in [infected-data#sources](https://github.com/hungrxyz/infected-data#sources)
 
@@ -19,10 +17,12 @@ Listed in [infected-data#sources](https://github.com/hungrxyz/infected-data#sour
 1. Run _Infected_ scheme on preferred device.
 
 ## Upcoming Features
-- [ ] Medium/large widget showing regions from Watchlist.
-- [ ] Mortality/Survival rate.
-- [ ] Positive cases per population
-- [ ] Test information (how many tests done, positivity rate,...).
+> **Update 19 Mar 2021:** No more features are planned at the moment since the pandemic is ending and vaccine is being rolled out.
+
+- [ ] ~~Medium/large widget showing regions from Watchlist.~~
+- [ ] ~~Mortality/Survival rate.~~
+- [ ] ~~Positive cases per population.~~
+- [ ] ~~Test information (how many tests done, positivity rate,...).~~
 - [x] Sorting options for regions. [Region Search in [1.3.0](https://github.com/hungrxyz/Infected/releases/tag/1.3.0)]
 - [x] ICU occupancy. [Released with Hospital Occupancy in [1.2.0](https://github.com/hungrxyz/Infected/releases/tag/1.2.0)]
 - [x] Watchlist (similar to iOS Stocks app). [My Regions [1.1.0](https://github.com/hungrxyz/Infected/releases/tag/1.1.0)]
