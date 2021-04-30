@@ -54,7 +54,7 @@
 "Hospital occupancy." = "Ziekenhuisbezetting.";
 "Leave a Review on App Store" = "Geef een recensie op App Store";
 "Vaccinations" = "Vaccinaties";
-"New Doses" = "Nieuw doses";
+"New Doses" = "Nieuwe doses";
 "Total Doses" = "Totaal doses";
 "Coverage" = "Dekkingsgraad";
 "Vaccinations." = "Vaccinaties.";
@@ -63,7 +63,7 @@
 "Coronavirus Dashboard" = "Dashboard coronavirus";
 "Herd Immunity (Estimated)" = "Groepsimmun. (lever.)";
 "Herd Immunity (Current Trend)" = "Groepsimmun. (trend)";
-"New (7 day average)" = "Nieuw doses (gemid. 7 dagen)";
+"New (7 day average)" = "Nieuwe doses (gemid. 7 dagen)";
 "New vaccinations is calculated by subtracting previous day total with current day total of vaccinations administered." = "Nieuwe toegediende doses worden berekend door het totaal van de vorige dag af te trekken van het huidige dagtotaal van de toegediende vaccinatiedoses.";
 "Average" = "Gemiddelde";
 "7 day average is calculated by summing up new vaccinations for past 7 days and dividing the sum by 7." = "Het 7-daagse gemiddelde wordt berekend door de nieuw toegediende doses van de afgelopen 7 dagen bij elkaar op te tellen en de som te delen door 7.";
