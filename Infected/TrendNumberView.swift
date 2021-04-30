@@ -40,7 +40,7 @@ private extension Int {
         case -1:
             return "arrow.down"
         case 0:
-            return "arrow.forward"
+            return "circlebadge.fill"
         case 1:
             return "arrow.up"
         default:
