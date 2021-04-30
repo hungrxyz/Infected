@@ -11,7 +11,7 @@ struct VaccinationsInfoView: View {
 
     private var newView: some View {
         Group {
-            Text("New")
+            Text("New Doses")
                 .font(.title2).bold()
             Text("New vaccinations is calculated by subtracting previous day total with current day total of vaccinations administered.")
             Text("Average")

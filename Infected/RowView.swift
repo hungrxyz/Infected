@@ -105,7 +105,7 @@ struct RowView: View {
 
         private static let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
-            formatter.dateStyle = .long
+            formatter.dateStyle = .medium
             formatter.timeStyle = .none
             formatter.doesRelativeDateFormatting = true
             return formatter
@@ -244,7 +244,7 @@ struct RowView: View {
                 HStack {
                     if let new = vaccinations.new {
                         DataPointView(
-                            titleKey: "New",
+                            titleKey: "New Doses",
                             number: Float(new),
                             trend: nil,
                             numberStyle: .integer,
@@ -265,7 +265,7 @@ struct RowView: View {
                 }
                 HStack {
                     DataPointView(
-                        titleKey: "Total",
+                        titleKey: "Total Doses",
                         number: vaccinations.total.flatMap(Float.init),
                         trend: nil,
                         numberStyle: .integer,
@@ -281,11 +281,14 @@ struct RowView: View {
                         isPositiveTrendUp: true
                     )
                 }
-                if let estimatedDate = vaccinations.herdImmunityEstimatedDate {
-                    DataPointDateView(titleKey: "Herd Immunity (Estimated)", date: estimatedDate)
-                }
-                if let currentTrendDate = vaccinations.herdImmunityCurrentTrendDate {
-                    DataPointDateView(titleKey: "Herd Immunity (Current Trend)", date: currentTrendDate)
+                HStack {
+                    if let estimatedDate = vaccinations.herdImmunityEstimatedDate {
+                        DataPointDateView(titleKey: "Herd Immunity (Estimated)", date: estimatedDate)
+                    }
+                    if let currentTrendDate = vaccinations.herdImmunityCurrentTrendDate {
+                        Divider()
+                        DataPointDateView(titleKey: "Herd Immunity (Current Trend)", date: currentTrendDate)
+                    }
                 }
             }
         }
