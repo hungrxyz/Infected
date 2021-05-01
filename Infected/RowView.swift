@@ -44,6 +44,8 @@ struct RowView: View {
             HStack(alignment: .top, spacing: 8) {
                 if let numbers = numbers {
                     switch representation {
+                    case .cases:
+                        CasesNumbersView(numbers: numbers)
                     case .vaccinations:
                         VaccinationsView(vaccinations: numbers)
                     default:
@@ -74,6 +76,7 @@ struct RowView: View {
     private enum NumberStyle {
         case integer
         case decimal
+        case decimalExtendedFraction
         case percent
     }
 
@@ -142,6 +145,14 @@ struct RowView: View {
             return formatter
         }()
 
+        private static let decimalExtendedFractionFormatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumIntegerDigits = 1
+            formatter.maximumFractionDigits = 2
+            return formatter
+        }()
+
         let number: Float?
         let style: NumberStyle
 
@@ -159,6 +170,8 @@ struct RowView: View {
                 return Self.numberFormatter.string(for: number) ?? "--"
             case .percent:
                 return Self.percentNumberFormatter.string(for: number) ?? "--"
+            case .decimalExtendedFraction:
+                return Self.decimalExtendedFractionFormatter.string(for: number) ?? "--"
             }
         }
 
@@ -199,6 +212,66 @@ struct RowView: View {
                 numberStyle: .integer,
                 isPositiveTrendUp: false
             )
+        }
+
+    }
+
+    private struct CasesNumbersView: View {
+        let numbers: SummaryNumbers
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    DataPointView(
+                        titleKey: "New",
+                        number: numbers.new.flatMap(Float.init),
+                        trend: numbers.trend,
+                        numberStyle: .integer,
+                        isPositiveTrendUp: false
+                    )
+                    .layoutPriority(10)
+                    if let per100K = numbers.per100KInhabitants {
+                        Divider()
+                        DataPointView(
+                            titleKey: "Per 100k",
+                            number: per100K,
+                            trend: nil,
+                            numberStyle: .decimal,
+                            isPositiveTrendUp: false
+                        )
+                    }
+                    if numbers.percentageOfPopulation == nil {
+                        Divider()
+                        DataPointView(
+                            titleKey: "Total",
+                            number: numbers.total.flatMap(Float.init),
+                            trend: nil,
+                            numberStyle: .integer,
+                            isPositiveTrendUp: false
+                        )
+                    }
+                }
+                if let reproductionNumber = numbers.percentageOfPopulation {
+                    HStack {
+                        DataPointView(
+                            titleKey: "Total",
+                            number: numbers.total.flatMap(Float.init),
+                            trend: nil,
+                            numberStyle: .integer,
+                            isPositiveTrendUp: false
+                        )
+                        Divider()
+                        DataPointView(
+                            titleKey: "Reproduction Number",
+                            number: reproductionNumber,
+                            trend: nil,
+                            numberStyle: .decimalExtendedFraction,
+                            isPositiveTrendUp: false
+                        )
+                    }
+                }
+            }
+
         }
 
     }
