@@ -78,3 +78,5 @@
 "Current Trend" = "Current Trend";
 "Calculated by adding current 7 day average of doses administered per day to current number of total doses administered until threshold of 70% of national population is reached. Each time the total value is incremented, a day is added to current date which results in expected date." = "Calculated by adding current 7 day average of doses administered per day to current number of total doses administered until threshold of 70% of national population is reached. Each time the total value is incremented, a day is added to current date which results in expected date.";
 "Reproduction Number" = "Reproduction (Rt)";
+"Home Admissions" = "Home Admissions";
+"Active" = "Active";

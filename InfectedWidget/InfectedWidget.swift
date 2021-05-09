@@ -193,6 +193,13 @@ private extension Summary {
                 currentlyOccupied: 492,
                 currentlyOccupiedTrend: 8
             ),
+            homeAdmissions: Occupancy(
+                newAdmissions: 48,
+                newAdmissionsTrend: -2,
+                newAdmissionsPer100KInhabitants: 0.5,
+                currentlyOccupied: 492,
+                currentlyOccupiedTrend: 8
+            ),
             deaths: SummaryNumbers(
                 new: 48,
                 trend: -16,

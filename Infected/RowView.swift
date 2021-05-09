@@ -52,7 +52,7 @@ struct RowView: View {
                         DefaultNumbersView(numbers: numbers)
                     }
                 } else if let occupancy = occupancy {
-                    OccupancyView(occupancy: occupancy)
+                    OccupancyView(occupancy: occupancy, representation: representation)
                 }
                 Spacer()
             }
@@ -278,6 +278,7 @@ struct RowView: View {
 
     private struct OccupancyView: View {
         let occupancy: Occupancy
+        let representation: NumberRepresentation
 
         var body: some View {
             DataPointView(
@@ -300,7 +301,7 @@ struct RowView: View {
                 Divider()
             }
             DataPointView(
-                titleKey: "Occupied Beds",
+                titleKey: representation == .homeAdmissions ? "Active" : "Occupied Beds",
                 number: occupancy.currentlyOccupied.flatMap(Float.init),
                 trend: occupancy.currentlyOccupiedTrend,
                 numberStyle: .integer,
@@ -379,6 +380,8 @@ private extension NumberRepresentation {
             return "Hospitalizations"
         case .intensiveCareOccupancy:
             return "Intensive Care"
+        case .homeAdmissions:
+            return "Home Admissions"
         case .deaths:
             return "Deaths"
         case .vaccinations:
@@ -394,6 +397,8 @@ private extension NumberRepresentation {
             return Image(systemName: "cross.fill")
         case .intensiveCareOccupancy:
             return Image(systemName: "waveform.path.ecg.rectangle.fill")
+        case .homeAdmissions:
+            return Image(systemName: "house.fill")
         case .deaths:
             return Image("heart.broken.fill")
         case .vaccinations:
@@ -438,7 +443,7 @@ struct RowView_Previews: PreviewProvider {
                 occupancy: nil
             )
             RowView(
-                representation: .intensiveCareOccupancy,
+                representation: .homeAdmissions,
                 numbers: nil,
                 occupancy: .random
             )

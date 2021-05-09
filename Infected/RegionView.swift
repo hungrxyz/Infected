@@ -61,6 +61,13 @@ struct RegionView: View {
                     occupancy: intensiveCareOccupancy
                 )
             }
+            if let homeAdmissions = summary.homeAdmissions {
+                RowView(
+                    representation: .homeAdmissions,
+                    numbers: nil,
+                    occupancy: homeAdmissions
+                )
+            }
             RowView(
                 representation: .deaths,
                 numbers: summary.deaths,

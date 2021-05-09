@@ -78,3 +78,5 @@
 "Current Trend" = "Huidige trend";
 "Calculated by adding current 7 day average of doses administered per day to current number of total doses administered until threshold of 70% of national population is reached. Each time the total value is incremented, a day is added to current date which results in expected date." = "Berekend door het huidige 7-daagse gemiddelde van toegediende doses per dag toe te voegen aan het huidige aantal toegediende totale doses totdat de drempel van 70% van de nationale bevolking is bereikt. Elke keer dat de totale waarde wordt verhoogd, wordt een dag toegevoegd aan de huidige datum, wat resulteert in een verwachte datum.";
 "Reproduction Number" = "Reproductiegetal (Rt)";
+"Home Admissions" = "Thuisopnames";
+"Active" = "Actief";

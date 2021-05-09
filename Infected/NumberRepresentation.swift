@@ -13,6 +13,7 @@ enum NumberRepresentation {
     case hospitalizations
     case hospitalOccupancy
     case intensiveCareOccupancy
+    case homeAdmissions
     case deaths
     case vaccinations
 

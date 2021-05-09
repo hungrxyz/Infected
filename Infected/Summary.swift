@@ -19,6 +19,7 @@ struct Summary: Decodable {
     let hospitalAdmissions: SummaryNumbers
     let hospitalOccupancy: Occupancy?
     let intensiveCareOccupancy: Occupancy?
+    let homeAdmissions: Occupancy?
     let deaths: SummaryNumbers
     let vaccinations: SummaryNumbers?
 
@@ -112,6 +113,7 @@ extension Summary {
             currentlyOccupiedTrend: -38
         ),
         intensiveCareOccupancy: .demo,
+        homeAdmissions: .demo,
         deaths: SummaryNumbers(
             new: 48,
             trend: -16,
@@ -162,6 +164,7 @@ extension Summary {
         ),
         hospitalOccupancy: .random,
         intensiveCareOccupancy: .random,
+        homeAdmissions: .demo,
         deaths: SummaryNumbers(
             new: Int.random(in: 0...999),
             trend: Int.random(in: -999...999),
