@@ -80,3 +80,15 @@
 "Reproduction Number" = "Reproductiegetal (Rt)";
 "Home Admissions" = "Thuisopnames";
 "Active" = "Actief";
+"Home Admissions About Description" = "Er zijn drie soorten Thuisopnames:
+1) Luscii COVID-19 Thuis app
+2) Andere apps
+3) Pen & Papier (verpleegkundigen bellen)
+
+In categorie 1 en 2, patiënten worden zowel vanaf de spoedeisende hulp als na ziekenhuisopname eerder ontslagen en thuis opgenomen onder auspiciën van het ziekenhuis. In categorie 3 worden patiënten meestal terugverwezen naar de huisarts.
+
+Luscii deelt de aantallen in de Luscii app geactiveerde patiënten in real time waardoor dit aantal gebruikt kan worden om het totaal aantal app gebaseerde thuisopnames te schatten.
+
+Op basis van onze kennis, maakt tenminste de helft van de patiënten van de Luscii COVID-19 Thuis app gebruik. De andere 50% gebruikt een variatie aan andere oplossingen. “Pen & papier” aantallen zijn onbekend dus buiten beschouwing gelaten.";
+"New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "Het aantal nieuwe thuisopnames wordt berekend door het totaal van de vorige dag geactiveerd af te trekken van het totaal aantal geactiveerde opnames op de huidige dag.";
+"Active number is calculated by subtracting total stopped from total activated admissions." = "Het actieve aantal wordt berekend door het totaal aantal gestopte opnames af te trekken van het totaal aantal geactiveerde opnames.";

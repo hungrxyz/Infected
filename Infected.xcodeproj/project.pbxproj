@@ -11,6 +11,7 @@
 		AD0F97A82579781700030E7C /* GroupedSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F97A22579763900030E7C /* GroupedSummaries.swift */; };
 		AD131CBE2559D393003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
 		AD131CCA2559D94C003077F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD131CC02559D393003077F3 /* Localizable.strings */; };
+		AD288AB92648279400F9F708 /* HomeAdmissionsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AB82648279400F9F708 /* HomeAdmissionsInfoView.swift */; };
 		AD327F2C2546332E002CCE01 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638D8D258FAF6000EDE19B /* LinkView.swift */; };
 		AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6680BB251F4C0800E669A7 /* RegionView.swift */; };
@@ -85,6 +86,7 @@
 		AD0F97A22579763900030E7C /* GroupedSummaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedSummaries.swift; sourceTree = "<group>"; };
 		AD131CBF2559D393003077F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AD131CC52559D39D003077F3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD288AB82648279400F9F708 /* HomeAdmissionsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdmissionsInfoView.swift; sourceTree = "<group>"; };
 		AD327F2B2546332E002CCE01 /* NumbersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersProvider.swift; sourceTree = "<group>"; };
 		AD638D8D258FAF6000EDE19B /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 		AD6680BB251F4C0800E669A7 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
@@ -211,32 +213,33 @@
 				ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */,
 				ADD4C30E251627920064A959 /* Info.plist */,
 				AD74CCC5255DF7B200002500 /* AboutView.swift */,
-				AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */,
-				AD638D8D258FAF6000EDE19B /* LinkView.swift */,
 				ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */,
 				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
 				AD825D032578306C00CF681B /* GeoArea.swift */,
 				ADE10EFB254F45930080B975 /* GroupedRegionsView.swift */,
 				AD0F97A22579763900030E7C /* GroupedSummaries.swift */,
+				AD74494F25A1325C00C7A658 /* HospitalAdmissionsInfoView.swift */,
 				AD825CD5257596D400CF681B /* InfectedAPI.swift */,
 				ADD4C305251627910064A959 /* InfectedApp.swift */,
+				AD638D8D258FAF6000EDE19B /* LinkView.swift */,
+				AD71549B258E4F450059DD0C /* NationalHospitalInfoView.swift */,
 				ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */,
 				AD327F2B2546332E002CCE01 /* NumbersProvider.swift */,
 				AD6680BB251F4C0800E669A7 /* RegionView.swift */,
 				AD6680C12520832800E669A7 /* RowView.swift */,
-				AD71549B258E4F450059DD0C /* NationalHospitalInfoView.swift */,
-				ADD01CD825FE39BD0015748D /* VaccinationsInfoView.swift */,
-				AD74494F25A1325C00C7A658 /* HospitalAdmissionsInfoView.swift */,
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
+				AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */,
 				AD825CDB25759D8400CF681B /* Summary.swift */,
 				ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */,
 				ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */,
+				ADD01CD825FE39BD0015748D /* VaccinationsInfoView.swift */,
+				AD288AB82648279400F9F708 /* HomeAdmissionsInfoView.swift */,
 				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
-				AD82EB3825A24CD600864A78 /* SearchBar */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30B251627920064A959 /* Preview Content */,
+				AD82EB3825A24CD600864A78 /* SearchBar */,
 			);
 			path = Infected;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				AD71549C258E4F450059DD0C /* NationalHospitalInfoView.swift in Sources */,
 				ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */,
 				ADD4C308251627910064A959 /* ContentView.swift in Sources */,
+				AD288AB92648279400F9F708 /* HomeAdmissionsInfoView.swift in Sources */,
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
 				AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */,

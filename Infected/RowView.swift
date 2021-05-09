@@ -35,6 +35,8 @@ struct RowView: View {
                     HospitalAdmissionsInfoView()
                 case .hospitalOccupancy, .intensiveCareOccupancy:
                     NationalHospitalInfoView()
+                case .homeAdmissions:
+                    HomeAdmissionsInfoView()
                 case .vaccinations:
                     VaccinationsInfoView()
                 default:
@@ -411,6 +413,7 @@ private extension NumberRepresentation {
         case .hospitalizations,
              .hospitalOccupancy,
              .intensiveCareOccupancy,
+             .homeAdmissions,
              .vaccinations:
             return true
         default:

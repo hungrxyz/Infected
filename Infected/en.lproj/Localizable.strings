@@ -80,3 +80,15 @@
 "Reproduction Number" = "Reproduction (Rt)";
 "Home Admissions" = "Home Admissions";
 "Active" = "Active";
+"Home Admissions About Description" = "There are three types of Home Admissions:
+1) Luscii COVID-19 Home app
+2) Other apps
+3) Pen & Paper (nurses call)
+
+In categories 1 and 2, patients are discharged earlier both from the emergency department and after hospitalization and admitted to their home under the auspices of the hospital. In category 3, patients are usually referred back to the general practitioner.
+
+Luscii shares the numbers of patients activated in the Luscii app in real time, so this number can be used to estimate the total number of app-based home admissions.
+
+Based on our knowledge, at least half of the patients use the Luscii COVID-19 Home app. The other 50% uses a variety of other solutions. \"Pen & paper\" numbers are unknown and disregarded.";
+"New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions.";
+"Active number is calculated by subtracting total stopped from total activated admissions." = "Active number is calculated by subtracting total stopped from total activated admissions.";
