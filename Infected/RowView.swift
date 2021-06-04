@@ -21,7 +21,7 @@ struct RowView: View {
                 representation.image
                 Text(representation.displayNameLocalizedStringKey)
                 if representation.hasInfo {
-                    Spacer()
+                    Spacer(minLength: 0)
                     Image(systemName: "info.circle")
                         .onTapGesture { isInfoSheetShown.toggle() }
                         .foregroundColor(.blue)
@@ -48,15 +48,18 @@ struct RowView: View {
                     switch representation {
                     case .cases:
                         CasesNumbersView(numbers: numbers)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     case .vaccinations:
                         VaccinationsView(vaccinations: numbers)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     default:
                         DefaultNumbersView(numbers: numbers)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 } else if let occupancy = occupancy {
                     OccupancyView(occupancy: occupancy, representation: representation)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                Spacer()
             }
         }
         .padding(.vertical, 8)
@@ -95,10 +98,10 @@ struct RowView: View {
                 HeadlineView(text: titleKey)
                 HStack(alignment: .lastTextBaseline, spacing: 4) {
                     NumberView(number: number, style: numberStyle)
-                        .layoutPriority(10)
+                        .layoutPriority(100)
                     if let trendNumber = trend {
                         TrendNumberView(number: trendNumber, isPositiveUp: isPositiveTrendUp)
-                            .layoutPriority(9)
+                            .layoutPriority(101)
                     }
                 }
             }
@@ -188,32 +191,34 @@ struct RowView: View {
         let numbers: SummaryNumbers
 
         var body: some View {
-            DataPointView(
-                titleKey: "New",
-                number: numbers.new.flatMap(Float.init),
-                trend: numbers.trend,
-                numberStyle: .integer,
-                isPositiveTrendUp: false
-            )
-            .layoutPriority(10)
-            Divider()
-            if let per100K = numbers.per100KInhabitants {
+            HStack(spacing: 8) {
                 DataPointView(
-                    titleKey: "Per 100k",
-                    number: per100K,
-                    trend: nil,
-                    numberStyle: .decimal,
+                    titleKey: "New",
+                    number: numbers.new.flatMap(Float.init),
+                    trend: numbers.trend,
+                    numberStyle: .integer,
                     isPositiveTrendUp: false
                 )
+                .layoutPriority(10)
                 Divider()
+                if let per100K = numbers.per100KInhabitants {
+                    DataPointView(
+                        titleKey: "Per 100k",
+                        number: per100K,
+                        trend: nil,
+                        numberStyle: .decimal,
+                        isPositiveTrendUp: false
+                    )
+                    Divider()
+                }
+                DataPointView(
+                    titleKey: "Total",
+                    number: numbers.total.flatMap(Float.init),
+                    trend: nil,
+                    numberStyle: .integer,
+                    isPositiveTrendUp: false
+                )
             }
-            DataPointView(
-                titleKey: "Total",
-                number: numbers.total.flatMap(Float.init),
-                trend: nil,
-                numberStyle: .integer,
-                isPositiveTrendUp: false
-            )
         }
 
     }
@@ -223,7 +228,7 @@ struct RowView: View {
 
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
-                HStack {
+                HStack(alignment: .top) {
                     DataPointView(
                         titleKey: "New",
                         number: numbers.new.flatMap(Float.init),
@@ -283,32 +288,36 @@ struct RowView: View {
         let representation: NumberRepresentation
 
         var body: some View {
-            DataPointView(
-                titleKey: "New",
-                number: occupancy.newAdmissions.flatMap(Float.init),
-                trend: occupancy.newAdmissionsTrend,
-                numberStyle: .integer,
-                isPositiveTrendUp: false
-            )
-            .layoutPriority(10)
-            Divider()
-            if let per100K = occupancy.newAdmissionsPer100KInhabitants {
+            HStack(spacing: 8) {
                 DataPointView(
-                    titleKey: "Per 100k",
-                    number: per100K,
-                    trend: nil,
-                    numberStyle: .decimal,
+                    titleKey: "New",
+                    number: occupancy.newAdmissions.flatMap(Float.init),
+                    trend: occupancy.newAdmissionsTrend,
+                    numberStyle: .integer,
                     isPositiveTrendUp: false
                 )
+                .layoutPriority(10)
                 Divider()
+                DataPointView(
+                    titleKey: representation == .homeAdmissions ? "Active" : "Occupied Beds",
+                    number: occupancy.currentlyOccupied.flatMap(Float.init),
+                    trend: occupancy.currentlyOccupiedTrend,
+                    numberStyle: .integer,
+                    isPositiveTrendUp: false
+                )
+                .layoutPriority(9)
+                if let per100K = occupancy.currentlyOccupiedPer100KInhabitants {
+                    Divider()
+                    DataPointView(
+                        titleKey: "Per 100k",
+                        number: per100K,
+                        trend: nil,
+                        numberStyle: .decimal,
+                        isPositiveTrendUp: false
+                    )
+                    .layoutPriority(8)
+                }
             }
-            DataPointView(
-                titleKey: representation == .homeAdmissions ? "Active" : "Occupied Beds",
-                number: occupancy.currentlyOccupied.flatMap(Float.init),
-                trend: occupancy.currentlyOccupiedTrend,
-                numberStyle: .integer,
-                isPositiveTrendUp: false
-            )
         }
     }
 

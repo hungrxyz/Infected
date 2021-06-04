@@ -45,6 +45,7 @@ struct Occupancy: Decodable {
     let newAdmissionsPer100KInhabitants: Float?
     let currentlyOccupied: Int?
     let currentlyOccupiedTrend: Int?
+    let currentlyOccupiedPer100KInhabitants: Float?
 
 }
 
@@ -110,7 +111,8 @@ extension Summary {
             newAdmissionsTrend: 23,
             newAdmissionsPer100KInhabitants: 1,
             currentlyOccupied: 1842,
-            currentlyOccupiedTrend: -38
+            currentlyOccupiedTrend: -38,
+            currentlyOccupiedPer100KInhabitants: 1
         ),
         intensiveCareOccupancy: .demo,
         homeAdmissions: .demo,
@@ -209,14 +211,16 @@ extension Occupancy {
         newAdmissionsTrend: 29,
         newAdmissionsPer100KInhabitants: 1,
         currentlyOccupied: 1489,
-        currentlyOccupiedTrend: -48
+        currentlyOccupiedTrend: -48,
+        currentlyOccupiedPer100KInhabitants: 1
     )
     static let random = Occupancy(
         newAdmissions: Int.random(in: 0...9999),
         newAdmissionsTrend: Int.random(in: 0...99999),
         newAdmissionsPer100KInhabitants: Float.random(in: 0...100),
         currentlyOccupied: Int.random(in: 0...999999),
-        currentlyOccupiedTrend: Int.random(in: 0...999)
+        currentlyOccupiedTrend: Int.random(in: 0...999),
+        currentlyOccupiedPer100KInhabitants: Float.random(in: 0...100)
     )
 }
 #endif

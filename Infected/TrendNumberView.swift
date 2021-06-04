@@ -14,7 +14,7 @@ struct TrendNumberView: View {
         formatter.numberStyle = .decimal
         formatter.positivePrefix = ""
         formatter.negativePrefix = ""
-        formatter.zeroSymbol = "0"
+        formatter.zeroSymbol = ""
         return formatter
     }()
 

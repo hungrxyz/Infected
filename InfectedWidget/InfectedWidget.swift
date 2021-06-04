@@ -184,21 +184,24 @@ private extension Summary {
                 newAdmissionsTrend: 23,
                 newAdmissionsPer100KInhabitants: 0.5,
                 currentlyOccupied: 1842,
-                currentlyOccupiedTrend: -38
+                currentlyOccupiedTrend: -38,
+                currentlyOccupiedPer100KInhabitants: 0.5
             ),
             intensiveCareOccupancy: Occupancy(
                 newAdmissions: 48,
                 newAdmissionsTrend: -2,
                 newAdmissionsPer100KInhabitants: 0.5,
                 currentlyOccupied: 492,
-                currentlyOccupiedTrend: 8
+                currentlyOccupiedTrend: 8,
+                currentlyOccupiedPer100KInhabitants: 0.5
             ),
             homeAdmissions: Occupancy(
                 newAdmissions: 48,
                 newAdmissionsTrend: -2,
                 newAdmissionsPer100KInhabitants: 0.5,
                 currentlyOccupied: 492,
-                currentlyOccupiedTrend: 8
+                currentlyOccupiedTrend: 8,
+                currentlyOccupiedPer100KInhabitants: 0.5
             ),
             deaths: SummaryNumbers(
                 new: 48,
