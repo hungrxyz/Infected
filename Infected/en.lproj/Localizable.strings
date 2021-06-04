@@ -94,3 +94,4 @@ Based on our knowledge, at least 50% of the patients are using the Luscii COVID-
 "Home Admissions Calculation" = "Realtime number of Luscii app home admissions times two to estimate a total number for Luscii and Other apps. [home admissions = Luscii home admissions * 2]";
 "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions.";
 "Active number is calculated by subtracting total stopped from total activated admissions." = "Active number is calculated by subtracting total stopped from total activated admissions.";
+"Home admissions." = "Home admissions.";

@@ -94,3 +94,4 @@ Op basis van onze kennis, maakt tenminste de helft van de patiënten van de Lusc
 "Home Admissions Calculation" = "Realtime aantal thuisopnames in de Luscii-app maal twee om het totale aantal voor Luscii en andere apps te schatten. [thuisopnames = Luscii-thuisopnames * 2]";
 "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "Het aantal nieuwe thuisopnames wordt berekend door het totaal van de vorige dag geactiveerd af te trekken van het totaal aantal geactiveerde opnames op de huidige dag.";
 "Active number is calculated by subtracting total stopped from total activated admissions." = "Het actieve aantal wordt berekend door het totaal aantal gestopte opnames af te trekken van het totaal aantal geactiveerde opnames.";
+"Home admissions." = "Thuisopnames.";

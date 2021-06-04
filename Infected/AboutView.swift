@@ -40,6 +40,11 @@ struct AboutView: View {
                         titleKey: "Coronavirus Dashboard",
                         footnoteKey: "Vaccinations."
                     )
+                    LinkView(
+                        url: URL("https://luscii.com"),
+                        titleKey: "Luscii",
+                        footnoteKey: "Home admissions."
+                    )
                 }
                 Section(header: Text("Acknowledgements")) {
                     VStack(alignment: .leading, spacing: 4) {
