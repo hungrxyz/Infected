@@ -348,6 +348,7 @@ struct RowView: View {
                         )
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 HStack {
                     DataPointView(
                         titleKey: "Total Doses",
@@ -366,6 +367,7 @@ struct RowView: View {
                         isPositiveTrendUp: true
                     )
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 HStack {
                     if let estimatedDate = vaccinations.herdImmunityEstimatedDate {
                         DataPointDateView(titleKey: "Herd Immunity (Estimated)", date: estimatedDate)
@@ -375,7 +377,9 @@ struct RowView: View {
                         DataPointDateView(titleKey: "Herd Immunity (Current Trend)", date: currentTrendDate)
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
