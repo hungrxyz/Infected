@@ -59,7 +59,7 @@
 "Coverage" = "Dekkingsgraad";
 "Vaccinations." = "Vaccinaties.";
 "Per 100 000 (100k) People" = "Per 100.000 (100k) mensen";
-"Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "De verhouding per 100.000 mensen wordt berekend door eerst het aantal nieuwe opnames te delen door de bevolking van de regio en vervolgens het resultaat te vermenigvuldigen met 100.000\n[(nieuwe opnames / populatie) * 100.000].";
+"Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "De verhouding per 100.000 personen wordt berekend door eerst het aantal bezette bedden of actieve app-gebruikers (afhankelijk van het datapunt) te delen door de bevolking van de regio en vervolgens het resultaat te vermenigvuldigen met 100.000\n[(bezette bedden|actieve app-gebruikers / populatie ) * 100.000].";
 "Coronavirus Dashboard" = "Dashboard coronavirus";
 "Herd Immunity (Estimated)" = "Groepsimmun. (lever.)";
 "Herd Immunity (Current Trend)" = "Groepsimmun. (trend)";
@@ -78,7 +78,7 @@
 "Current Trend" = "Huidige trend";
 "Calculated by adding current 7 day average of doses administered per day to current number of total doses administered until threshold of 70% of national population is reached. Each time the total value is incremented, a day is added to current date which results in expected date." = "Berekend door het huidige 7-daagse gemiddelde van toegediende doses per dag toe te voegen aan het huidige aantal toegediende totale doses totdat de drempel van 70% van de nationale bevolking is bereikt. Elke keer dat de totale waarde wordt verhoogd, wordt een dag toegevoegd aan de huidige datum, wat resulteert in een verwachte datum.";
 "Reproduction Number" = "Reproductiegetal (Rt)";
-"Home Admissions" = "Thuisopnames";
+"Home Admissions" = "Thuisopnames (app)";
 "Active" = "Actief";
 "Home Admissions About Description" = "Er zijn drie soorten Thuisopnames:
 1) Luscii COVID-19 Thuis app
@@ -90,5 +90,7 @@ In categorie 1 en 2, patiënten worden zowel vanaf de spoedeisende hulp als na z
 Luscii deelt de aantallen in de Luscii app geactiveerde patiënten in real time waardoor dit aantal gebruikt kan worden om het totaal aantal app gebaseerde thuisopnames te schatten.
 
 Op basis van onze kennis, maakt tenminste de helft van de patiënten van de Luscii COVID-19 Thuis app gebruik. De andere 50% gebruikt een variatie aan andere oplossingen. “Pen & papier” aantallen zijn onbekend dus buiten beschouwing gelaten.";
+"Calculation" = "Calculatie";
+"Home Admissions Calculation" = "Realtime aantal thuisopnames in de Luscii-app maal twee om het totale aantal voor Luscii en andere apps te schatten. [thuisopnames = Luscii-thuisopnames * 2]";
 "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "Het aantal nieuwe thuisopnames wordt berekend door het totaal van de vorige dag geactiveerd af te trekken van het totaal aantal geactiveerde opnames op de huidige dag.";
 "Active number is calculated by subtracting total stopped from total activated admissions." = "Het actieve aantal wordt berekend door het totaal aantal gestopte opnames af te trekken van het totaal aantal geactiveerde opnames.";

@@ -59,7 +59,7 @@
 "Coverage" = "Coverage";
 "Vaccinations." = "Vaccinations.";
 "Per 100 000 (100k) People" = "Per 100,000 (100k) People";
-"Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "Per 100,000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100,000\n[(new admissions / population) * 100,000].";
+"Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000]." = "Per 100,000 people ratio is calculated by first dividing the number of occupied beds or active app users (depending on the data point) with the population of the region, then multiplying the result by 100,000\n[(occupied beds|active app users / population) * 100,000].";
 "Coronavirus Dashboard" = "Coronavirus Dashboard";
 "Herd Immunity (Estimated)" = "Herd Immunity (deliv.)";
 "Herd Immunity (Current Trend)" = "Herd Immunity (trend)";
@@ -78,17 +78,19 @@
 "Current Trend" = "Current Trend";
 "Calculated by adding current 7 day average of doses administered per day to current number of total doses administered until threshold of 70% of national population is reached. Each time the total value is incremented, a day is added to current date which results in expected date." = "Calculated by adding current 7 day average of doses administered per day to current number of total doses administered until threshold of 70% of national population is reached. Each time the total value is incremented, a day is added to current date which results in expected date.";
 "Reproduction Number" = "Reproduction (Rt)";
-"Home Admissions" = "Home Admissions";
+"Home Admissions" = "Home Admissions (App)";
 "Active" = "Active";
-"Home Admissions About Description" = "There are three types of Home Admissions:
+"Home Admissions About Description" = "There are three kinds of Home Admissions:
 1) Luscii COVID-19 Home app
 2) Other apps
-3) Pen & Paper (nurses call)
+3) Pen & Paper (nurses calling)
 
-In categories 1 and 2, patients are discharged earlier both from the emergency department and after hospitalization and admitted to their home under the auspices of the hospital. In category 3, patients are usually referred back to the general practitioner.
+In category 1 and 2 patients are both included in the app from A&E (Accident & Emergency) as well as after hospital admission to facilitate early discharge under the aegis of the hospital. In 3, most of the time patients are referred back to the GP.
 
-Luscii shares the numbers of patients activated in the Luscii app in real time, so this number can be used to estimate the total number of app-based home admissions.
+Luscii is providing the numbers of activated patients in the Luscii app in real time so they can be used to determine the total number of app based home admissions.
 
-Based on our knowledge, at least half of the patients use the Luscii COVID-19 Home app. The other 50% uses a variety of other solutions. \"Pen & paper\" numbers are unknown and disregarded.";
+Based on our knowledge, at least 50% of the patients are using the Luscii COVID-19 Home app. The other 50% are a variety of other solutions. “Pen & Paper” numbers are unknown and left out.";
+"Calculation" = "Calculation";
+"Home Admissions Calculation" = "Realtime number of Luscii app home admissions times two to estimate a total number for Luscii and Other apps. [home admissions = Luscii home admissions * 2]";
 "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions.";
 "Active number is calculated by subtracting total stopped from total activated admissions." = "Active number is calculated by subtracting total stopped from total activated admissions.";

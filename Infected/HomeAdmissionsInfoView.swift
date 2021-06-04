@@ -15,6 +15,9 @@ struct HomeAdmissionsInfoView: View {
                 .font(.title).bold()
             Spacer()
             Text("Home Admissions About Description")
+            Text("Calculation")
+                .font(.title3).bold()
+            Text("Home Admissions Calculation")
         }
     }
 
@@ -33,6 +36,14 @@ struct HomeAdmissionsInfoView: View {
             Text("Active number is calculated by subtracting total stopped from total activated admissions.")
         }
     }
+    
+    private var per100kView: some View {
+        Group {
+            Text("Per 100 000 (100k) People")
+                .font(.title2).bold()
+            Text("Per 100 000 people ratio is calculated by first dividing the number of new admissions with the population of the region, then multiplying the result by 100 000 [(new admissions / population) * 100 000].")
+        }
+    }
 
     @Environment(\.presentationMode) private var presentationMode
 
@@ -46,6 +57,8 @@ struct HomeAdmissionsInfoView: View {
                         newView
                         Spacer()
                         activeView
+                        Spacer()
+                        per100kView
                     }
                     Spacer()
                 }
