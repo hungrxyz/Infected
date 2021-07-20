@@ -88,7 +88,7 @@ struct RowView: View {
     private struct DataPointView: View {
 
         let titleKey: LocalizedStringKey
-        let number: Float?
+        let number: Number?
         let trend: Int?
         let numberStyle: NumberStyle
         let isPositiveTrendUp: Bool
@@ -158,10 +158,10 @@ struct RowView: View {
             return formatter
         }()
 
-        let number: Float?
+        let number: Number?
         let style: NumberStyle
 
-        init(number: Float?, style: NumberStyle) {
+        init(number: Number?, style: NumberStyle) {
             self.number = number
             self.style = style
         }
@@ -172,11 +172,11 @@ struct RowView: View {
             }
             switch style {
             case .integer, .decimal:
-                return Self.numberFormatter.string(for: number) ?? "--"
+                return Self.numberFormatter.string(for: number.intValue) ?? "--"
             case .percent:
-                return Self.percentNumberFormatter.string(for: number) ?? "--"
+                return Self.percentNumberFormatter.string(for: number.floatValue) ?? "--"
             case .decimalExtendedFraction:
-                return Self.decimalExtendedFractionFormatter.string(for: number) ?? "--"
+                return Self.decimalExtendedFractionFormatter.string(for: number.floatValue) ?? "--"
             }
         }
 
@@ -194,7 +194,7 @@ struct RowView: View {
             HStack(spacing: 8) {
                 DataPointView(
                     titleKey: "New",
-                    number: numbers.new.flatMap(Float.init),
+                    number: numbers.new.flatMap { .integer($0) },
                     trend: numbers.trend,
                     numberStyle: .integer,
                     isPositiveTrendUp: false
@@ -204,7 +204,7 @@ struct RowView: View {
                 if let per100K = numbers.per100KInhabitants {
                     DataPointView(
                         titleKey: "Per 100k",
-                        number: per100K,
+                        number: .decimal(per100K),
                         trend: nil,
                         numberStyle: .decimal,
                         isPositiveTrendUp: false
@@ -213,7 +213,7 @@ struct RowView: View {
                 }
                 DataPointView(
                     titleKey: "Total",
-                    number: numbers.total.flatMap(Float.init),
+                    number: numbers.total.flatMap { .integer($0) },
                     trend: nil,
                     numberStyle: .integer,
                     isPositiveTrendUp: false
@@ -231,7 +231,7 @@ struct RowView: View {
                 HStack(alignment: .top) {
                     DataPointView(
                         titleKey: "New",
-                        number: numbers.new.flatMap(Float.init),
+                        number: numbers.new.flatMap { Number.integer($0) },
                         trend: numbers.trend,
                         numberStyle: .integer,
                         isPositiveTrendUp: false
@@ -241,7 +241,7 @@ struct RowView: View {
                         Divider()
                         DataPointView(
                             titleKey: "Per 100k",
-                            number: per100K,
+                            number: .decimal(per100K),
                             trend: nil,
                             numberStyle: .decimal,
                             isPositiveTrendUp: false
@@ -251,7 +251,7 @@ struct RowView: View {
                         Divider()
                         DataPointView(
                             titleKey: "Total",
-                            number: numbers.total.flatMap(Float.init),
+                            number: numbers.total.flatMap { Number.integer($0) },
                             trend: nil,
                             numberStyle: .integer,
                             isPositiveTrendUp: false
@@ -262,7 +262,7 @@ struct RowView: View {
                     HStack {
                         DataPointView(
                             titleKey: "Total",
-                            number: numbers.total.flatMap(Float.init),
+                            number: numbers.total.flatMap { Number.integer($0) },
                             trend: nil,
                             numberStyle: .integer,
                             isPositiveTrendUp: false
@@ -270,7 +270,7 @@ struct RowView: View {
                         Divider()
                         DataPointView(
                             titleKey: "Reproduction Number",
-                            number: reproductionNumber,
+                            number: .decimal(reproductionNumber),
                             trend: nil,
                             numberStyle: .decimalExtendedFraction,
                             isPositiveTrendUp: false
@@ -291,7 +291,7 @@ struct RowView: View {
             HStack(spacing: 8) {
                 DataPointView(
                     titleKey: "New",
-                    number: occupancy.newAdmissions.flatMap(Float.init),
+                    number: occupancy.newAdmissions.flatMap { Number.integer($0) },
                     trend: occupancy.newAdmissionsTrend,
                     numberStyle: .integer,
                     isPositiveTrendUp: false
@@ -300,7 +300,7 @@ struct RowView: View {
                 Divider()
                 DataPointView(
                     titleKey: representation == .homeAdmissions ? "Active" : "Occupied Beds",
-                    number: occupancy.currentlyOccupied.flatMap(Float.init),
+                    number: occupancy.currentlyOccupied.flatMap { Number.integer($0) },
                     trend: occupancy.currentlyOccupiedTrend,
                     numberStyle: .integer,
                     isPositiveTrendUp: false
@@ -310,7 +310,7 @@ struct RowView: View {
                     Divider()
                     DataPointView(
                         titleKey: "Per 100k",
-                        number: per100K,
+                        number: .decimal(per100K),
                         trend: nil,
                         numberStyle: .decimal,
                         isPositiveTrendUp: false
@@ -330,7 +330,7 @@ struct RowView: View {
                     if let new = vaccinations.new {
                         DataPointView(
                             titleKey: "New Doses",
-                            number: Float(new),
+                            number: .integer(new),
                             trend: nil,
                             numberStyle: .integer,
                             isPositiveTrendUp: true
@@ -341,7 +341,7 @@ struct RowView: View {
                     if let average = vaccinations.average {
                         DataPointView(
                             titleKey: "New (7 day average)",
-                            number: Float(average),
+                            number: .integer(average),
                             trend: vaccinations.trend,
                             numberStyle: .integer,
                             isPositiveTrendUp: true
@@ -352,7 +352,7 @@ struct RowView: View {
                 HStack {
                     DataPointView(
                         titleKey: "Total Doses",
-                        number: vaccinations.total.flatMap(Float.init),
+                        number: vaccinations.total.flatMap { Number.integer($0) },
                         trend: nil,
                         numberStyle: .integer,
                         isPositiveTrendUp: true
@@ -361,7 +361,7 @@ struct RowView: View {
                     Divider()
                     DataPointView(
                         titleKey: "Coverage",
-                        number: vaccinations.percentageOfPopulation,
+                        number: vaccinations.percentageOfPopulation.flatMap { Number.decimal($0) },
                         trend: nil,
                         numberStyle: .percent,
                         isPositiveTrendUp: true

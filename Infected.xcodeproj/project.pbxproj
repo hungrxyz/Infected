@@ -49,6 +49,7 @@
 		ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */; };
 		ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
+		ADE7FE1526A7832D00AB3A63 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7FE1426A7832D00AB3A63 /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		ADE4EDE625604F530035CBE5 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendNumberView.swift; sourceTree = "<group>"; };
 		ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRepresentation.swift; sourceTree = "<group>"; };
+		ADE7FE1426A7832D00AB3A63 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				ADD01CD825FE39BD0015748D /* VaccinationsInfoView.swift */,
 				AD288AB82648279400F9F708 /* HomeAdmissionsInfoView.swift */,
 				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
+				ADE7FE1426A7832D00AB3A63 /* Number.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30B251627920064A959 /* Preview Content */,
@@ -434,6 +437,7 @@
 				AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */,
 				AD82EB3D25A24D0200864A78 /* ViewControllerResolver.swift in Sources */,
 				AD82EB3425A24CD200864A78 /* SearchBar.swift in Sources */,
+				ADE7FE1526A7832D00AB3A63 /* Number.swift in Sources */,
 				ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */,
 				AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */,
 				AD74495025A1325C00C7A658 /* HospitalAdmissionsInfoView.swift in Sources */,
