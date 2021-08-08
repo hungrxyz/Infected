@@ -21,7 +21,7 @@ struct Summary: Decodable {
     let intensiveCareOccupancy: Occupancy?
     let homeAdmissions: Occupancy?
     let deaths: SummaryNumbers
-    let vaccinations: SummaryNumbers?
+    let vaccinations: Vaccinations?
 
 }
 
@@ -33,8 +33,6 @@ struct SummaryNumbers: Decodable {
     let average: Int?
     let per100KInhabitants: Float?
     let percentageOfPopulation: Float?
-    let herdImmunityCurrentTrendDate: Date?
-    let herdImmunityEstimatedDate: Date?
 
 }
 
@@ -46,6 +44,15 @@ struct Occupancy: Decodable {
     let currentlyOccupied: Int?
     let currentlyOccupiedTrend: Int?
     let currentlyOccupiedPer100KInhabitants: Float?
+
+}
+
+struct Vaccinations: Decodable {
+
+    let numbers: SummaryNumbers
+    let herdImmunityCurrentTrendDate: Date
+    let herdImmunityEstimatedDate: Date
+    let lastUpdated: Date
 
 }
 
@@ -92,9 +99,7 @@ extension Summary {
             total: 329402,
             average: 837438,
             per100KInhabitants: 53.43,
-            percentageOfPopulation: nil,
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+            percentageOfPopulation: nil
         ),
         hospitalAdmissions: SummaryNumbers(
             new: 85,
@@ -102,9 +107,7 @@ extension Summary {
             total: 42304,
             average: 837438,
             per100KInhabitants: 2.53,
-            percentageOfPopulation: nil,
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+            percentageOfPopulation: nil
         ),
         hospitalOccupancy: Occupancy(
             newAdmissions: 287,
@@ -122,19 +125,20 @@ extension Summary {
             total: 8932,
             average: 837438,
             per100KInhabitants: 1.023,
-            percentageOfPopulation: nil,
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+            percentageOfPopulation: nil
         ),
-        vaccinations: SummaryNumbers(
-            new: 48,
-            trend: -16,
-            total: 8932,
-            average: 837438,
-            per100KInhabitants: 1.023,
-            percentageOfPopulation: nil,
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+        vaccinations: Vaccinations(
+            numbers: SummaryNumbers(
+                new: 48,
+                trend: -16,
+                total: 8932,
+                average: 837438,
+                per100KInhabitants: 1.023,
+                percentageOfPopulation: nil
+            ),
+            herdImmunityCurrentTrendDate: Date.distantFuture,
+            herdImmunityEstimatedDate: Date.distantPast,
+            lastUpdated: Date()
         )
     )
     static let random = Summary(
@@ -150,9 +154,7 @@ extension Summary {
             total: Int.random(in: 0...999999999),
             average: Int.random(in: 0...999999),
             per100KInhabitants: Float.random(in: 0...1000),
-            percentageOfPopulation: Float.random(in: 0...1),
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+            percentageOfPopulation: Float.random(in: 0...1)
         ),
         hospitalAdmissions: SummaryNumbers(
             new: Int.random(in: 0...9999),
@@ -160,9 +162,7 @@ extension Summary {
             total: Int.random(in: 0...99999999),
             average: Int.random(in: 0...999999),
             per100KInhabitants: Float.random(in: 0...1000),
-            percentageOfPopulation: Float.random(in: 0...1),
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+            percentageOfPopulation: Float.random(in: 0...1)
         ),
         hospitalOccupancy: .random,
         intensiveCareOccupancy: .random,
@@ -173,11 +173,14 @@ extension Summary {
             total: Int.random(in: 0...9999999),
             average: Int.random(in: 0...999999),
             per100KInhabitants: Float.random(in: 0...1000),
-            percentageOfPopulation: Float.random(in: 0...1),
-            herdImmunityCurrentTrendDate: nil,
-            herdImmunityEstimatedDate: nil
+            percentageOfPopulation: Float.random(in: 0...1)
         ),
-        vaccinations: .random
+        vaccinations: Vaccinations(
+            numbers: .random,
+            herdImmunityCurrentTrendDate: Date.distantFuture,
+            herdImmunityEstimatedDate: Date.distantPast,
+            lastUpdated: Date.distantPast
+        )
     )
 
 }
@@ -189,9 +192,7 @@ extension SummaryNumbers {
         total: 329402,
         average: 837438,
         per100KInhabitants: 439.30,
-        percentageOfPopulation: 0.5,
-        herdImmunityCurrentTrendDate: Date.distantFuture,
-        herdImmunityEstimatedDate: Date.distantPast
+        percentageOfPopulation: 0.5
     )
     static let random = SummaryNumbers(
         new: Int.random(in: 0...99999),
@@ -199,9 +200,7 @@ extension SummaryNumbers {
         total: Int.random(in: 0...99999999),
         average: Int.random(in: 0...999999),
         per100KInhabitants: Float.random(in: 0...100000),
-        percentageOfPopulation: Float.random(in: 0...1),
-        herdImmunityCurrentTrendDate: Date.distantFuture,
-        herdImmunityEstimatedDate: Date.distantPast
+        percentageOfPopulation: Float.random(in: 0...1)
     )
 }
 

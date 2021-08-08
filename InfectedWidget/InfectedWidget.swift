@@ -165,9 +165,7 @@ private extension Summary {
                 total: 329402,
                 average: 23847,
                 per100KInhabitants: 483.2384,
-                percentageOfPopulation: 0.5,
-                herdImmunityCurrentTrendDate: nil,
-                herdImmunityEstimatedDate: nil
+                percentageOfPopulation: 0.5
             ),
             hospitalAdmissions: SummaryNumbers(
                 new: 85,
@@ -175,9 +173,7 @@ private extension Summary {
                 total: 42304,
                 average: 23847,
                 per100KInhabitants: 483.2384,
-                percentageOfPopulation: 0.5,
-                herdImmunityCurrentTrendDate: nil,
-                herdImmunityEstimatedDate: nil
+                percentageOfPopulation: 0.5
             ),
             hospitalOccupancy: Occupancy(
                 newAdmissions: 287,
@@ -209,19 +205,20 @@ private extension Summary {
                 total: 8932,
                 average: 23847,
                 per100KInhabitants: 43.2384,
-                percentageOfPopulation: 0.5,
-                herdImmunityCurrentTrendDate: nil,
-                herdImmunityEstimatedDate: nil
+                percentageOfPopulation: 0.5
             ),
-            vaccinations: SummaryNumbers(
-                new: 48,
-                trend: -16,
-                total: 8932,
-                average: 23847,
-                per100KInhabitants: 43.2384,
-                percentageOfPopulation: 0.5,
-                herdImmunityCurrentTrendDate: nil,
-                herdImmunityEstimatedDate: nil
+            vaccinations: Vaccinations(
+                numbers: SummaryNumbers(
+                    new: 48,
+                    trend: -16,
+                    total: 8932,
+                    average: 23847,
+                    per100KInhabitants: 43.2384,
+                    percentageOfPopulation: 0.5
+                ),
+                herdImmunityCurrentTrendDate: Date(),
+                herdImmunityEstimatedDate: Date(),
+                lastUpdated: Date()
             )
         )
     }()

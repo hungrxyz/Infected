@@ -11,6 +11,7 @@ struct RowView: View {
 
     let representation: NumberRepresentation
     let numbers: SummaryNumbers?
+    let vaccinations: Vaccinations?
     let occupancy: Occupancy?
 
     @State private var isInfoSheetShown = false
@@ -19,7 +20,12 @@ struct RowView: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 representation.image
-                Text(representation.displayNameLocalizedStringKey)
+                VStack(alignment: .leading) {
+                    Text(representation.displayNameLocalizedStringKey)
+                    if representation == .vaccinations, let lastUpdatedVaccinations = vaccinations?.lastUpdated {
+                        VaccinationsUpdatedCaptionView(date: lastUpdatedVaccinations)
+                    }
+                }
                 if representation.hasInfo {
                     Spacer(minLength: 0)
                     Image(systemName: "info.circle")
@@ -49,13 +55,13 @@ struct RowView: View {
                     case .cases:
                         CasesNumbersView(numbers: numbers)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                    case .vaccinations:
-                        VaccinationsView(vaccinations: numbers)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                     default:
                         DefaultNumbersView(numbers: numbers)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
+                } else if let vaccinations = vaccinations {
+                    VaccinationsView(vaccinations: vaccinations)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 } else if let occupancy = occupancy {
                     OccupancyView(occupancy: occupancy, representation: representation)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -172,7 +178,12 @@ struct RowView: View {
             }
             switch style {
             case .integer, .decimal:
-                return Self.numberFormatter.string(for: number.intValue) ?? "--"
+                switch number {
+                case let .integer(value):
+                    return Self.numberFormatter.string(for: value) ?? "--"
+                case let .decimal(value):
+                    return Self.numberFormatter.string(for: value) ?? "--"
+                }
             case .percent:
                 return Self.percentNumberFormatter.string(for: number.floatValue) ?? "--"
             case .decimalExtendedFraction:
@@ -322,12 +333,12 @@ struct RowView: View {
     }
 
     private struct VaccinationsView: View {
-        let vaccinations: SummaryNumbers
+        let vaccinations: Vaccinations
 
         var body: some View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    if let new = vaccinations.new {
+                    if let new = vaccinations.numbers.new {
                         DataPointView(
                             titleKey: "New Doses",
                             number: .integer(new),
@@ -338,11 +349,11 @@ struct RowView: View {
                         .layoutPriority(9)
                         Divider()
                     }
-                    if let average = vaccinations.average {
+                    if let average = vaccinations.numbers.average {
                         DataPointView(
                             titleKey: "New (7 day average)",
                             number: .integer(average),
-                            trend: vaccinations.trend,
+                            trend: vaccinations.numbers.trend,
                             numberStyle: .integer,
                             isPositiveTrendUp: true
                         )
@@ -352,7 +363,7 @@ struct RowView: View {
                 HStack {
                     DataPointView(
                         titleKey: "Total Doses",
-                        number: vaccinations.total.flatMap { Number.integer($0) },
+                        number: vaccinations.numbers.total.flatMap { Number.integer($0) },
                         trend: nil,
                         numberStyle: .integer,
                         isPositiveTrendUp: true
@@ -361,7 +372,7 @@ struct RowView: View {
                     Divider()
                     DataPointView(
                         titleKey: "Coverage",
-                        number: vaccinations.percentageOfPopulation.flatMap { Number.decimal($0) },
+                        number: vaccinations.numbers.percentageOfPopulation.flatMap { Number.decimal($0) },
                         trend: nil,
                         numberStyle: .percent,
                         isPositiveTrendUp: true
@@ -443,12 +454,14 @@ struct RowView_Previews: PreviewProvider {
             RowView(
                 representation: .cases,
                 numbers: .demo,
+                vaccinations: nil,
                 occupancy: nil
             )
             .preferredColorScheme(.dark)
             RowView(
                 representation: .vaccinations,
-                numbers: .random,
+                numbers: nil,
+                vaccinations: Summary.demo.vaccinations,
                 occupancy: nil
             )
             .preferredColorScheme(.dark)
@@ -456,11 +469,13 @@ struct RowView_Previews: PreviewProvider {
             RowView(
                 representation: .hospitalizations,
                 numbers: .random,
+                vaccinations: nil,
                 occupancy: nil
             )
             RowView(
                 representation: .homeAdmissions,
                 numbers: nil,
+                vaccinations: nil,
                 occupancy: .random
             )
         }

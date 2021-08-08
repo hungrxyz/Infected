@@ -50,6 +50,7 @@
 		ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
 		ADE7FE1526A7832D00AB3A63 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7FE1426A7832D00AB3A63 /* Number.swift */; };
+		ADE7FE1326A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7FE1226A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendNumberView.swift; sourceTree = "<group>"; };
 		ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRepresentation.swift; sourceTree = "<group>"; };
 		ADE7FE1426A7832D00AB3A63 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		ADE7FE1226A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationsUpdatedCaptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 				AD327F2B2546332E002CCE01 /* NumbersProvider.swift */,
 				AD6680BB251F4C0800E669A7 /* RegionView.swift */,
 				AD6680C12520832800E669A7 /* RowView.swift */,
+				ADE7FE1226A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift */,
 				AD74CCCB255DF8B500002500 /* SectionHeader.swift */,
 				AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */,
 				AD825CDB25759D8400CF681B /* Summary.swift */,
@@ -423,6 +426,7 @@
 				AD288AB92648279400F9F708 /* HomeAdmissionsInfoView.swift in Sources */,
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
+				ADE7FE1326A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift in Sources */,
 				AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */,
 				ADE4EDE725604F530035CBE5 /* CloseButton.swift in Sources */,
 				AD6680BC251F4C0800E669A7 /* RegionView.swift in Sources */,
