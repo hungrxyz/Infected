@@ -68,7 +68,12 @@
 "Average" = "Average";
 "7 day average is calculated by summing up new vaccinations for past 7 days and dividing the sum by 7." = "7 day average is calculated by summing up new administered doses for past 7 days and dividing the sum by 7.";
 "Trend is calculated by subtracting current 7 day average from from previous 7 day average." = "Trend is calculated by subtracting current 7 day average from from previous 7 day average.";
-"Calculated by multiplying number of administered doses with the dosage of administered doses then dividing the result with the national population.\n[(administered doses * dosage) / national population]" = "Calculated by multiplying number of administered doses with the dosage of administered doses then dividing the result with the national population.\n[(administered doses * dosage) / national population]";
+"Calculated by multiplying number of administered doses with the dosage of administered doses then dividing the result with the national population.\n[(administered doses * dosage) / national population]" = "Calculated by multiplying number of administered doses with the fully vaccinated coefficient*, then dividing the result with the national population.
+
+[(total doses administered * fully vaccinated coefficient*) / national population]
+
+*  fully vaccinated coefficient = (total 2nd dose doses administered / total doses administered) + single dose coefficient**
+** single dose coefficient = total single dose doses administered / total doses administered";
 "Dosage" = "Dosage";
 "Represents quantity of doses required to be fully vaccinated. E.g. 2 doses / person = 0.5, 1 dose / person = 1.0." = "Represents quantity of doses required to be fully vaccinated. E.g. 2 doses / person = 0.5, 1 dose / person = 1.0.";
 "Herd Immunity" = "Herd Immunity";

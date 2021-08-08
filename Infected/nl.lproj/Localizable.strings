@@ -68,7 +68,12 @@
 "Average" = "Gemiddelde";
 "7 day average is calculated by summing up new vaccinations for past 7 days and dividing the sum by 7." = "Het 7-daagse gemiddelde wordt berekend door de nieuw toegediende doses van de afgelopen 7 dagen bij elkaar op te tellen en de som te delen door 7.";
 "Trend is calculated by subtracting current 7 day average from from previous 7 day average." = "De trend wordt berekend door het huidige 7-daagse gemiddelde af te trekken van het vorige 7-daagse gemiddelde.";
-"Calculated by multiplying number of administered doses with the dosage of administered doses then dividing the result with the national population.\n[(administered doses * dosage) / national population]" = "Berekend door het aantal toegediende doses te vermenigvuldigen met de dosering van de toegediende doses en vervolgens het resultaat te delen door de nationale populatie.\n[(toegediende doses * dosering) / nationale populatie]";
+"Calculated by multiplying number of administered doses with the dosage of administered doses then dividing the result with the national population.\n[(administered doses * dosage) / national population]" = "Berekend door het vermenigvuldigen van het aantal toegediende doses met de volledig gevaccineerde coëfficiënt* en verdeling het resultaat met de nationale bevolking.
+
+[(toegediende doses * volledig gevaccineerde coëfficiënt*) / nationale populatie]
+
+* Volledig gevaccineerde coëfficiënt = (totale 2e dosis doses toegediend / totale doses toegediend) + enkele dosiscoëfficiënt**
+** Enkele dosiscoëfficiënt = totale single dosis doses toegediend / totale toegediende doses";
 "Dosage" = "Dosering";
 "Represents quantity of doses required to be fully vaccinated. E.g. 2 doses / person = 0.5, 1 dose / person = 1.0." = "Geeft de hoeveelheid doses weer die nodig zijn om volledig te worden gevaccineerd. Bijv. 2 doses / persoon = 0,5, 1 dosis / persoon = 1,0.";
 "Herd Immunity" = "Groepsimmuniteit";
