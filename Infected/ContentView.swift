@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
 
     @EnvironmentObject var numbersProvider: NumbersProvider
-    @State var isAboutShown = false
-    @State var editMode = EditMode.inactive
+    @State private var isAboutShown = false
+    @State private var isWhatsNewShown = false
+    @State private var editMode = EditMode.inactive
 
     private var aboutButton: some View {
         Button(action: {
@@ -45,10 +46,16 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: numbersProvider.reloadAllRegions)
+        .onAppear {
+            numbersProvider.reloadAllRegions()
+            isWhatsNewShown = WhatsNewOperator.shouldShowWhatsNew()
+        }
         .onReceive(willEnterForegroundPublisher) {
             numbersProvider.reloadAllRegions()
             StoreReviewHandler.requestIfNeeded()
+        }
+        .sheet(isPresented: $isWhatsNewShown) {
+            WhatsNewView()
         }
     }
 

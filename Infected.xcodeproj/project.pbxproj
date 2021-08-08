@@ -28,6 +28,8 @@
 		AD82EB3425A24CD200864A78 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82EB3325A24CD200864A78 /* SearchBar.swift */; };
 		AD82EB3D25A24D0200864A78 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82EB3C25A24D0200864A78 /* ViewControllerResolver.swift */; };
 		AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */; };
+		ADA4F4EF26C0357F00B28573 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4F4EE26C0357F00B28573 /* WhatsNewView.swift */; };
+		ADA4F4F126C03A3C00B28573 /* WhatsNewOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4F4F026C03A3C00B28573 /* WhatsNewOperator.swift */; };
 		ADB726AC257C0FC800AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB726D3257C2B0500AB2DB1 /* WatchlistKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */; };
 		ADB7274C257D135700AB2DB1 /* UserDefaults+Infected.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7274B257D135700AB2DB1 /* UserDefaults+Infected.swift */; };
@@ -49,8 +51,8 @@
 		ADE73A36254B612900C9FBD4 /* TrendNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */; };
 		ADE73A75254D7C8300C9FBD4 /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD327F2B2546332E002CCE01 /* NumbersProvider.swift */; };
 		ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */; };
-		ADE7FE1526A7832D00AB3A63 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7FE1426A7832D00AB3A63 /* Number.swift */; };
 		ADE7FE1326A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7FE1226A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift */; };
+		ADE7FE1526A7832D00AB3A63 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE7FE1426A7832D00AB3A63 /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		AD82EB3325A24CD200864A78 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AD82EB3C25A24D0200864A78 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 		AD84AEAF258FF650002972C0 /* StoreReviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHandler.swift; sourceTree = "<group>"; };
+		ADA4F4EE26C0357F00B28573 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
+		ADA4F4F026C03A3C00B28573 /* WhatsNewOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewOperator.swift; sourceTree = "<group>"; };
 		ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistKeeper.swift; sourceTree = "<group>"; };
 		ADB726FA257CEF0B00AB2DB1 /* Infected.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Infected.entitlements; sourceTree = "<group>"; };
 		ADB726FF257CFDAA00AB2DB1 /* Infected.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Infected.xcconfig; sourceTree = "<group>"; };
@@ -129,8 +133,8 @@
 		ADE4EDE625604F530035CBE5 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		ADE73A35254B612900C9FBD4 /* TrendNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendNumberView.swift; sourceTree = "<group>"; };
 		ADE73A8E254DDEB700C9FBD4 /* NumberRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRepresentation.swift; sourceTree = "<group>"; };
-		ADE7FE1426A7832D00AB3A63 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		ADE7FE1226A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationsUpdatedCaptionView.swift; sourceTree = "<group>"; };
+		ADE7FE1426A7832D00AB3A63 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 				ADE10EEF254F3FEA0080B975 /* AllRegionsView.swift */,
 				ADE4EDE625604F530035CBE5 /* CloseButton.swift */,
 				ADD4C307251627910064A959 /* ContentView.swift */,
+				ADA4F4F026C03A3C00B28573 /* WhatsNewOperator.swift */,
 				AD825D032578306C00CF681B /* GeoArea.swift */,
 				ADE10EFB254F45930080B975 /* GroupedRegionsView.swift */,
 				AD0F97A22579763900030E7C /* GroupedSummaries.swift */,
@@ -242,6 +247,7 @@
 				AD288AB82648279400F9F708 /* HomeAdmissionsInfoView.swift */,
 				ADB726AB257C0FC800AB2DB1 /* WatchlistKeeper.swift */,
 				ADE7FE1426A7832D00AB3A63 /* Number.swift */,
+				ADA4F4EE26C0357F00B28573 /* WhatsNewView.swift */,
 				ADD4C309251627920064A959 /* Assets.xcassets */,
 				AD131CC02559D393003077F3 /* Localizable.strings */,
 				ADD4C30B251627920064A959 /* Preview Content */,
@@ -426,6 +432,7 @@
 				AD288AB92648279400F9F708 /* HomeAdmissionsInfoView.swift in Sources */,
 				ADE73A8F254DDEB700C9FBD4 /* NumberRepresentation.swift in Sources */,
 				AD6680C22520832800E669A7 /* RowView.swift in Sources */,
+				ADA4F4EF26C0357F00B28573 /* WhatsNewView.swift in Sources */,
 				ADE7FE1326A62AE700AB3A63 /* VaccinationsUpdatedCaptionView.swift in Sources */,
 				AD84AEB0258FF650002972C0 /* StoreReviewHandler.swift in Sources */,
 				ADE4EDE725604F530035CBE5 /* CloseButton.swift in Sources */,
@@ -441,6 +448,7 @@
 				AD638D8E258FAF6000EDE19B /* LinkView.swift in Sources */,
 				AD82EB3D25A24D0200864A78 /* ViewControllerResolver.swift in Sources */,
 				AD82EB3425A24CD200864A78 /* SearchBar.swift in Sources */,
+				ADA4F4F126C03A3C00B28573 /* WhatsNewOperator.swift in Sources */,
 				ADE7FE1526A7832D00AB3A63 /* Number.swift in Sources */,
 				ADE10EFC254F45930080B975 /* GroupedRegionsView.swift in Sources */,
 				AD74CCCC255DF8B500002500 /* SectionHeader.swift in Sources */,

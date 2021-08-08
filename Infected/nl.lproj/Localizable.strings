@@ -100,3 +100,7 @@ Op basis van onze kennis, maakt tenminste de helft van de patiënten van de Lusc
 "New home admissions is calculated by subtracting previous day total activated from current day total activated admissions." = "Het aantal nieuwe thuisopnames wordt berekend door het totaal van de vorige dag geactiveerd af te trekken van het totaal aantal geactiveerde opnames op de huidige dag.";
 "Active number is calculated by subtracting total stopped from total activated admissions." = "Het actieve aantal wordt berekend door het totaal aantal gestopte opnames af te trekken van het totaal aantal geactiveerde opnames.";
 "Home admissions." = "Thuisopnames.";
+"What's New" = "Wat is er nieuw";
+"Version 1.8.0" = "Versie 1.8.0";
+"1.8.0 Update" = "Nieuwe vaccinatie-dekking algoritme die beter het verschil begrijpt tussen gedeeltelijk en volledig gevaccineerde mensen en moet daarom een meer accurate schatting geven.";
+
