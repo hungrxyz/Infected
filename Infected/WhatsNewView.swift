@@ -9,28 +9,22 @@ import SwiftUI
 
 struct WhatsNewView: View {
 
-    @Environment(\.presentationMode) private var presentationMode
-
     var body: some View {
-        NavigationView {
-            ScrollView {
-                HStack {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Group {
-                            Text("What's New")
-                                .font(.title).bold()
-                            Spacer()
-                            Text("Version 1.8.0")
-                                .font(.title2).bold()
-                            Text("1.8.0 Update")
-                        }
+        ScrollView {
+            HStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    Group {
+                        Text("What's New")
+                            .font(.title).bold()
+                        Spacer()
+                        Text("Version 1.8.0")
+                            .font(.title2).bold()
+                        Text("1.8.0 Update")
                     }
-                    Spacer()
                 }
-                .padding()
+                Spacer()
             }
-            .navigationBarItems(trailing: CloseButton { presentationMode.wrappedValue.dismiss() })
-            .navigationBarTitleDisplayMode(.inline)
+            .padding()
         }
     }
 

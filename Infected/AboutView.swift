@@ -74,6 +74,10 @@ struct AboutView: View {
                 }
                 if let appVersionText = Bundle.main.appVersionDisplayText {
                     Section {
+                        NavigationLink(
+                            destination: WhatsNewView(),
+                            label: { Text("What's New") }
+                        )
                         HStack {
                             Text("App Version")
                             Spacer()

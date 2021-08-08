@@ -55,7 +55,11 @@ struct ContentView: View {
             StoreReviewHandler.requestIfNeeded()
         }
         .sheet(isPresented: $isWhatsNewShown) {
-            WhatsNewView()
+            NavigationView {
+                WhatsNewView()
+                    .navigationBarItems(trailing: CloseButton { isWhatsNewShown = false })
+                    .navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 
