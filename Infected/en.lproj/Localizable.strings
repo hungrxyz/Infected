@@ -102,4 +102,5 @@ Based on our knowledge, at least 50% of the patients are using the Luscii COVID-
 "Home admissions." = "Home admissions.";
 "What's New" = "What's New";
 "Version 1.8.0" = "Version 1.8.0";
-"1.8.0 Update" = "New vaccination coverage algorithm that better understands the difference between partially and fully vaccinated people and should therefore provide a more accurate estimation.";
+"1.8.0 Update" = "- New vaccination coverage algorithm that better understands the difference between partially and fully vaccinated people and should therefore provide a more accurate estimation.
+- Vaccinations are updated only twice a week (Tuesday and Thursday), as reported on the Corona dashboard.";

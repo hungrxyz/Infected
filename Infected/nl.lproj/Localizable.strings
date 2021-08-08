@@ -102,5 +102,6 @@ Op basis van onze kennis, maakt tenminste de helft van de patiënten van de Lusc
 "Home admissions." = "Thuisopnames.";
 "What's New" = "Wat is er nieuw";
 "Version 1.8.0" = "Versie 1.8.0";
-"1.8.0 Update" = "Nieuwe vaccinatie-dekking algoritme die beter het verschil begrijpt tussen gedeeltelijk en volledig gevaccineerde mensen en moet daarom een meer accurate schatting geven.";
+"1.8.0 Update" = "- Nieuwe vaccinatie-dekking algoritme die beter het verschil begrijpt tussen gedeeltelijk en volledig gevaccineerde mensen en moet daarom een meer accurate schatting geven.
+- Vaccinaties worden slechts twee keer per week bijgewerkt (dinsdag en donderdag), zoals gerapporteerd over het Corona-dashboard.";
 
